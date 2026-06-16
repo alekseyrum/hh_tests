@@ -399,7 +399,74 @@ var middle04_description = `Вы разрабатываете систему м�
 *Price - текущая цена (целое число).
 *ChangeDirection - направление изменения: UP (рост) или DOWN (падение).
 *Timestamp - время изменения в формате ЧЧ:ММ:СС.`;
-var middle04_text = `_не дописано еще_`;
+var middle04_text = `#include <iostream>
+#include <vector>
+#include <map>
+#include <chrono>
+#include <regex>
+
+using namespace std;
+
+struct AState {
+    int price;
+    std::chrono::seconds time;
+};
+
+std::vector<std::string> report(const std::vector<std::string> & lines) 
+{
+    std::vector<std::string> vecResult;
+    std::map<std::string,AState> mPapers;
+    std::map<std::string,AState>::iterator itPaper;
+    std::vector<std::string>::const_iterator itLine = lines.begin();
+
+    std::regex pattern("^(\\w{4})::(\\d+)::(\\w{2,4})::(\\d{2}:\\d{2}:\\d{2})$"); 
+    std::smatch matches;
+
+    while ( itLine != lines.end() )
+    {
+        if (! std::regex_search( *itLine , matches, pattern)) {
+            cout << "regexp parsing not found mathces in line:" << endl;
+            cout << *itLine << endl;
+            itLine++;
+            continue;
+        }
+        std::istringstream iss( matches.str(4) );
+        std::chrono::seconds time_val; 
+        iss >> std::chrono::parse("%H:%M:%S", time_val);
+        if ( iss.fail()) {
+            cout << "ERROR time parsing from string:" << matches.str(4) << endl;
+            itLine++;
+            continue;
+        }
+        int iNewPrice = std::stoi(matches.str(2));
+        std::string sPaperName = matches.str(1);
+        itPaper = mPapers.find( sPaperName );
+        if ( itPaper == mPapers.end() ) {
+            AState nS;
+            nS.price = iNewPrice;
+            nS.time = time_val;
+            mPapers.insert( { sPaperName , nS } );
+        } else {
+            // PAPER already exists
+            // cout << "paper exists wit time = " <<  itPaper->second.time << endl;
+            if (itPaper->second.time >= time_val) {
+                itLine++;
+                continue;
+            }
+            itPaper->second.time = time_val;
+            if ( matches.str(3) == "UP" ) {
+                vecResult.push_back("{\"Symbol\":\"" + sPaperName + "\",\"Price\":" + std::to_string(iNewPrice) + ",\"Trend\":\"UP\"}" );
+            } else {
+                int iDeltaPrice = itPaper->second.price - iNewPrice;
+                vecResult.push_back(sPaperName + " DOWN " + std::to_string(iDeltaPrice) );
+            }
+            itPaper->second.price = iNewPrice;
+        }
+        itLine++;
+    }
+    if (vecResult.size() == 0) vecResult.push_back("none");
+    return vecResult;
+}`;
 
 var middle05_description = `none`;
 var middle05_text = `нету.`;
