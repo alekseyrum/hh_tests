@@ -24,17 +24,31 @@
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Компания переходит на Git с другой системы контроля версий. Вам нужно создать репозиторий, который будет содержать все афйлы проекта, но без истории изменений. Какой из следующих подходов соответствует этой задаче?
-Варианты ответа:
+
+++ git init && cp -r old_project/* . && git add . && git commit -m "Initial commit"
+
 -- git clone old_project/.git && rm -rf .git && git init && git add . && git commit -m "Initial commit"
--- git init && cp -r old_project/* . && git add . && git commit -m "Initial commit"
 -- git init && rsync -av old_project/ . && git commit -am "Initial commit"
 -- tar -czf backup.tar.gz old_project && git init && git add . && git commit -m "Initial commit"
-git archive --format=tar HEAD | tar -x -C new_folder && git init && git add . git commit -m "Initial commit"
+git archive --format=tar HEAD | tar -x -C new_folder && git init && git add . && git commit -m "Initial commit"
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Вы внесли изменения в несколько отслеживаемых файлов проекта и хотите зафиксировать их в истории репозитория с комментарием.
+Какая команда позволит это сделать одним шагом, без предварительного вызова git add ?
+
+Варианты ответа:
+
+++		: git commit -am "Комментарий"
+
+(сокращение от -a — all и -m — message)
+
+-- git commit --all --allow-empty-message
+-- git add . && git commit -m "Комментарий"
+-- git commit -m "Комментарий"
+-- git commit --amend "Комментарий"
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
+[видео на 02.41]
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
