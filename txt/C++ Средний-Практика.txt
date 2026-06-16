@@ -1,0 +1,615 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//
+// HH.ru : C++ Средний уровень-Практика 
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Фрилансеры со всего света
+Средний Валидация данных Коллекции Обработка даты и времени
+
+Отдел управления персоналом ИТ-компании формирует отчет для департамента по налогам по количеству внештатных сотрудников в разных странах за прошлый год в формате:
+Фамилия;ГодРождения;НазваниеСтраны;ProjectID.
+Требуется проверить корректность данных:
+*Фамилия содержит только символы английского алфавита без пробелов и других символов, длина поля - от 1 до 40 символов включительно.
+*ГодРождения - целое число от 1960 до 2007 включительно.
+*НазваниеСтраны содержит только символы английского алфавита без пробелов и других символов, длина поля - от 2 до 40 символов включительно, название страны не равно none.
+*ProjectID имеет формат CCNNN, где С - это символ английского алфавита в верхнем регистре, N - целое число от 0 до 7 включительно, например AF470.
+
+На основе корректных данных нужно вывести список стран и количество внештатных сотрудников из каждой страны.
+Список стран нужно упорядочить по убыванию количества внештатных сотрудников, при равенстве значений количества фрилансеров упорядочить НазваниеСтраны по алфавиту.
+Требуется разработать класс ProcessingFreelancers, который содержит метод ValidateFreelancer для определения корректности данных о внештатных сотрудниках, и GenerateFreelancersReport, который возвращает список стран с количеством внештатных сотрудников для каждой страны в формате
+Нзвание страны:КоличествоСотрудников.
+
+ФОРМАТ ВВОДА
+На вход подаются строки, содержащие информацию в формате:
+Фамилия;ГодРождения;НазваниеСтраны;ProjectID.
+Строка содержит ровно четыре поля, разделенных ;.
+До или после разделителя ; допускаются пробелы.
+Количество строк - от 1 до 1000. Гарантируется, что есть хотя бы одна строка.
+
+ФОРМАТ ВЫВОДА
+Вывести список стран с количеством внештатных сотрудников для каждой страны в формате Название страны:КоличествоФрилансеров.
+Если корректных данных о внештатных сотрудниках нет, вывести:
+none:0.
+.    .    .    .    .    .    .    .    .    .    .    .
+// Вероятно в примерах и тестах присутствуют символы латиницы, но визуально их не определить
+// поэтому результаты тесов не совпадают
+[Пример 1]
+Входные данные:
+Smith;1985;USA;AB123
+Johnson;1990;Canada;CD456
+Williams;1978;USA;EF789
+Brown;1995;UK;GH012
+Davis;1982;Canada;IJ345
+
+Выходные данные:
+Canada:2
+UK:1
+USA:1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 2]
+Входные данные:
+Smith;1950;USA;AB123
+Johnson;1990;C;CD456
+Williams1978;none;EF789
+Brown;1995;UK;GH0123
+Davis;1982;Canada;IJ34
+
+Выходные данные:
+none:0
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 1]
+Входные данные:
+VanLandeghem;1987;SanMarino;MN678
+DeConinck;1973;Monaco;OP901
+VanDePutte;1990;VaticanCity;QR234
+Verstappen;2003;Iceland;ST567
+VanDerAa;1971;Malta;UV890
+DeBock;1984;Cyprus;WX123
+VanOvermeire;1996;Andorra;YZ456
+Verhaeghe;1969;Liechtenstein;AB789
+VanSteen;1981;SanMarino;CD012
+DePaepe;1975;Monaco;EF345
+VanHulle;1998;VaticanCity;GH678
+Verdonck;2002;Iceland;IJ901
+
+Выходные данные:
+Andorra:1
+Cyprus:1
+Iceland:1
+Monaco:1
+SanMarino:1
+VaticanCity:1
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код ]
+
+#include <sstream>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <charconv>
+#include <map>
+using namespace std;
+
+std::vector<std::string> generate_report(const std::vector<std::string> & lines) 
+{
+    std::vector<std::string> vecResult;
+    std::map<string, int> mapWorkers;
+
+    for (const std::string &word : lines) {
+        std::string_view sv(word);
+        int delim1 = sv.find(';');
+        int delim2 = sv.find(';', delim1+1);
+        int delim3 = sv.find(';', delim2+1);
+        if (delim3 == std::string_view::npos) {
+            continue;
+        }
+        std::string_view svName = sv.substr(0,delim1);
+        std::string_view svYear = sv.substr(delim1+1, delim2-delim1-1);
+        std::string_view svCountry = sv.substr(delim2+1, delim3-delim2-1);
+        std::string_view svProject = sv.substr(delim3+1, sv.size()-delim3);
+        // cout << "name:" << svName << " year:" << svYear << " contry:" << svCountry << " proj:" << svProject << endl;
+        if ( svName.size() > 40 || svCountry.size() > 40 || svCountry.size() < 2) { 
+            cout << "wrong field length:" << svName << " or " << svCountry << endl;
+            continue; 
+        }
+        if ( ! std::all_of(svName.begin(), svName.end(), [](unsigned char c) { return std::isalpha(c); } ) )  {
+            cout << "wrong name:" << svName << endl;
+            continue; 
+        }
+        int iYearVal = 0;
+        std::from_chars_result fcr = std::from_chars(svYear.data(), svYear.data() + svYear.size() , iYearVal );
+        if ( iYearVal < 1960 || iYearVal > 2007) {
+            cout << "wrong year:" << iYearVal << endl;
+            continue;
+        }
+
+        if ( ! std::all_of(svCountry.begin(), svCountry.end(), [](unsigned char c) { return std::isalpha(c); } ) )  {
+            cout << "wrong country:" << svCountry << endl;
+            continue; 
+        }
+        // - - - [field ProjectID] - - -
+        if ( svProject.size() != 5 || ! std::all_of(svProject.begin(), svProject.begin()+2, [](unsigned char c) { return (c >= 'A' && c <= 'Z');} ) ) {
+            cout << "wrong project format:" << svProject << endl;
+            continue;
+        }    
+        if ( ! std::all_of(svProject.begin()+3, svProject.begin()+5, [](unsigned char c) { return std::isdigit(c); } ) ) {
+            cout << "wrong project format:" << svProject << endl;
+            continue;
+        }   
+        // here all ok:
+        std::map<string,int>::iterator itWorkers = mapWorkers.find( std::string(svCountry) );
+        if ( itWorkers == mapWorkers.end() ) {
+            mapWorkers.insert( { std::string(svCountry), 1 } );
+        } else {
+            itWorkers->second++;
+        }
+    }
+
+    if ( mapWorkers.size() == 0 ) {
+        return {"none:0"};
+    }
+
+    std::vector<std::pair<std::string, int>> vec4Sort(mapWorkers.begin(), mapWorkers.end());
+    std::sort(vec4Sort.begin(), vec4Sort.end(), [](const auto& a, const auto& b) {
+        if (a.second != b.second) return a.second > b.second;
+        return a.first < b.first;
+    });
+    for (auto cc : vec4Sort) {
+        vecResult.push_back( cc.first + ":" + std::to_string(cc.second) );
+    }
+    return vecResult;
+}
+
+int main () {
+    vector<string> vInputData = { 
+    "Smith;1985;USA;AB123",
+    "Johnson;1990;Canada;CD456",
+    "Williams;1978;USA;EF789",
+    "Brown;1995;UK;GH012",
+    "Davis;1982;Canada;IJ345" };
+    
+    vector<string> vResult = generate_report(vInputData);
+    for ( auto ss : vResult) {
+        cout << ss << endl;
+    }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Задача 2
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Популярные компьютерные игры
+Средний Обработка исключительных ситуаций Валидация данных
+
+Администратор сайта сформировал данные о размещенных разработчиками компьютерных инди-играх в формате:
+gameID->Название->Рейтинг->КоличествоСкачиваний.
+Для стандартизации данных в описании игры на сайте и проведения маркетинговой кампании службе продвижения сайта требуется информаци об играх с высокой, средней или низкой популярностью.
+Требуетсяя разработать модуль, который выполняет проверку данных на корректность (проверка останавливается при первой ошибке) и для каждой записи о компьютерной игре выводит информацию в следующем формате:
+gameID:Название:Message,
+где Message - это одно из значений (top,middle,low,incorrect data).
+Признаки корректности данных:
+*строка содержит ровно четыре поля, разделенных -> без пробелов;
+*поле gameID целое число от 1000 до 9999 включительно;
+*поле Название содержит только символы английского алфавита без пробелов и других символов, длина поля - от 5 до 40 символов включительно;
+*поле Рейтинг - целое число от 0 до 100 включительно;
+*поле КоличествоСкачиваний - целое число от 0 до 10000000 включительно.
+Требуется разработать класс ProcesingGames, который содержит метод ValidateGame для определения корректности данных об игре, метод calculateGameRate и метод gamesReport, который возвращает данные об игроках в требуемом формате.
+
+ФОРМАТ ВВОДА
+На вход подаются строки, содержащие информацию об играх, в формате:
+gameID->Название->Рейтинг->КоличествоСкачиваний.
+Количество строк - от 1 до 1000. Гарантируется, что есть хотя бы одна строка.
+
+ФОРМАТ ВЫВОДА
+Вывести для каждой игры данные в формате:
+gameID:Название:Message, разделитель двоеточие ":" без пробелов.
+gameID - это поле gameID из исходных данных. Если поле пустое, вывести unknown.
+Название - это поле Название из исходных данных. Если поле пустое, вывести unknown.
+Поле Message принимает следующие значения:
+top - если Рейтинг больше либо равен 90 или Количество скачиваний болше 100000;
+middle - если Рейтинг от 65 до 89 включительно или Количество скачиваний от 50000 до 99999 включительно;
+low - в остальных случаях;
+incorrect data - если в данных обнаружена ошибка. Проверка выполняется до обнаружения первой ошибки.
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 1 ]
+Входные данные:
+1001->StardewValley->95->50000
+1002->Terrarie->85->75000
+1003->HollowKnight->72->300000
+1004->Celeste->20->15000
+1007->SuperNova->75->25000
+
+Выходные данные:
+1001:StardewValley:top
+1002:Terrarie:middle
+1003:HollowKnight:top
+1004:Celeste:low
+1007:SuperNova:middle
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 2 ]
+Входные данные:
+1001->Stardew Valley->95->500000
+1002->->85->75000
+1003->HollowKnight->92->300000
+->->80->45000
+
+Выходные данные:
+1001:Stardew Valley:incorrect data
+1002:unknown:incorrect data
+1003:HollowKnight:top
+unknown:unknown:incorrect data
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 1 ]
+Входные данные:
+1001->Amani->95->500000
+1002->Baraka->85->75000
+1003-> Chidi->92->300000
+1004 ->Dakarai->80->45000
+1005->Ekon->65->50000
+1006->Femi->90->200000
+1007->lfe->75->60000
+1008->Jabari->80->80000
+1009->Kato->70->70000
+1010->Lebo->60->40000
+1011->Mandla->155->30000
+1012->Nia->50->20000
+
+Ожидаемый результат:
+1001:Amani:top
+1002:Baraka:middle
+1003:Chidi:top
+1004:Dakarai:middle
+1005:Ekon:incorrect data
+1006:Femi:incorrect data
+1007:lfe:incorrect data
+1008:Jabari:middle
+1009:Kato:incorrect data
+1010:Lebo:incorrect data
+1011:Mandla:incorrect data
+1012:Nia:incorrect data
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код ]
+#include <sstream>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+std::vector<std::string> report(const std::vector<std::string> & lines) 
+{
+    std::vector<std::string> vecResult;
+
+    for (auto cc : lines) {
+        std::string_view sv(cc);
+
+        int delim1 = sv.find("->");
+        int delim2 = sv.find("->", delim1+2);
+        int delim3 = sv.find("->", delim2+2);
+        if (delim3 == std::string_view::npos) {
+            cout << "fields too few" << endl;
+            return vecResult;
+        }
+        std::string svGameid(sv.substr(0,delim1) );
+        std::string svName(sv.substr(delim1+2, delim2-delim1-2) ) ; 
+        std::string svRate(sv.substr(delim2+2, delim3-delim2-2) );
+        std::string svLoad(sv.substr(delim3+2, sv.size()-delim3) );
+       
+        int iGameID = 0 ; 
+        if ( svGameid.empty() ) { 
+            svGameid = "unknown" ;
+        } else {
+            iGameID = std::stoi(svGameid);
+        }
+        
+        int iRate = std::stoi(svRate);
+        int iDownLoad = std::stoi(svLoad);
+        std::string sMsg = "low";
+
+        if (iGameID < 1000 || iGameID > 9999 || svName.length() < 5 || svName.length() > 40 
+            || ! std::all_of(svName.begin(), svName.end(), [](unsigned char c) { return std::isalpha(c); })
+            || iRate < 0 || iRate > 100
+            || iDownLoad < 0 || iDownLoad > 10000000
+            ) { 
+            if ( svName.empty() ) { svName = "unknown"; }
+            vecResult.push_back(svGameid + ":" + svName + ":incorrect data");
+        } else {
+            if (iRate >= 90 || iDownLoad > 100000) { sMsg = "top"; }
+            else if ( (iRate > 60 && iRate <= 89) || (iDownLoad > 50000 && iDownLoad < 99999 ) ) 
+            { sMsg = "middle"; }
+            vecResult.push_back(svGameid + ":" + svName + ":" + sMsg);
+        }         
+    }  
+    return vecResult; 
+}
+
+int main () {
+    vector<string> vInputData = {
+    "1001->Stardew Valley->95->500000",
+    "1002->->85->75000",
+    "1003->HollowKnight->92->300000",
+    "->->80->45000"};
+ 
+    vector<string> vResult = report(vInputData);
+    for ( auto ss : vResult) {
+        cout << ss << endl;
+    }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Задача 3
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Подозрительная активность на сервере
+Средний Регулярные выражения Обобщения Интерфейсы
+
+Вы разрабатываете модуль анализа активности системных служб в корпоративной информационной системе на основе исследования логов запросов, поступающих на сервер.
+Запись лога имеет следующий вид:
+<service="serviceID" data="dataID" action="readwrite">.
+Нужно определить корректные записи логов сервера.
+Корректные записи обрабатываются следующим образом:
+*Для операций read и write для каждого сервиса производится подсчет сделанных запросов.
+*Операция write - для каждого сервиса производится подсчет количества сделанных запросов, а также детектируется наличие подозрительной активности: количество операций write >= 75% от общего количества операций readwrite.
+Для каждого сервиса нужно вывести количество операций read и write либо сообщение о подозрительной активности.
+Если корректные записи логов отсутствуют, вывести none.
+Требуется разработать класс ServerLogAnalyzer с методом ProcessingServerLogs, который выводит информацию об активности сервисов в требуемом формате.
+Реализовать классы CorrectService и FishingService, реализующие интерфейс IWriteServiceActivity.
+
+ФОРМАТ ВВОДА
+На вход подаются строки, содержащие логи сервера в формате:
+<service="serviceID" data="dataID" action="readwrite">.
+Признаки корректности данных:
+*запись лога строка содержит ровно три атрибута, разделенных символом пробел в формате имяАтрибута="значениеАтрибута";
+*внутри имен и значений атрибутой пробелы не допускаются;
+*допускаются пробелы в начале и конце строки, содержащей запись лога;
+*атрибут service содержит значение serviced, которое имеет вид целого числа от 10000 до 99999 включительно;
+*атрибут data содержит значение dataID, которое имеет вид строки символов английского алфавита длиной 9 символов, записанных в верхнем регистре;
+*атрибут action содержит одно из значений (read или write).
+Количество строк - от 1 до 1000. Гарантируется, что есть хотя бы одна строки.
+
+ФОРМАТ ВЫВОДА
+Данные о корректных записях лога для сервиса с нормальной активностью выводятся в формате сериализованного JSON в порядке, как указано в примере:
+{"service":"serviceID","read":readCount,"write":writeCount}.
+Данные о корректных записях лога для сервиса с подозрительной активностью выводятся в следующем формате:
+Alert! serviceID has suspicious activity.
+При этом сервисы сортируются по возрастанию serviceID.
+Если нет ни одной корректной записи, вывести одну строку: none
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 1]
+Входные данные:
+<service="10001" data="ABCDEFGHI" action="read">
+<service="10001" data="JKLMNOPQR" action="read">
+<service="10001" data="STUVWXYZa" action="write">
+<service="10002" data="bcdefghij" action="read">
+
+Выходные данные:
+{"service":"10001","read":2,"write":1}
+{"service":"10002","read":1,"write":0}
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 2]
+Входные данные:
+<service="20001" data="AAAAAAAAA" action="write">
+<service="20001" data="BBBBBBBBB" action="write">
+<service="20001" data="CCCCCCCCC" action="write">
+<service="20001" data="DDDDDDDDD" action="read">
+<service="20002" data="EEEEEEEEE" action="read">
+<service="20002" data="FFFFFFFFF" action="read">
+<service="20002" data="GGGGGGGGG" action="write">
+
+Выходные данные:
+Alert! 20001 has suspicious activity
+{"service":"20002","read":2,"write":1}
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 3]
+Входные данные:
+<service="20002" data="EEEEEEEEE" acteon="read">
+<service="20002" data="FFFFFF" action="re">
+<service="200" data="GGGGGGGGG" action="write">
+
+Выходные данные:
+none
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 1]
+<service="29005" data="ABCDEFGHI" action="read">
+<service="30006" data="JKLMNOPQR" action="write">
+<service="29005" data="STUVWXYZA" action="read">
+<service="30006" data="BCDEFGHIJ" action="write">
+<service="29005" data="KLMNOPQRS" action="read">
+<service="30006" data="TUVWXYZAB" action="write">
+<service="29005" data="CDEFGHIJK" action="read">
+<service="30006" data="LMNOPQRST" action="write">
+
+Ожидаемый результат:
+{"service":"29005","read":4,"write":0}
+Alert! 30006 has suspicious activity
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код ]
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <regex>
+
+using namespace std;
+
+struct OpStatus {
+    int read;
+    int write;
+};
+
+std::vector<std::string> report(const std::vector<std::string> & lines) 
+{
+    std::vector<std::string> vecResult;
+    std::map<string, OpStatus> mStates;
+    std::map<string, OpStatus>::iterator itElem;
+
+    std::regex pattern("^<service=\"(\\d{5})\" data=\"(\\w{9})\" action=\"(\\w{4,5})\">"); 
+    std::smatch matches;
+
+    std::vector<std::string>::const_iterator itLine = lines.begin();
+    while ( itLine != lines.end() )
+    {
+        if (std::regex_search( *itLine , matches, pattern)) {
+            itElem = mStates.find( matches.str(1) );
+            if ( itElem == mStates.end() ) {
+                OpStatus os;
+                os.read = 0;
+                os.write = 0;
+                auto pIns = mStates.insert( { matches.str(1) , os } );
+                itElem = pIns.first;
+            } 
+            if ( matches.str(3) == "read") {
+                itElem->second.read++;
+            } else if (matches.str(3) == "write") {
+                itElem->second.write++;
+            }
+        }
+        itLine++;
+    }
+    // write-out to result:
+    for (const auto & dd : mStates) {
+        int iWriteLimit = (dd.second.write + dd.second.read) *0.75;
+        if ( dd.second.write >= iWriteLimit) {
+            vecResult.push_back( "Alert! " + dd.first + " has suspicious activity" );
+        } else {
+            vecResult.push_back( "{service=\"" + dd.first + "\",\"read\":" + std::to_string(dd.second.read) + ",\"write\":" + std::to_string(dd.second.write) + "}" );
+        }
+    }
+    if ( vecResult.size() == 0 ) {
+        vecResult.push_back( "none" );
+    }
+    return vecResult;
+}
+
+int main () 
+{
+
+ vector<string> vInputData = {     
+        "<service=\"20002\" data=\"EEEEEEEEE\" acteon=\"read\">",
+        "<service=\"20002\" data=\"FFFFFF\" action=\"re\">",
+        "<service=\"200\" data=\"GGGGGGGGG\" action=\"write\">" };
+
+    vector<string> vResult = report(vInputData);
+    for ( auto ss : vResult) {
+        cout << ss << endl;
+    }
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Задача 4
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Мониторинг акций
+Средний Делегаты и события Принципы SOLID Коллекции
+
+Вы разрабатываете систему мониторинга изменений цен акций отдела ценообразования в большой компании-ритейлере.
+Каждое событие изменения цены акции имеет формат:
+*Symbol::Price::ChangeDirection::Timestamp.
+*Symbol - тикер акции (например AAPL).
+*Price - текущая цена (целое число).
+*ChangeDirection - направление изменения: UP (рост) или DOWN (падение).
+*Timestamp - время изменения в формате ЧЧ:ММ:СС.
+Правила обработки:
+Если тикер акции встретился первый раз, он заносится в список тикеров акций.
+Если тикер акции уже есть, то происходит обновление цены по следующим правилам:
+*Если цена выросла (UP) и временная метка позже сохраненной, то вывести:
+{"Symbol":"AAPL","Price":150,"Trend":"UP"}.
+*Если цена упала (DOWN) и временная метка позже сохраненной, то вывести:
+Symbol DOWN priceChange,
+где priceChange - разница между предыдущей и текущей ценой акции.
+*Если изменений цены акции не было, вывести none.
+Нужно разработать класс SharePriceSystem, реализующий обработку изменения цены акции через подписку на события.
+
+ФОРМАТ ВВОДА
+На стандартный ввод подаются строки, содержащие информацию о цене акций:
+Symbol::Price::ChangeDirection::Timestamp.
+Поля Symbol::Price::ChangeDirection::Timestamp всегда корректные и не пустые и не содержат пробелов.
+Значение поля Symbol - четыре символа английского алфавита в верхнем регистре.
+Значение поля Price - целое число от 1 до 9999 включительно.
+Значение поля ChangeDirection - одно из двух значений (UP или DOWN).
+Значение поля Timestamp - время в формате ЧЧ:ММ:СС - часы от 00 до 23 включительно, ММ - минуты от 00 до 59 включительно, СС - секунды от 00 до 59 включительно).
+Количество строк от 1 до 1000. Гарантируется, что есть хотя бы одна строка.
+
+ФОРМАТ ВЫВОДА
+Сообщения о предложениях цены объектов недвижимости.
+Если цена выросла (UP), вывети:
+{"Symbol":"AAPL","Price":150,"Trend":"UP"}.
+Если цена упала (DOWN), вывести:
+Symbol DOWN price.
+Если изменений цены акции не было, вывести none.
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 1 ]
+Входные данные:
+AAPL::100::UP::10:00:00
+AAPL::120::UP::10:05:00
+GOOG::200::DOWN::10:10:00
+AAPL::110::DOWN::10:15:00
+GOOG::210::UP::10:05:00
+MSFT::150::UP::10:20:00
+AAPL::115::UP::10:10:00
+
+Выходные данные:
+{"Symbol":"AAPL","Price":120,"Trend":"UP"}
+AAPL DOWN 10
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Пример 2 ]
+Входные данные:
+AAPL::150::UP::10:30:00
+GOOG::2800::DOWN::10:31:00
+
+Выходные данные:
+none
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 1 ]
+Входные данные:
+IBMM::120::UP::13:00:00
+IBMM::125::UP::13:05:00
+IBMM::130::UP::13:10:00
+IBMM::135::UP::13:15:00
+IBMM::140::UP::13:20:00
+IBMM::145::UP::13:25:00
+IBMM::150::UP::13:30:00
+IBMM::155::UP::13:35:00
+
+Oжидаемый результат:
+{"Symbol":"IBMM","Price":125,"Trend":"UP"}
+{"Symbol":"IBMM","Price":130,"Trend":"UP"}
+{"Symbol":"IBMM","Price":135,"Trend":"UP"}
+{"Symbol":"IBMM","Price":140,"Trend":"UP"}
+{"Symbol":"IBMM","Price":145,"Trend":"UP"}
+{"Symbol":"IBMM","Price":150,"Trend":"UP"}
+{"Symbol":"IBMM","Price":155,"Trend":"UP"}
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 2 ]
+Входные данные:
+INTC::60::DOWN::14:00:00
+INTC::58::DOWN::14:05:00
+INTC::56::DOWN::14:10:00
+INTC::54::DOWN::14:15:00
+INTC::52::DOWN::14:20:00
+INTC::50::DOWN::14:25:00
+INTC::48::DOWN::14:30:00
+INTC::46::DOWN::14:35:00
+
+Oжидаемый результат:
+INTC DOWN 2
+INTC DOWN 2
+INTC DOWN 2
+INTC DOWN 2
+INTC DOWN 2
+INTC DOWN 2
+INTC DOWN 2
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 3 ]
+Входные данные:
+ORCL::80::UP::15:00:00
+ORCL::85::UP::15:05:00
+ORCL::90::UP::15:10:00
+CSCO::45::DOWN::15:15:00
+CSCO::43::DOWN::15:20:00
+CSCO::41::DOWN::15:25:00
+ORCL::95::UP::15:30:00
+CSCO::39::DOWN::15:35:00
+
+Oжидаемый результат:
+{"Symbol":"ORCL","Price":85,"Trend":"UP"}
+{"Symbol":"ORCL","Price":90,"Trend":"UP"}
+CSCO DOWN 2
+CSCO DOWN 2
+{"Symbol":"ORCL","Price":95,"Trend":"UP"}
+CSCO DOWN 2

@@ -1,0 +1,1027 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//
+// HH.ru : C++ Сложный уровень-Практика 
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Поиск лучших программистов
+Сложный
+Структура данных, Обработка строк, Коллекции, ООП - классы и объекты
+
+Вы разрабатываете для рекрутинговой компании модуль подбора программистов, которые могут быть привлечены к участию в различных проектах.
+Данные о каждом программисте имеют следующий формат:
+Фамилия::Стаж::Навык1,Навык2,...,НавыкN
+Результатом работы модуля является сортировка программистов по навыкам и стажу (поиск лучших из лучших): список программистов упорядочивается по убыванию количества навыков; если у нескольких программистов количество навыков одинаковое, то они выводятся по убыванию стажа; если у нескольких программистов стаж одинаковый, то их фамилии выводятся в алфавитном порядке.
+Вам нужно разработать:
+*класс Programmer, реализующий перегрузку операторов сравнения;
+*класс ProgrammerData, реализующий хранение данных о программистах;
+*класс ProcessingProgrammerData, содержащий метод ProcessingInputLines, для обработки входных данных.
+ФОРМАТ ВВОДА
+На вход модуля подаются строки, содержащие информацию о программистах и навыках, в формате:
+Фамилия::Стаж::Навык1,Навык2,...НавыкN
+*Поля Фамилия::Стаж::Навык1,Навык2,...НавыкN всегда корректные, не пустые и не содержат пробелов, но пробелы могут быть в начале и конце строки.
+*Значение поля Фамилия - набор символов русского алфавита длиной от 1 до 40 включительно.
+*Значение поля Стаж (количество лет работы в ИТ-отрасли) - целое число от 1 до 30 включительно.
+*Значение поля с навыками - это список навыков, разделенных запятой без пробела. Каждый навык - это набор символов английского алфавита и специальных символов (!@#$%^&*(){}[]<>), длиной от 2 до 30 включительно. Минимальное количество навыков - 1, максимальное количество навыков - 12.
+Количество строк - от 1 до 1000. Гарантируется, что есть хотя бы одна строка.
+ФОРМАТ ВЫВОДА
+Строки с обработанными данными о программистах в формате:
+Фамилия1::КоличествоНавыков1::Стаж1
+Фамилия2::КоличествоНавыков2::Стаж2
+...
+ФамилияN::КоличествоНавыковN::СтажN
+
+[Пример 1]
+Входные данные:
+Петров::3::JavaScript,TypeScript
+Сидоров::5::C#,Java
+Иванов::5::C#,Java,Python
+Кузнецов::7::Go
+
+Выходные данные:
+Иванов::3::5
+Сидоров::2::5
+Петров::2::3
+Кузнецов::1::7
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 2]
+Входные данные:
+Михайлов::5::Java,Python
+Широков::3::C#,JavaScript
+Ковалев::3::Go,Rust
+Субботин::4::Kotlin,Dart
+Власов::6::Scala,Haskell
+
+Выходные данные:
+Власов::2::6
+Михайлов::2::5
+Субботин::2::4
+Ковалев::2::3
+Широков::2::3
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 1]
+Киселёв::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell
+Савельев::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell
+Орлов::3::Elixir,Clojure
+Медведев::5::PHP,HTML,CSS,SQL,PLSQL
+Егоров::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell
+Фролов::2::Swift,Rubby
+Щербаков::4::Bash,Perl,Lua
+Кудрявцев::1::VBA
+
+Ожидаемый результат:
+Егоров::11::10
+Киселёв::11:10
+Савельев::11::10
+Медведев::5::5
+Щербаков::3::4
+Орлов::2::3
+Фролов::2::2
+Кудрявцев::1::1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 2]
+Входные данные
+Блинов::9::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart
+Колесников::9::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart
+Тарасов::3::Scala,Haskell
+ Самсонов::6::PHP,HTML,CSS,PLSQL,MySQL
+Лазарев::9::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart
+Баранов::2::Elixir,Clojure
+Гусев::4::Swift,Ruby
+Виноградов::1::Objective-C
+
+Ожидаемый результат:
+Блинов::9::9
+Колесников::9::9
+Лазарев::9::9
+Самсонов::6::6
+Гусев::2::4
+Тарасов::2::3
+Баранов::2::2
+Виноградов::1::1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 3]
+Входные данные
+Королев::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust
+Ефимов::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust
+Шестаков::3::Kotlin,Dart
+ Сорокин::5::PHP,HTML,CSS,SQL,PLSQL
+Носов::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust
+Одинцов::2::Scala,Haskell
+Крылов::4::Bash,Perl
+Коновалов::1::Lua
+
+Ожидаемый результат:
+Ефимов::7::8
+Королёв::7::8
+Носов::7::8
+Сорокин::5::5
+Крылов::2::4
+Шестаков::2::3
+Одинцов::2::2
+Коновалов::1::1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Код]
+#include <vector>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct ProgrammerData {
+    string family;
+    int stage;
+    int skills;
+};
+
+class ProcessingProgrammerData{
+public:
+    std::vector<std::string> process(const std::vector<std::string> & lines) const;
+};
+
+std::vector<std::string>
+ProcessingProgrammerData::process(const std::vector<std::string> & lines) const
+{
+    ProgrammerData newProg;
+    vector<ProgrammerData> vP;
+
+    int delimPos = 0;
+    int delim2Pos = 0;
+    for (string curStr : lines) {
+        if (curStr[0] != ' ') {
+            newProg.family = curStr.substr(0, delimPos = curStr.find(':') );
+        } else {
+            newProg.family = curStr.substr(1, delimPos = curStr.find(':') );
+        }
+        
+        newProg.stage = std::stoi ( curStr.substr(delimPos+2, delim2Pos = curStr.find(':', delimPos + 2) ));
+        delim2Pos += 2;
+        std::string curSkill = curStr.substr(delim2Pos, curStr.length()-delim2Pos);
+        delimPos = 0;
+        newProg.skills = 1;
+        
+        while (  std::string::npos != (delimPos = curSkill.find(',',delimPos))  )
+        {
+            delimPos++;
+            newProg.skills++;
+        }
+        vP.push_back(newProg);
+    }
+    std::sort(vP.begin(), vP.end(), [](const auto& a, const auto& b) {
+        if (a.skills != b.skills ) return a.skills > b.skills;
+        if (a.stage != b.stage ) return a.stage > b.stage ;
+        return a.family < b.family;
+    } );
+
+    vector<string> vOutResult;
+    for (ProgrammerData curP : vP) {
+        vOutResult.push_back (curP.family + "::" + std::to_string(curP.skills)  + "::" + std::to_string(curP.stage) );
+    }
+    return vOutResult;
+}
+int main ()
+{
+    vector<string> vInputData = { 
+        "Михайлов::5::Java,Python", "Широков::3::C#,JavaScript", 
+        "Ковалев::3::Go,Rust", "Субботин::4::Kotlin,Dart", "Власов::6::Scala,Haskell"
+    } ;
+    ProcessingProgrammerData ppg;
+    vector<string> vResult = ppg.process (vInputData);
+    for ( string ss : vResult) {
+        cout << ss << endl;
+    }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Задача 2
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Недобросовестные клиенты
+Сложный Структуры данных Обработка строк
+
+Вы разрабатываете модуль анализа обработки заказов клиентов для интернет-магазина.
+Требуется найти клиентов, которые в указанном месяце сделали возвраты (действия rejected). Для таких клиентов необходимо рассчитать:
+*общую сумму возвратов;
+*количество возвратных заказов.
+Нужно вывести Nclients клиентов с наибольшей суммой возвратов. При равенстве - большее количество заказов, при равенстве - меньший ClientID. Если таких клиентов меньше, чем Nclients, нужно вывести none.
+Важно: заказы со статусом accepted игнорируются при обработке данных.
+Данные о заказах имеют следующий формат:
+ClientID:OrderID:Action:Summa:Date, где Action - это одно из двух действий:
+    *accepted - клиент оплатил и получил заказ - успешное завершение заказа;
+    *rejected - клиент вернул средства и отклонил заказ - неуспешное завершение заказа.
+Вам нужно разработать:
+*класс ClientData, реализующий агрегацию суммы и количества заказов клиента;
+*класс ProcessingClientData, содержащий метод ProcessingInputLines, для обработки входных данных.
+Используйте Span<T> и Slice для парсинга строки без выделения дополнительной памяти.
+
+ФОРМАТ ВВОДА
+На вход модуля подаются строки, содержащие информацию о заказах клиентов в формате:
+Nmonth Nclients
+ClientID1:OrderID1:Action1:Summa1:Date1
+...
+ClientIDn:OrderIDn:Actionn:Summan:Daten
+
+Вначале идут два целых числа, разделенных пробелом:
+Nmonth (номер месяца) - целое число от 1 до 12 включительно;
+Nclients (количество клиентов, ожидающих выдачи заказа) - целое число от 1 до 10 включительно
+Далее идут строки с данными о клиентах.
+Поля ClientID:OrderID:Action:Summa:Date всегда корректные, не пустые и не содержат пробелов, но пробелы могут быть в начале и конце строки.
+Значение поля ClientID - целое число от 10000 до 99999 включительно.
+Значение поля OrderID - целое число от 10000 до 99999 включительно.
+Значение поля Action - одно из двух значений (accepted или rejected).
+Значение поля Summa - целое число от 1000 до 9999999 включительно.
+Значение поля Date - формат датыДД-ММ-ГГГГ.
+Количество строк - от 1 до 1000000. Гарантируется, что есть хотя бы одна строка.
+
+ФОРМАТ ВЫВОДА
+Строки с обработанными данными о клиентах в формате:
+ClientID;totalSumm;oredersCount
+Количество строк равно Nclients.
+Признак невозожности вывода заданного количества клиентов - в заданном месяце общее количество различных клиентов строго меньше Nclients или равно 0.
+Если по результатам обработки данных невозможно вывести заданное количество клиентов, вывести none.
+
+[Пример 1]
+Входные данные:
+5 2
+10001:20001:accepted:15000:01-05-2024
+10002:20002:rejected:25000:15-05-2024
+10001:20003:rejected:35000:20-05-2024
+10003:20004:rejected:10000:10-05-2024
+10002:20005:rejected:15000:25-05-2024
+
+Выходные данные:
+10002:40000:2
+10001:35000:1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 2]
+Входные данные:
+6 3
+10001:20001:rejected:10000:01-06-2024
+10002:20002:accepted:20000:15-06-2024
+10003:20003:rejected:10000:20-06-2024
+
+Выходные данные:
+none
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 1]
+7 5
+10041:20041:accepted:45000:01-07-2024
+10042:20042:accepted:50000:05-07-2024
+10043:20043:accepted:55000:10-07-2024
+10044:20044:accepted:60000:15-07-2024
+10045:20045:accepted:65000:20-07-2024
+10046:20046:accepted:70000:25-07-2024
+10047:20047:accepted:75000:30-07-2024
+10048:20048:accepted:80000:31-07-2024
+
+Ожидаемый результат:
+none
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 2]
+8 2
+10049:20049:rejected:85000:01-08-2024
+10050:20050:rejected:90000:05-08-2024
+10051:20051:rejected:95000:10-08-2024
+10050:20052:rejected:100000:15-08-2024
+10050:20053:rejected:105000:20-08-2024
+10050:20054:rejected:110000:25-08-2024
+10050:20055:rejected:115000:30-08-2024
+10056:20056:rejected:120000:31-08-2024
+
+Ожидаемый результат:
+10050:520000:5
+10056:120000:1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 3]
+5 10
+10057:20057:rejected:125000:01-05-2024
+10058:20058:rejected:130000:05-05-2024
+10059:20059:accepted:135000:10-05-2024
+10060:20060:rejected:140000:15-05-2024
+10061:20061:accepted:145000:20-03-2024
+10062:20062:rejected:150000:25-05-2024
+10063:20063:accepted:155000:30-05-2024
+10064:20064:accepted:160000:31-03-2024
+10065:20065:accepted:165000:01-05-2024
+10066:20066:accepted:170000:05-03-2024
+10067:20067:accepted:175000:10-05-2024
+10068:20068:accepted:180000:15-05-2024
+
+Ожидаемый результат:
+none
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код: ]
+#include <vector>
+#include <iostream>
+#include <string_view>
+#include <span>
+#include <charconv>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+struct ClientData {
+    int clientid;
+    int sum;
+    int orders;
+};
+std::vector<std::string> process(const std::vector<std::string> & lines) 
+// Solution::ProcessingClientData::process(const std::vector<std::string> & lines) const
+{
+    std::string_view str0 = lines[0];
+
+    int delimPos = str0.find(' ');
+    int months = 0;
+    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, months);
+    int Nclients = 0;
+    fcr = std::from_chars(str0.data() + delimPos+1, str0.data() + str0.size(), Nclients);
+
+    std::vector<std::string>::const_iterator itCurLine = lines.begin() + 1;
+
+    map<int, ClientData> mapClients;
+    ClientData newOrder;
+    while (itCurLine != lines.end() ) {
+        std::string_view viewLine = *itCurLine;
+        delimPos = viewLine.find(':');
+        int iClid = 0;
+        fcr = std::from_chars(viewLine.data(), viewLine.data() + delimPos, iClid);
+        int delim2Pos = viewLine.find(':', delimPos+1);
+        int iOrdid = 0;
+        fcr = std::from_chars(viewLine.data()+delimPos+1, viewLine.data() + delim2Pos-1, iOrdid);
+
+        int delim3Pos = viewLine.find(':', delim2Pos+1);
+        std::span<const char> const_span(viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
+        if ( std::string_view(const_span.data(), const_span.size()) == "accepted") { 
+            itCurLine++; 
+            continue; 
+        }
+        int delim4Pos = viewLine.find(':', delim3Pos+1);
+        int iCost = 0;
+        fcr = std::from_chars(viewLine.data()+delim3Pos+1, viewLine.data() + (delim4Pos), iCost);
+
+        auto itClient = mapClients.find(iClid); // или std::map<std::string, int>::iterator
+        if (itClient == mapClients.end()) {
+            newOrder.clientid = iClid;
+            newOrder.sum = iCost;
+            newOrder.orders = 1;
+            mapClients.emplace(iClid , newOrder);
+        } else {
+            itClient->second.sum += iCost;
+            itClient->second.orders++;
+        }
+        itCurLine++;
+    }
+    // сортировка:
+    std::vector<std::pair<int,ClientData>> vecSort(mapClients.begin(), mapClients.end());
+    std::sort(vecSort.begin(), vecSort.end(), [](const auto& a, const auto& b) {
+        if ( a.second.sum != b.second.sum ) return a.second.sum > b.second.sum ;
+        if ( a.second.orders != b.second.orders ) return a.second.orders > b.second.orders ;
+        return a.second.clientid < b.second.clientid; // по возрастанию значений
+    });
+
+    vector<string> vResult;
+    if (Nclients > vecSort.size()) {
+        vResult.push_back("none");
+        return vResult;
+    }
+   
+    auto itRec = vecSort.begin();
+    for (int iCurRec = 0; iCurRec < Nclients; iCurRec++) {
+        vResult.push_back( std::to_string(itRec->first) + ":" + std::to_string(itRec->second.sum) + ":" + std::to_string(itRec->second.orders) );
+        itRec++;
+    }
+    return vResult;
+}
+int main() 
+{
+    vector<string> vInputData = { 
+        "5 2",
+        "10001:20001:accepted:15000:01-05-2024", "10002:20002:rejected:25000:15-05-2024",
+        "10001:20003:rejected:35000:20-05-2024", "10003:20004:rejected:10000:10-05-2024",
+        "10002:20005:rejected:15000:25-05-2024"
+    };
+    vector<string> vResult = process(vInputData);
+    for ( auto ss : vResult) {
+        cout << ss << endl;
+    }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// [Задача 3]
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Анализ страховых выплат по типу
+Сложный Коллекции LINQ
+Вы разрабатываете модуль обработк данных о поступлении страховых платежей от клиентов.
+Требуется разработать метод, который обрабатывает входные данные, считывает общую сумму платежей и возвращает топ-3 типов страхования по общей сумме страховых платежей.
+На вход модуля поступают данные в формате CSV:
+Type,ClientID,PolicyCode1:Payment1,PolicyCode2:Payment2,PolicyCode3:Payment3,PolicyCode4:Payment4
+*Type - тип страхования,
+*ClientID - код клиента,
+*PolicyCode:Payment - код страхового полиса и сумма платежа клиента,
+Клиент может иметь от одного до четырех страховых полисов.
+Если клиент оформил:
+*1 полис, то данные содержат 
+PolicyCode1:Payment1
+*2 полиса, то данные содержат 
+PolicyCode1:Payment1,PolicyCode2:Payment2
+*3 полиса, то данные содержат 
+PolicyCode1:Payment1,PolicyCode2:Payment2,PolicyCode3:Payment3,PolicyCode4:Payment4
+Нужно разработать класс processingInsurancePayments, содержащий метод ProcessingInputLines для обработки входных данных с использованием PLINQ и потокобезопасное суммирование с ConcurrentDictionary.
+
+ФОРМАТ ВВОДА
+На вход подаются строки в формате CSV с полями, разделенными запятыми без пробелов:
+Type,ClientID,PolicyCode1:Payment1,PolicyCode2:Payment2,PolicyCode3:Payment3,PolicyCode4:Payment4
+Type - тип страхования, состоит из символов английского алфавита длиной от 3 до 20 символов включительно, поле всегда корректное и не пустое.
+ClientID - код клиента, целое число от 10000 до 99999 включительно, поле всегда корректное и не пустое.
+PolicyCode - код полиса, состоит из символов английского алфавита в верхнем регистре длиной 4 символа.
+Payment - сумма платежа по полису, целое число от 1 до 99999 включительно.
+PolicyCode1:Payment1 всегда содержит корректные и не пустые значения.
+PolicyCode2:Payment2,PolicyCode3:Payment3,PolicyCode4:Payment4 могут отсутствовать
+Могут быть пробелы в начале и конце строки с данными в формате CSV.
+Количество строк - от 1 до 10000000. Гарантируется, что есть хотя бы одна строка.
+
+ФОРМАТ ВЫВОДА
+Топ-3 типов страхования по общей сумме выплат в формате:
+Type,totalPayment
+Type - тип страхования, totalPayment - общая сумма выплат по данному типу.
+Если типов страхования во входных данных меньше трех, выводятся все типы страхования.
+При выводе данные упорядочиваются по убыванию totalPayment, при равенстве totalPayment - по полю Type по алфавиту без учета регистра.
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 1]
+Входные данные:
+Car,10000,ABCD:5000,EFGH:3000
+Home,10001,IJKL:10000
+Car,10001,MNOP:7000,QRST:2000
+Life,10003,UVWX:15000
+Home,10004,YZAB:8000,CDEF:4000
+Life,10005,GHIJ:12000
+
+Выходные данные:
+Life,27000
+Home,22000
+Car,17000
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 2]
+Входные данные:
+Life,90006,IJKL:40000
+Life,90006,IJKL:40000,MNOP:50000
+Life,90006,IJKL:40000,MNOP:50000,QRST:60000
+Life,90006,IJKL:40000,MNOP:50000,QRST:60000,UVWX:70000
+
+Выходные данные:
+Life,500000
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 1]
+Medical,70001,KLMN:25000
+Dental,70002,OPQR:35000,STUV:45000
+MentalHealth,70003,WXYZ:55000
+SubstanceAbuse,70004,ABCD:65000,EFGH:75000
+Vision,70005,IJKL:85000
+Drug,70006,MNOP:95000,QRST:5000
+ShortTermCare,70007,UVWX:15000
+LongTermCare,70008,YZAB:25000,CDEF:35000
+
+Ожидаемый результат:
+SubstanceAbuse,140000
+Drug,100000
+Vision,85000
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 2]
+Hospice,80001,GHIJ:45000
+HomeHealth,80002,KLMN:55000,OPQR:65000
+DMEPOS,80003,STUV:75000
+AdvancedImaging,80004,WXYZ:85000,ABCF:95000
+MRIs,80005,EFGH:5000
+CTScans,80006,IJKL:15000,MNOP:25000
+PETScans,80007,QRST:35000
+PreventiveCare,80008,UWX:45000,YZAB:55000
+
+Ожидаемый результат:
+AdvancedImaging,180000
+HomeHealth,120000
+PreventiveCare,100000
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 3]
+Screening,90001,CDFE:10000
+Immunization,90002,GHIJ:20000,KLMN:30000
+Rehabilitation,90003,OPQR:40000
+Home,90004,STUV:50000,WXYZ:10000,ABCD:20000
+Car,90005,EFGH:30000
+Life,90006,IJKL:40000,MNOP:50000,QRST:60000,UVWX:70000
+Pet,90007,YZAB:80000
+Fire,90008,CDFE:90000,GHIJ:10000
+Medical,90009,KLMN:20000,OPQR:30000
+Dental,90010,STUV:40000
+MentalHealth,90011,WXYZ:50000,ABCD:60000,EFGH:70000
+SubstanceAbuse,90012,IJKL:80000,MNOP:90000
+
+Ожидаемый результат:
+Life,220000
+MentalHealth,180000
+SubstanceAbuse,170000
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код ]
+#include <algorithm>
+#include <unordered_map>
+#include <shared_mutex>
+#include <mutex>
+#include <vector>
+#include <iostream>
+#include <execution>
+#include <ranges>
+#include <charconv>
+
+using namespace std;
+
+template <typename Key, typename Value>
+class ThreadSafeDictionary {
+private:
+    std::unordered_map<Key, Value> data;
+    mutable std::shared_mutex mtx;
+public:
+    // Потокобезопасное добавление или обновление значения
+    void add_or_update(const Key& key, Value val) {
+        std::unique_lock<std::shared_mutex> lock(mtx);
+        data[key] += val; // Выполняет суммирование
+    }
+    // Потокобезопасное чтение
+    Value get_value(const Key& key) const {
+        std::shared_lock<std::shared_mutex> lock(mtx);
+        auto it = data.find(key);
+        if (it != data.end()) {
+            return it->second;
+        }
+        return Value(); // Значение по умолчанию, если ключ отсутствует
+    }
+    auto getKeysView() const {
+        return data | std::views::keys;
+    }
+};
+
+std::vector<std::string> process(const std::vector<std::string> & lines) 
+{
+    ThreadSafeDictionary<std::string, int> dict;
+
+    std::for_each(std::execution::par, lines.begin(), lines.end(), [&dict](auto& curLine) {
+        int delim1 = curLine.find(',');
+        int delim2 = curLine.find(',', delim1+1);
+        std::string_view sInputLine = curLine;
+        std::string_view sType = sInputLine.substr(0, delim1);
+        delim1 = delim2;
+        delim2 = curLine.find(',', delim1+1);
+        std::from_chars_result fcr;
+        int iPaySum = 0;
+        int payVal = 0;
+        int delimDots = 0;
+        while ( delim2 != std::string::npos ) {
+            delimDots = curLine.find(':', delim1);
+            fcr = std::from_chars(curLine.data()+curLine.find(':',delim1)+1, curLine.data() + delim2, payVal);
+            iPaySum += payVal;
+
+            delim1 = delim2;
+            delim2 = curLine.find(',', delim1+1);
+        }
+        delimDots = curLine.find(':', delim1);
+        fcr = std::from_chars(curLine.data()+ delimDots+1, curLine.data() + curLine.size()-delim1, payVal);
+        iPaySum += payVal;
+
+        dict.add_or_update( std::string(sType) , iPaySum);
+    });
+    auto resKeys = dict.getKeysView();
+    std::vector< std::pair<string, int> > sortedPay;
+    std::vector<std::string> vResult;
+
+    for (const auto& name : resKeys) {
+        int iVal = dict.get_value(name);
+        sortedPay.push_back( std::pair<string, int>(name,iVal) );
+    }
+     std::sort(sortedPay.begin(), sortedPay.end(), [](const auto& a, const auto& b) {
+        if ( a.second  != b.second ) return a.second > b.second ;
+        return a.first < b. first; 
+    });
+    std::vector< std::pair<string, int> >::const_iterator it = sortedPay.begin();
+    int iNumRec = 0;
+    while (it != sortedPay.end() && iNumRec < 3) {
+         vResult.push_back( it->first + "," + std::to_string(it->second) );
+         it++;
+         iNumRec++;
+    }
+    return vResult;
+}
+
+int main()
+{
+  vector<string> vInputData = { 
+        "Life,90006,IJKL:40000",
+        "Life,90006,IJKL:40000,MNOP:50000",
+        "Life,90006,IJKL:40000,MNOP:50000,QRST:60000",
+        "Life,90006,IJKL:40000,MNOP:50000,QRST:60000,UVWX:70000" };
+    
+    vector<string> vResult = process(vInputData);
+    for ( auto ss : vResult) {
+        cout << ss << endl;
+    }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// [Задача 4]
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выбор сервера в MMORPG
+Сложный Валидация данных Коллекции
+В связи с модернизацией модуля обработки потока запросов на подключение игроков к игровым серверам MMORPG-игры возникла проблема с увеличением числа отказов в подключении.
+Вам необходимо разработать модуль анализа отказов в подключении игроков.
+От игроков поступают запросы вида UserID:Action.
+Action определяет два вида запросов:
+*connect - запрос на подключение к серверу;
+*disconnect - запрос на отключение от сервера.
+Существуют три сервера с ограниченной очередью. При поступлении запроса на подключение выбирается сервер с наименьшим количеством игроков.
+Если все серверы заполнены максимально возможным количеством игроков, то игрок в ответ на свой запрос получает отказ в подключении (этот запрос на подключение повторно не обрабатывается).
+В случае успешного подключения игрок может провести на сервере неограниченное время.
+Игрок удаляется с сервера при поступлении от него запроса с Action=disconnect с тем же userID, который использовался для подключения.
+В систему может поступить запрос с Action=disconnect от пользователя, который не является подключенным ни к одному из серверов. Такой запрос считается некорректным и игнорируется.
+В систему может поступить запрос с Action=connect от пользователя, который уже является подключенным к одному из серверов. Такой запрос считается некорректным и игнорируется.
+Вам нужно разработать:
+*класс Server для обработки подключений к серверу;
+*класс ConnectionModelling, обрабатывающий подключение игроков к серверу, содержащий метод processingInputLines, который возвращает количество игроков, которым было отказано в подключении.
+
+ФОРМАТ ВВОДА
+q1 q2 q3
+UserID1:Action1
+...
+UserIDN:ActionN
+
+В первой строке содержатся три целых числа (от 1 до 1000 включительно), разделенных пробелом, - размеры очереди игроков на каждом из трех серверов: q1 для сервера 1, q2 для сервера 2, q3 для сервера 3.
+Далее идут строки, содержащие UserID:Action:
+UserID - целое число от 100000 до 999999 включительно;
+Action - одно из двух значений (connect, disconnect).
+
+Все значения полей UserID:Action корректные и не пустые. Могут быть пробелы в начале и конце строки с данными.
+Количество строк - от 1 до 10000. Гарантируется, что есть хотя бы одна строка с данными.
+
+ФОРМАТ ВЫВОДА
+Одно целое число (>= 0) - количество игроков, которым было отказано в подключении.
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 1]
+Входные данные:
+2 2 2
+100001:connect
+100002:connect
+100003:connect
+100004:connect
+100005:connect
+100006:connect
+100007:connect
+
+Выходные данные:
+1
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 2]
+Входные данные:
+1 2 1
+100001:connect
+100002:connect
+100001:connect
+100003:connect
+100001:disconnect
+100004:connect
+100005:disconnect
+
+Выходные данные:
+0
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 1]
+Входные данные:
+1 1 1
+700000:connect
+700001:connect
+700002:connect
+700003:connect
+700004:connect
+700005:connect
+700006:connect
+700007:connect
+
+Ожидаемый результат:
+5
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 2]
+Входные данные:
+5 5 5
+800000:disconnect
+800001:disconnect
+800002:disconnect
+800000:connect
+800001:connect
+800002:connect
+800003:connect
+800004:connect
+
+Ожидаемый результат:
+0
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 3]
+Входные данные:
+2 2 2
+900000:connect
+900001:connect
+900002:connect
+900003:connect
+900000:disconnect
+900004:connect
+900001:disconnect
+900005:connect
+900002:disconnect
+900006:connect
+900003:disconnect
+900007:connect
+
+Ожидаемый результат:
+0
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 4]
+Входные данные:
+3 3 3
+300000:connect
+300001:connect
+300002:connect
+300003:connect
+300004:connect
+300005:connect
+300006:connect
+300007:connect
+300008:connect
+300009:connect
+300010:connect
+300011:connect
+
+Ожидаемый результат:
+3
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код ]
+
+#include <charconv>
+#include <iostream>
+#include <vector>
+#include <set>
+using namespace std;
+
+int process(const std::vector<std::string> & lines) 
+{
+    std::string_view sInputLine = lines[0];
+    int delim1 = sInputLine.find(' ');
+    int delim2 = sInputLine.find(' ', delim1+1);
+    int iServer1, iServer2, iServer3 = 0;
+
+    std::from_chars_result fcr;
+    fcr = std::from_chars(sInputLine.data(), sInputLine.data() + delim1, iServer1);
+    fcr = std::from_chars(sInputLine.data()+delim1+1, sInputLine.data() + delim2, iServer2);
+    fcr = std::from_chars(sInputLine.data()+delim2+1, sInputLine.data() + sInputLine.size()-delim2, iServer3);
+
+    int iTotalGamers = iServer1 + iServer2 + iServer3;
+    set<int> setGamers;
+    int iRejected = 0;
+
+    std::vector<std::string>::const_iterator itLine = ++lines.begin();
+    while (itLine != lines.end() ) {
+        
+        std::string_view curStr = *itLine ;
+        delim1 = curStr.find(':');
+        int clid;
+        fcr = std::from_chars(curStr.data(), curStr.data() + delim1, clid);
+        std::string_view strType = curStr.substr(delim1+1, curStr.size()- delim1);
+
+        if ( setGamers.contains(clid) ) {
+            if (strType == "disconnect") {
+                setGamers.erase(clid);
+            }
+        } else {
+            if (strType == "connect") {
+                if ( setGamers.size() < iTotalGamers ) {
+                    setGamers.insert(clid);
+                } else {
+                    iRejected++;
+                }
+            }
+        }
+        itLine++;
+    }
+    return iRejected;
+}
+
+int main()
+{
+ vector<string> vInputData = { 
+    "2 2 2",
+    "100001:connect",
+    "100002:connect",
+    "100003:connect",
+    "100004:connect",
+    "100005:connect",
+    "100006:connect",
+    "100007:connect" };
+
+     int iResult = process(vInputData);
+    cout << iResult << endl;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// [Задача 5]
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Медианная фильтрация
+Сложный LINQ Паттерны проектирования
+
+Вы разрабатываете модуль предварительной обработки данных для системы компьютерного зрения на основе медианного фильтра для последующего определения сильно зашумленных изображений.
+На вход модуля подается изображение в виде матрицы точек размером NxN, элемент матрицы - это код цвета в оттенках серого (целое число от 0 до 255 включительно). Число N - это количество строк и столбцов в матрице. N является степенью 2 и N больше или равно 2.
+Необходимо выполнить медианную фильтрацию изображения следующим образом.
+Матрица изображения разбивается на блоки точек размером 2х2 начиная с верхнего левого угла. Для каждого блока вычисляется медиана точек по следующему правилу: все четыре кода цветов блока упорядочиваются по возрастанию:
+c1<=c2<=c3<c4
+тогда медиана - это цвет с кодом (с2+с3)/2 (значение медианы округляется до целого путем отбрасывания дробной части).
+После применения медианного фильтра из матрицы NxN получается матрица N/2xN/2.
+Вам нужно разработать класс SeriesAnalyser, содержащий метод processingInputLines, который принимает на вход исходную матрицу цветов и возвращает матрицу цветов, полученную в результате обработки медианным фильтром. Необходимо разработать синглтон MedianCalculator для вычисления медианы и декоратор MatrixValidator для валидации входных данных, другие необходимые вспомогательные классы.
+
+ФОРМАТ ВВОДА
+N
+c11 c12 ... c1N
+...
+cN1 cN2 ... cNN
+
+В первой строке содержится одно целое число N - размер матрицы цветов изображения.
+N является степенью двойки и находится в интервале от 2 до 1024 включительно.
+Далее идет N строк, каждая из которых содержит N кодов цвета точки изображения, разделенных одним пробелом.
+cij - это код цвета, целое число от 0 до 255 включительно.
+Количество строк - от 2 до 1024.
+
+ФОРМАТ ВЫВОДА
+Матрица кодов цветов изображения, полученная в результате медианной фильтрации, в формате:
+M
+c11 c12 ... c1M
+...
+cM1 cM2 ... cMM
+
+M - это целое число, равное N/2, cij - это код цвета, целое число от 0 до 255 включительно.
+Если входные данные не прошли валидацию, то вывести 0.
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 1]
+Входные данные:
+2
+10 20
+30 40
+
+Выходные данные:
+1
+25
+.    .    .    .    .    .    .    .    .    .    .    .
+[Пример 2]
+Входные данные:
+4
+10 20 30 40
+50 60 70 80
+90 100 110 120
+130 140 150 160
+
+Выходные данные:
+2
+35 55
+115 135
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 1]
+Входные данные:
+8
+10 10 20 20 30 30 40 40 
+10 10 20 20 30 30 40 40 
+50 50 60 60 70 70 80 80 
+50 50 60 60 70 70 80 80 
+90 90 100 100 110 110 120 120
+90 90 100 100 110 110 120 120
+130 130 140 140 150 150 160 160
+130 130 140 140 150 150 160 160
+
+Ожидаемый результат:
+4
+10 20 30 40
+50 60 70 80
+90 100 110 120
+130 140 150 160
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 2]
+Входные данные:
+8
+5 5 5 5 10 10 10 10
+5 5 5 5 10 10 10 10
+5 5 5 5 10 10 10 10
+5 5 5 5 10 10 10 10
+15 15 15 15 20 20 20 20
+15 15 15 15 20 20 20 20
+15 15 15 15 20 20 20 20
+15 15 15 15 20 20 20 20
+
+Ожидаемый результат:
+4
+5 5 10 10 
+5 5 10 10
+15 15 20 20
+15 15 20 20
+.    .    .    .    .    .    .    .    .    .    .    .
+[Тест 3]
+Входные данные:
+8
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+0 50 100 150 200 250 255 255
+
+Ожидаемый результат:
+4
+25 125 255 255
+25 125 255 255
+25 125 255 255
+25 125 255 255
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Код ]
+
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <algorithm>
+
+using namespace std;
+
+std::vector<std::string> process(const std::vector<std::string> & lines) 
+{
+    int iN = std::stoi(lines[0]);
+    // cout <<iN << endl;
+    unsigned char * inMat = static_cast<unsigned char*>(malloc( sizeof(unsigned char) * iN * iN ));
+    if ( inMat == nullptr ) return {};
+
+    int iCurLine = 0;
+    std::vector<std::string>::const_iterator itLine = ++lines.begin();
+    while (iCurLine < iN && itLine != lines.end()) {
+        std::stringstream stInput(*itLine);
+        int iCurCol = 0;
+        std::string sColorVal;
+
+        while ( std::getline(stInput,sColorVal, ' ' )) {
+            int iVal = std::stoi(sColorVal);
+            inMat[ sizeof(unsigned char) *(iCurLine*iN) + iCurCol] = static_cast<unsigned char>(iVal);
+            iCurCol++;
+        }
+        if (iCurCol != iN )  {
+            cout << "ERROR: Column count " << iCurCol << " in Line " << iCurLine << endl;
+            cout << "(must be equal " << iN  << endl;
+            return {}; 
+        }
+
+        iCurLine++;
+        itLine++;
+    }
+
+    /*
+    cout << "matrix loaded." << endl;
+    for (int idebugLine = 0; idebugLine < iN; idebugLine++) {
+        for (int idebugCol = 0; idebugCol < iN; idebugCol++) {
+            cout << std::to_string(inMat[ sizeof(unsigned char) *  (idebugLine*iN) + idebugCol]) << "-";
+        }
+        cout << endl;
+    }
+    */
+
+    // - - - [processing matrix:] - - - - - - - - - - - - - - - -
+    vector<string> vecResult;
+    vecResult.push_back( std::to_string(iN/2) );
+
+    vector<unsigned char>vMid = {0, 0, 0, 0};
+    for (int iMidLine = 0; iMidLine < iN/2; iMidLine++)
+    {
+        string sCurResLine = "";
+        for (int iMidCol = 0; iMidCol < iN/2; iMidCol++) {
+            vMid[0] = inMat[sizeof(unsigned char) * (iN*iMidLine*2) + (iMidCol*2)];
+            vMid[1] = inMat[sizeof(unsigned char) * (iN*iMidLine*2) + (iMidCol*2 + 1) ];
+            vMid[2] = inMat[sizeof(unsigned char) * (iN*(iMidLine*2 + 1)) + (iMidCol*2) ];
+            vMid[3] = inMat[sizeof(unsigned char) * (iN*(iMidLine*2 + 1)) + (iMidCol*2 + 1) ];
+            // cout << "original pixels:" << std::to_string(vMid[0]) << "," << std::to_string(vMid[1]) << "," << std::to_string(vMid[2]) << "," << std::to_string(vMid[3]) << endl;
+
+            std::sort(vMid.begin(), vMid.end(), [](const auto& a, const auto& b) { return a < b ; } );
+            // cout << "sorted pixels:" << std::to_string(vMid[0]) << "," << std::to_string(vMid[1]) << "," << std::to_string(vMid[2]) << "," << std::to_string(vMid[3]) << endl;
+            int iMidValue = (vMid[1] + vMid[2]) / 2;
+            // cout << "average = " << iMidValue << endl;
+            sCurResLine += (std::to_string(iMidValue) + " ");
+        }
+        vecResult.push_back(sCurResLine);
+    }
+    return vecResult;
+}
+
+int main()
+{
+    vector<string> vInputData = { 
+    "2",
+    "10 20",
+    "30 40" };
+
+    vector<string> vResult = process(vInputData);
+    for ( auto ss : vResult) {
+        cout << ss << endl;
+    }
+}
+
