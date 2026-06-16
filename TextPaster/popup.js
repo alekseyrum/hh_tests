@@ -623,7 +623,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
     return vResult;
 }`;
 
-var hard03_description = `Вы разрабатываете модуль обработк данных о поступлении страховых платежей от клиентов.
+var hard03_description = `Вы разрабатываете модуль обработки данных о поступлении страховых платежей от клиентов.
 Требуется разработать метод, который обрабатывает входные данные, считывает общую сумму платежей и возвращает топ-3 типов страхования по общей сумме страховых платежей.
 На вход модуля поступают данные в формате CSV:
 Type,ClientID,PolicyCode1:Payment1,PolicyCode2:Payment2,PolicyCode3:Payment3,PolicyCode4:Payment4`;
