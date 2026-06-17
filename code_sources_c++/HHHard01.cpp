@@ -25,16 +25,15 @@ ProcessingProgrammerData::process(const std::vector<std::string> & lines) const
     int delimPos = 0;
     int delim2Pos = 0;
     for (string curStr : lines) {
-        if (curStr[0] != ' ') {
-            newProg.family = curStr.substr(0, delimPos = curStr.find(':') );
-        } else {
-            newProg.family = curStr.substr(1, delimPos = curStr.find(':') );
+        while (curStr[0] == ' ') {
+            curStr = curStr.substr(1, curStr.length()-1);
         }
+        newProg.family = curStr.substr(0, delimPos = curStr.find(':') );        
+        if (newProg.family.length() == 0) continue;
         
         newProg.stage = std::stoi ( curStr.substr(delimPos+2, delim2Pos = curStr.find(':', delimPos + 2) ));
         delim2Pos += 2;
         // cout << "str.Len = " << curStr.length() << " pos = " << delim2Pos << endl;
-
         std::string curSkill = curStr.substr(delim2Pos, curStr.length()-delim2Pos);
         delimPos = 0;
         newProg.skills = 1;
@@ -62,43 +61,31 @@ ProcessingProgrammerData::process(const std::vector<std::string> & lines) const
 
 int main ()
 {
-    //             1
-    //  012345678901
-    // vector<string> vInputData = { "è•‚‡Æ¢::3::JavaScript,TypeScript", "ë®§Æ‡Æ¢::5::C#,Java", "à¢†≠Æ¢::5::C#,Java,Python", "ä„ß≠•ÊÆ¢::7::Go"} ;
-    // vector<string> vInputData = { "å®Â†©´Æ¢::5::Java,Python", "ò®‡Æ™Æ¢::3::C#,JavaScript", "äÆ¢†´•¢::3::Go,Rust", "ë„°°Æ‚®≠::4::Kotlin,Dart", "Ç´†·Æ¢::6::Scala,Haskell"} ;
-    /*
-    vector<string> vInputData = { "ä®·•´Ò¢::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell", 
-        "ë†¢•´Ï•¢::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell", 
-        "é‡´Æ¢::3::Elixir,Clojure", 
-        "å•§¢•§•¢::5::PHP,HTML,CSS,SQL,PLSQL", 
-        "Ö£Æ‡Æ¢::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell",
-        "î‡Æ´Æ¢::2::Swift,Rubby",
-        "ô•‡°†™Æ¢::4::Bash,Perl,Lua",
-        "ä„§‡Ô¢Ê•¢::1::VBA"
-    } ;
-    
+    system("chcp 65001 > nul");
+
+/*
     vector<string> vInputData = {
-        "Å´®≠Æ¢::9::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart",
-        "äÆ´•·≠®™Æ¢::9::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart",
-        "í†‡†·Æ¢::3::Scala,Haskell",
-        " ë†¨·Æ≠Æ¢::6::PHP,HTML,CSS,PLSQL,MySQL",
-        "ã†ß†‡•¢::9::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart",
-        "Å†‡†≠Æ¢::2::Elixir,Clojure",
-        "É„·•¢::4::Swift,Ruby",
-        "Ç®≠Æ£‡†§Æ¢::1::Objective-C"
+        "–ö–∏—Å–µ–ª—ë–≤::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell",
+        " ",
+        "    –°–∞–≤–µ–ª—å–µ–≤::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell",
+        "–û—Ä–ª–æ–≤::3::Elixir,Clojure",
+        "–ú–µ–¥–≤–µ–¥–µ–≤::5::PHP,HTML,CSS,SQL,PLSQL",
+        "–ï–≥–æ—Ä–æ–≤::10::Java,Python,C#,JavaScript,TypeScript,Go,Rust,Kotlin,Dart,Scala,Haskell",
+        "–§—Ä–æ–ª–æ–≤::2::Swift,Rubby",
+        "–©–µ—Ä–±–∞–∫–æ–≤::4::Bash,Perl,Lua",
+        "–ö—É–¥—Ä—è–≤—Ü–µ–≤::1::VBA",
     };
     */
-
     vector<string> vInputData = {
-        "äÆ‡Æ´•¢::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust",
-        "Ö‰®¨Æ¢::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust",
-        "ò•·‚†™Æ¢::3::Kotlin,Dart",
-        " ëÆ‡Æ™®≠::5::PHP,HTML,CSS,SQL,PLSQL",
-        "çÆ·Æ¢::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust",
-        "é§®≠ÊÆ¢::2::Scala,Haskell",
-        "ä‡Î´Æ¢::4::Bash,Perl",
-        "äÆ≠Æ¢†´Æ¢::1::Lua"
-    };
+        "–ö–æ—Ä–æ–ª–µ–≤::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust",
+        "–ï—Ñ–∏–º–æ–≤::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust",
+        "–®–µ—Å—Ç–∞–∫–æ–≤::3::Kotlin,Dart",
+        " –°–æ—Ä–æ–∫–∏–Ω::5::PHP,HTML,CSS,SQL,PLSQL",
+        "–ù–æ—Å–æ–≤::8::Java,Python,C#,JavaScript,TypeScript,Go,Rust",
+        "–û–¥–∏–Ω—Ü–æ–≤::2::Scala,Haskell",
+        "–ö—Ä—ã–ª–æ–≤::4::Bash,Perl",
+        "–ö–æ–Ω–æ–≤–∞–ª–æ–≤::1::Lua" };
+
 
     ProcessingProgrammerData ppg;
     vector<string> vResult = ppg.process (vInputData);

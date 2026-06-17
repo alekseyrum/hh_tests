@@ -1,5 +1,4 @@
 
-
 #include <algorithm>
 #include <unordered_map>
 #include <shared_mutex>
@@ -7,7 +6,6 @@
 #include <vector>
 #include <iostream>
 #include <execution>
-#include <ranges>
 #include <charconv>
 
 using namespace std;
@@ -30,8 +28,13 @@ public:
         }
         return Value(); 
     }
-    auto getKeysView() const {
-        return data | std::views::keys;
+    vector<Key> getAllKeys() const {
+        vector<Key> vRet;
+        vRet.reserve( data.size() );
+        for (const auto& pair : data) {
+            vRet.push_back(pair.first);
+        }
+        return vRet;
     }
 };
 
@@ -64,7 +67,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
 
         dict.add_or_update( std::string(sType) , iPaySum);
     });
-    auto resKeys = dict.getKeysView();
+    auto resKeys = dict.getAllKeys();
     std::vector< std::pair<string, int> > sortedPay;
     std::vector<std::string> vResult;
 
@@ -88,6 +91,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
 
 int main()
 {
+    system("chcp 65001 > nul");
     /*
     vector<string> vInputData = { 
        "Car,10000,ABCD:5000,EFGH:3000",

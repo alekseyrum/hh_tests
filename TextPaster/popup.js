@@ -1,25 +1,13 @@
 
 const copyBtn = document.getElementById("copyBtn");
 copyBtn.addEventListener("click",() => {
-	// console.log("ddsdfsdf");
 	var textNum = document.getElementById("txtNum");
-    /*
-	var whatToPaste;
-	switch (textNum.value) 
-	{
-		case "base01": { whatToPaste = base01_text; break;}
-		case "base02": { whatToPaste = base02_text; break;}
-		case "base03": { whatToPaste = base03_text; break;}
-	} 
-    */
 	navigator.clipboard.writeText( globalThis[textNum.value + "_text" ] );
 });
 
 const selectList = document.getElementById("txtNum");
 selectList.addEventListener("change",(event) => {
     const selectedValue = event.target.value; 
-    // const selectedText = selectElement.options[selectElement.selectedIndex].text;
-    // resultElement.textContent = `Вы выбрали: ${selectedText} (код: ${selectedValue})`;
     document.getElementById('description-block').textContent =  globalThis[selectedValue + "_description" ]; //  "Текст добавлен через JavaScript!";
 });
 
@@ -180,12 +168,6 @@ int processing_input_lines (const std::string & game_ids_line ,
     int iLessCount = ((float)count/vLoads.size())*100;
     return iLessCount;
 }`;
-
-var base05_description = `на будущее`;
-var base05_text = `пока пусто`;
-
-var base06_description = `not yet`;
-var base06_text = `_not_implemented_`;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 // Средний уровень: 
@@ -504,11 +486,11 @@ ProcessingProgrammerData::process(const std::vector<std::string> & lines) const
     int delimPos = 0;
     int delim2Pos = 0;
     for (string curStr : lines) {
-        if (curStr[0] != ' ') {
-            newProg.family = curStr.substr(0, delimPos = curStr.find(':') );
-        } else {
-            newProg.family = curStr.substr(1, delimPos = curStr.find(':') );
+        while (curStr[0] == ' ') {
+            curStr = curStr.substr(1, curStr.length()-1);
         }
+        newProg.family = curStr.substr(0, delimPos = curStr.find(':') );        
+        if (newProg.family.length() == 0) continue;
         
         newProg.stage = std::stoi ( curStr.substr(delimPos+2, delim2Pos = curStr.find(':', delimPos + 2) ));
         delim2Pos += 2;
@@ -558,15 +540,14 @@ struct ClientData {
 std::vector<std::string> process(const std::vector<std::string> & lines) 
 // Solution::ProcessingClientData::process(const std::vector<std::string> & lines) const
 {
-    std::string_view str0 = lines[0];
+ std::string_view str0 = lines[0];
 
     int delimPos = str0.find(' ');
-    int months = 0;
-    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, months);
+    int monthSearch = 0;
+    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, monthSearch);
     int Nclients = 0;
     fcr = std::from_chars(str0.data() + delimPos+1, str0.data() + str0.size(), Nclients);
-
-    std::vector<std::string>::const_iterator itCurLine = lines.begin() + 1;
+    std::vector<std::string>::const_iterator itCurLine = lines.begin() + 1; //  [1]
 
     map<int, ClientData> mapClients;
     ClientData newOrder;
@@ -578,10 +559,10 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         int delim2Pos = viewLine.find(':', delimPos+1);
         int iOrdid = 0;
         fcr = std::from_chars(viewLine.data()+delimPos+1, viewLine.data() + delim2Pos-1, iOrdid);
-
         int delim3Pos = viewLine.find(':', delim2Pos+1);
-        std::span<const char> const_span(viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
-        if ( std::string_view(const_span.data(), const_span.size()) == "accepted") { 
+
+        std::string_view const_span( viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
+        if ( const_span == "accepted") { 
             itCurLine++; 
             continue; 
         }
@@ -589,7 +570,15 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         int iCost = 0;
         fcr = std::from_chars(viewLine.data()+delim3Pos+1, viewLine.data() + (delim4Pos), iCost);
 
-        auto itClient = mapClients.find(iClid); // или std::map<std::string, int>::iterator
+        int delimMonthStart = viewLine.find('-', delim3Pos+1);
+        int delimMonthEnd = viewLine.find('-', delimMonthStart+1);
+        int iMonth = std::stoi( string(viewLine.substr( delimMonthStart+1,  delimMonthEnd - delimMonthStart-1 ))) ;
+        if (monthSearch != iMonth) {
+            itCurLine++; 
+            continue;
+        }
+        auto itClient = mapClients.find(iClid); 
+
         if (itClient == mapClients.end()) {
             newOrder.clientid = iClid;
             newOrder.sum = iCost;
@@ -601,14 +590,14 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         }
         itCurLine++;
     }
-    // сортировка:
     std::vector<std::pair<int,ClientData>> vecSort(mapClients.begin(), mapClients.end());
+
     std::sort(vecSort.begin(), vecSort.end(), [](const auto& a, const auto& b) {
         if ( a.second.sum != b.second.sum ) return a.second.sum > b.second.sum ;
         if ( a.second.orders != b.second.orders ) return a.second.orders > b.second.orders ;
-        return a.second.clientid < b.second.clientid; // по возрастанию значений
+        return a.second.clientid < b.second.clientid; 
     });
-
+    
     vector<string> vResult;
     if (Nclients > vecSort.size()) {
         vResult.push_back("none");
@@ -634,7 +623,6 @@ var hard03_text = `#include <algorithm>
 #include <vector>
 #include <iostream>
 #include <execution>
-#include <ranges>
 #include <charconv>
 
 using namespace std;
@@ -645,22 +633,25 @@ private:
     std::unordered_map<Key, Value> data;
     mutable std::shared_mutex mtx;
 public:
-    // Потокобезопасное добавление или обновление значения
     void add_or_update(const Key& key, Value val) {
         std::unique_lock<std::shared_mutex> lock(mtx);
-        data[key] += val; // Выполняет суммирование
+        data[key] += val; 
     }
-    // Потокобезопасное чтение
     Value get_value(const Key& key) const {
         std::shared_lock<std::shared_mutex> lock(mtx);
         auto it = data.find(key);
         if (it != data.end()) {
             return it->second;
         }
-        return Value(); // Значение по умолчанию, если ключ отсутствует
+        return Value(); 
     }
-    auto getKeysView() const {
-        return data | std::views::keys;
+    vector<Key> getAllKeys() const {
+        vector<Key> vRet;
+        vRet.reserve( data.size() );
+        for (const auto& pair : data) {
+            vRet.push_back(pair.first);
+        }
+        return vRet;
     }
 };
 
@@ -693,7 +684,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
 
         dict.add_or_update( std::string(sType) , iPaySum);
     });
-    auto resKeys = dict.getKeysView();
+    auto resKeys = dict.getAllKeys();
     std::vector< std::pair<string, int> > sortedPay;
     std::vector<std::string> vResult;
 

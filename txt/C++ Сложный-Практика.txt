@@ -147,11 +147,11 @@ ProcessingProgrammerData::process(const std::vector<std::string> & lines) const
     int delimPos = 0;
     int delim2Pos = 0;
     for (string curStr : lines) {
-        if (curStr[0] != ' ') {
-            newProg.family = curStr.substr(0, delimPos = curStr.find(':') );
-        } else {
-            newProg.family = curStr.substr(1, delimPos = curStr.find(':') );
+        while (curStr[0] == ' ') {
+            curStr = curStr.substr(1, curStr.length()-1);
         }
+        newProg.family = curStr.substr(0, delimPos = curStr.find(':') );        
+        if (newProg.family.length() == 0) continue;
         
         newProg.stage = std::stoi ( curStr.substr(delimPos+2, delim2Pos = curStr.find(':', delimPos + 2) ));
         delim2Pos += 2;
@@ -307,6 +307,28 @@ none
 Ожидаемый результат:
 none
 .    .    .    .    .    .    .    .    .    .    .    .
+[Тест 6]
+Входные данные:
+8 2
+10095:20095:rejected:315000:01-08-2024
+10096:20096:rejected:320000:05-02-2024
+10097:20097:rejected:325000:10-08-2024
+10097:20098:accepted:330000:15-08-2024
+10095:20099:rejected:65000:20-08-2024
+10095:20100:rejected:340000:25-02-2024
+10095:20101:accepted:345000:30-08-2024
+10095:20102:rejected:350000:31-08-2024
+10095:20103:rejected:355000:01-02-2024
+10096:20104:rejected:360000:05-08-2024
+10096:20105:accepted:365000:10-08-2024
+10096:20106:rejected:370000:15-08-2024
+10107:20107:rejected:375000:20-08-2024
+10108:20108:accepted:380000:25-08-2024
+
+Ожидаемый результат:
+10095;730000;3
+10096;730000;2
+.    .    .    .    .    .    .    .    .    .    .    .
 [ Код: ]
 #include <vector>
 #include <iostream>
@@ -325,15 +347,14 @@ struct ClientData {
 std::vector<std::string> process(const std::vector<std::string> & lines) 
 // Solution::ProcessingClientData::process(const std::vector<std::string> & lines) const
 {
-    std::string_view str0 = lines[0];
+  std::string_view str0 = lines[0];
 
     int delimPos = str0.find(' ');
-    int months = 0;
-    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, months);
+    int monthSearch = 0;
+    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, monthSearch);
     int Nclients = 0;
     fcr = std::from_chars(str0.data() + delimPos+1, str0.data() + str0.size(), Nclients);
-
-    std::vector<std::string>::const_iterator itCurLine = lines.begin() + 1;
+    std::vector<std::string>::const_iterator itCurLine = lines.begin() + 1; //  [1]
 
     map<int, ClientData> mapClients;
     ClientData newOrder;
@@ -345,10 +366,10 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         int delim2Pos = viewLine.find(':', delimPos+1);
         int iOrdid = 0;
         fcr = std::from_chars(viewLine.data()+delimPos+1, viewLine.data() + delim2Pos-1, iOrdid);
-
         int delim3Pos = viewLine.find(':', delim2Pos+1);
-        std::span<const char> const_span(viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
-        if ( std::string_view(const_span.data(), const_span.size()) == "accepted") { 
+
+        std::string_view const_span( viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
+        if ( const_span == "accepted") { 
             itCurLine++; 
             continue; 
         }
@@ -356,7 +377,15 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         int iCost = 0;
         fcr = std::from_chars(viewLine.data()+delim3Pos+1, viewLine.data() + (delim4Pos), iCost);
 
-        auto itClient = mapClients.find(iClid); // или std::map<std::string, int>::iterator
+        int delimMonthStart = viewLine.find('-', delim3Pos+1);
+        int delimMonthEnd = viewLine.find('-', delimMonthStart+1);
+        int iMonth = std::stoi( string(viewLine.substr( delimMonthStart+1,  delimMonthEnd - delimMonthStart-1 ))) ;
+        if (monthSearch != iMonth) {
+            itCurLine++; 
+            continue;
+        }
+        auto itClient = mapClients.find(iClid); 
+
         if (itClient == mapClients.end()) {
             newOrder.clientid = iClid;
             newOrder.sum = iCost;
@@ -368,14 +397,14 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         }
         itCurLine++;
     }
-    // сортировка:
     std::vector<std::pair<int,ClientData>> vecSort(mapClients.begin(), mapClients.end());
+
     std::sort(vecSort.begin(), vecSort.end(), [](const auto& a, const auto& b) {
         if ( a.second.sum != b.second.sum ) return a.second.sum > b.second.sum ;
         if ( a.second.orders != b.second.orders ) return a.second.orders > b.second.orders ;
-        return a.second.clientid < b.second.clientid; // по возрастанию значений
+        return a.second.clientid < b.second.clientid; 
     });
-
+    
     vector<string> vResult;
     if (Nclients > vecSort.size()) {
         vResult.push_back("none");
@@ -525,7 +554,6 @@ SubstanceAbuse,170000
 #include <vector>
 #include <iostream>
 #include <execution>
-#include <ranges>
 #include <charconv>
 
 using namespace std;
@@ -536,22 +564,25 @@ private:
     std::unordered_map<Key, Value> data;
     mutable std::shared_mutex mtx;
 public:
-    // Потокобезопасное добавление или обновление значения
     void add_or_update(const Key& key, Value val) {
         std::unique_lock<std::shared_mutex> lock(mtx);
-        data[key] += val; // Выполняет суммирование
+        data[key] += val; 
     }
-    // Потокобезопасное чтение
     Value get_value(const Key& key) const {
         std::shared_lock<std::shared_mutex> lock(mtx);
         auto it = data.find(key);
         if (it != data.end()) {
             return it->second;
         }
-        return Value(); // Значение по умолчанию, если ключ отсутствует
+        return Value(); 
     }
-    auto getKeysView() const {
-        return data | std::views::keys;
+    vector<Key> getAllKeys() const {
+        vector<Key> vRet;
+        vRet.reserve( data.size() );
+        for (const auto& pair : data) {
+            vRet.push_back(pair.first);
+        }
+        return vRet;
     }
 };
 
@@ -584,7 +615,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
 
         dict.add_or_update( std::string(sType) , iPaySum);
     });
-    auto resKeys = dict.getKeysView();
+    auto resKeys = dict.getAllKeys();
     std::vector< std::pair<string, int> > sortedPay;
     std::vector<std::string> vResult;
 
@@ -753,6 +784,48 @@ Action - одно из двух значений (connect, disconnect).
 
 Ожидаемый результат:
 3
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 5 ]
+Входные данные:
+20 20 20
+40000:connect
+40001:connect
+40002:connect
+40003:connect
+40004:connect
+40005:connect
+40006:connect
+40007:connect
+40008:connect
+40009:connect
+40010:connect
+40011:connect
+40012:connect
+40013:connect
+
+Ожидаемый результат:
+0
+.    .    .    .    .    .    .    .    .    .    .    .
+[ Тест 6 ]
+Входные данные:
+1 1 2
+600000:connect
+600001:connect
+600002:connect
+600003:connect
+600004:connect
+600005:connect
+600000:disconnect
+600006:connect
+600001:disconnect
+600007:connect
+600002:disconnect
+600008:connect
+600003:disconnect
+600009:connect
+
+Ожидаемый результат:
+2
 .    .    .    .    .    .    .    .    .    .    .    .
 [ Код ]
 

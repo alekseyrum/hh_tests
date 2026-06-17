@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <string_view>
-#include <span>
+// #include <span>
 #include <charconv>
 #include <map>
 #include <algorithm>
@@ -19,8 +19,8 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
     std::string_view str0 = lines[0];
 
     int delimPos = str0.find(' ');
-    int months = 0;
-    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, months);
+    int monthSearch = 0;
+    std::from_chars_result fcr = std::from_chars(str0.data(), str0.data() + delimPos, monthSearch);
     int Nclients = 0;
     fcr = std::from_chars(str0.data() + delimPos+1, str0.data() + str0.size(), Nclients);
     std::vector<std::string>::const_iterator itCurLine = lines.begin() + 1; //  [1]
@@ -28,7 +28,6 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
     map<int, ClientData> mapClients;
     ClientData newOrder;
     while (itCurLine != lines.end() ) {
-        // cout << *itCurLine << endl;
         std::string_view viewLine = *itCurLine;
         delimPos = viewLine.find(':');
         int iClid = 0;
@@ -36,18 +35,25 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
         int delim2Pos = viewLine.find(':', delimPos+1);
         int iOrdid = 0;
         fcr = std::from_chars(viewLine.data()+delimPos+1, viewLine.data() + delim2Pos-1, iOrdid);
-
         int delim3Pos = viewLine.find(':', delim2Pos+1);
-        std::span<const char> const_span(viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
-        if ( std::string_view(const_span.data(), const_span.size()) == "accepted") { 
+
+        std::string_view const_span( viewLine.data()+delim2Pos+1, delim3Pos - delim2Pos -1 );
+        if ( const_span == "accepted") { 
             itCurLine++; 
             continue; 
         }
         int delim4Pos = viewLine.find(':', delim3Pos+1);
         int iCost = 0;
         fcr = std::from_chars(viewLine.data()+delim3Pos+1, viewLine.data() + (delim4Pos), iCost);
-        // cout << std::string_view(viewLine.data()+delim3Pos+1,  (delim4Pos) - (delim3Pos+1) ) << endl;
-        auto itClient = mapClients.find(iClid); // или std::map<std::string, int>::iterator
+
+        int delimMonthStart = viewLine.find('-', delim3Pos+1);
+        int delimMonthEnd = viewLine.find('-', delimMonthStart+1);
+        int iMonth = std::stoi( string(viewLine.substr( delimMonthStart+1,  delimMonthEnd - delimMonthStart-1 ))) ;
+        if (monthSearch != iMonth) {
+            itCurLine++; 
+            continue;
+        }
+        auto itClient = mapClients.find(iClid); 
 
         if (itClient == mapClients.end()) {
             newOrder.clientid = iClid;
@@ -84,6 +90,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
 
 int main() 
 {
+    system("chcp 65001 > nul");
     /*
     vector<string> vInputData = { 
         "5 2",
@@ -120,7 +127,6 @@ int main()
     "10050:20054:rejected:110000:25-08-2024",
     "10050:20055:rejected:115000:30-08-2024",
     "10056:20056:rejected:120000:31-08-2024" };
-    */
 
     vector<string> vInputData = { 
     "5 10",
@@ -136,7 +142,24 @@ int main()
     "10066:20066:accepted:170000:05-03-2024",
     "10067:20067:accepted:175000:10-05-2024",
     "10068:20068:accepted:180000:15-05-2024"};
+    */
 
+    vector<string> vInputData = { 
+    "8 2",
+    "10095:20095:rejected:315000:01-08-2024",
+    "10096:20096:rejected:320000:05-02-2024",
+    "10097:20097:rejected:325000:10-08-2024",
+    "10097:20098:accepted:330000:15-08-2024",
+    "10095:20099:rejected:65000:20-08-2024",
+    "10095:20100:rejected:340000:25-02-2024",
+    "10095:20101:accepted:345000:30-08-2024",
+    "10095:20102:rejected:350000:31-08-2024",
+    "10095:20103:rejected:355000:01-02-2024",
+    "10096:20104:rejected:360000:05-08-2024",
+    "10096:20105:accepted:365000:10-08-2024",
+    "10096:20106:rejected:370000:15-08-2024",
+    "10107:20107:rejected:375000:20-08-2024",
+    "10108:20108:accepted:380000:25-08-2024"};
 
     vector<string> vResult = process(vInputData);
     for ( auto ss : vResult) {

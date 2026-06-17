@@ -107,7 +107,6 @@ vector<string> vInputData = {
     "900006:connect",
     "900003:disconnect",
     "900007:connect" };
-    */
 
     vector<string> vInputData = {
     "3 3 3",
@@ -123,6 +122,42 @@ vector<string> vInputData = {
     "300009:connect",
     "300010:connect",
     "300011:connect" };
+
+    vector<string> vInputData = {
+    "20 20 20",
+    "40000:connect",
+    "40001:connect",
+    "40002:connect",
+    "40003:connect",
+    "40004:connect",
+    "40005:connect",
+    "40006:connect",
+    "40007:connect",
+    "40008:connect",
+    "40009:connect",
+    "40010:connect",
+    "40011:connect",
+    "40012:connect",
+    "40013:connect"};
+*/
+
+    vector<string> vInputData = {
+    "1 1 2",
+    "600000:connect",
+    "600001:connect",
+    "600002:connect",
+    "600003:connect",
+    "600004:connect",
+    "600005:connect",
+    "600000:disconnect",
+    "600006:connect",
+    "600001:disconnect",
+    "600007:connect",
+    "600002:disconnect",
+    "600008:connect",
+    "600003:disconnect",
+    "600009:connect"};
+
 
     int iResult = process(vInputData);
     cout << iResult << endl;
