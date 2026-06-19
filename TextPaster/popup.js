@@ -832,5 +832,90 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
     return vecResult;
 }`;
 
-var hard06_description = `none`;
-var hard06_text = ``;
+var hard06_description = `Компания занимается созданием системы автоматического распознавания типа кузова автомобиля (седан, купе, хетчбек, кабриолет, пикап) по его изображению.
+Для повышения качества распознавания используются несколько нейронных сетей, каждая из которых оценивает вероятность того, что на изображении автомобиль с определенным типом кузова.
+На вход каждой нейронной сети подается пять изображений, по одному на каждый тип кузова.`;
+var hard06_text = `#include <iostream>
+#include <vector>
+#include <sstream>
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+class ProcessingNeuroData {
+public:
+    std::vector<std::string> 
+    process(const std::vector<std::string> & lines) const;
+};
+
+// typedef float rec_t[5] ; 
+typedef array<float, 5> rec_t; 
+
+void calcMinProbability(const rec_t & a, const rec_t & b, rec_t & res ){
+    for (int i=0; i<5;i++){
+        res[i] = a[i] < b[i] ? a[i] : b[i];
+    }
+}
+
+void calcMaxProbability(const rec_t & a, const rec_t & b, rec_t & res ){
+    for (int i=0; i<5;i++){
+        res[i] = a[i] > b[i] ? a[i] : b[i];
+    }
+}
+
+void calcComProbability(const rec_t & a, const rec_t & b, rec_t & res ){
+    for (int i=0; i<5;i++){
+        res[i] = (a[i] + b[i]) - (a[i] * b[i]);
+    }
+}
+
+std::vector<std::string> ProcessingNeuroData::process(const std::vector<std::string> & lines) const
+{
+    rec_t fRec = {1.0f, 2.0f, 3.0f, 4.0f, 5.0f}; 
+    std::vector<rec_t> vecData; 
+
+    std::vector<std::string>::const_iterator itLine = lines.begin();
+    while (itLine != lines.end()) {
+        std::stringstream stInput(*itLine);
+        std::string sVal;
+        for (int iCur = 0; iCur < 5; iCur++) {
+            std::getline(stInput,sVal, ' ' );
+            fRec[iCur] = std::stof(sVal);
+        }
+        vecData.push_back(fRec);
+        itLine++;
+    }
+    // - - - [ Calculations: ] - - - - - - - - - - - - - - - - -
+    rec_t minRes = vecData[0]; // {0.0};
+    rec_t maxRes = vecData[0]; // {0.0}; 
+    rec_t comRes = vecData[0]; // {0.0};
+
+    // const rec_t & fRecA = vecData[0];
+    const rec_t & fRecB = vecData[1];
+    for (int iCurRec = 1; iCurRec < vecData.size(); iCurRec++ ) {
+        calcMinProbability( minRes, vecData[iCurRec], minRes); 
+        calcMaxProbability( maxRes, vecData[iCurRec], maxRes); 
+        calcComProbability( comRes, vecData[iCurRec], comRes);
+    }
+    vector<string> vResult;
+    std::stringstream stream;
+    stream << std::fixed << std::setprecision(2) << minRes[0] << " " << minRes[1] << " " << minRes[2] << " " << minRes[3] << " " << minRes[4];
+    std::string str = stream.str();
+    vResult.push_back( stream.str() );
+
+    stream.str(""); 
+    stream << maxRes[0] << " " << maxRes[1] << " " << maxRes[2] << " " << maxRes[3] << " " << maxRes[4];
+    vResult.push_back( stream.str() );
+
+    stream.str("");
+    stream << comRes[0] << " " << comRes[1] << " " << comRes[2] << " " << comRes[3] << " " << comRes[4];
+    vResult.push_back( stream.str() );
+
+    return vResult;
+}`;
+
+var hard07_description = `none`;
+var hard07_text = ``;
