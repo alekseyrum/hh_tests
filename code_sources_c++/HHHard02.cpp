@@ -82,7 +82,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
    
     auto itRec = vecSort.begin();
     for (int iCurRec = 0; iCurRec < Nclients; iCurRec++) {
-        vResult.push_back( std::to_string(itRec->first) + ":" + std::to_string(itRec->second.sum) + ":" + std::to_string(itRec->second.orders) );
+        vResult.push_back( std::to_string(itRec->first) + ";" + std::to_string(itRec->second.sum) + ";" + std::to_string(itRec->second.orders) );
         itRec++;
     }
     return vResult;

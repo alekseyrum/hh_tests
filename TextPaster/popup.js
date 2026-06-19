@@ -606,7 +606,7 @@ std::vector<std::string> process(const std::vector<std::string> & lines)
    
     auto itRec = vecSort.begin();
     for (int iCurRec = 0; iCurRec < Nclients; iCurRec++) {
-        vResult.push_back( std::to_string(itRec->first) + ":" + std::to_string(itRec->second.sum) + ":" + std::to_string(itRec->second.orders) );
+        vResult.push_back( std::to_string(itRec->first) + ";" + std::to_string(itRec->second.sum) + ";" + std::to_string(itRec->second.orders) );
         itRec++;
     }
     return vResult;
@@ -737,10 +737,11 @@ int process(const std::vector<std::string> & lines)
         std::string_view curStr = *itLine ;
         delim1 = curStr.find(':');
         int clid;
-        fcr = std::from_chars(curStr.data(), curStr.data() + delim1, clid);
+        // fcr = std::from_chars(curStr.data(), curStr.data() + delim1, clid);
+        clid = std::stoi( string( curStr.substr(0, delim1)));
         std::string_view strType = curStr.substr(delim1+1, curStr.size()- delim1);
 
-        if ( setGamers.contains(clid) ) {
+        if ( setGamers.count(clid) > 0 ) {
             if (strType == "disconnect") {
                 setGamers.erase(clid);
             }
@@ -761,9 +762,6 @@ int process(const std::vector<std::string> & lines)
 var hard05_description = `Вы разрабатываете модуль предварительной обработки данных для системы компьютерного зрения на основе медианного фильтра для последующего определения сильно зашумленных изображений.
 На вход модуля подается изображение в виде матрицы точек размером NxN, элемент матрицы - это код цвета в оттенках серого (целое число от 0 до 255 включительно). Число N - это количество строк и столбцов в матрице. N является степенью 2 и N больше или равно 2.`;
 var hard05_text = `#include <iostream>
-#include <vector>
-#include <sstream>
-#include <algorithm>
 
 using namespace std;
 

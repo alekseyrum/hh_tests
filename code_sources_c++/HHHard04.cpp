@@ -23,14 +23,15 @@ int process(const std::vector<std::string> & lines)
 
     std::vector<std::string>::const_iterator itLine = ++lines.begin();
     while (itLine != lines.end() ) {
-        
-        std::string_view curStr = *itLine ;
+        std::string_view curStr = *itLine;
         delim1 = curStr.find(':');
         int clid;
-        fcr = std::from_chars(curStr.data(), curStr.data() + delim1, clid);
+        // fcr = std::from_chars(curStr.data(), curStr.data() + delim1, clid);
+        clid = std::stoi( string( curStr.substr(0, delim1)));
+        // cout << "clid=" << clid << endl;
         std::string_view strType = curStr.substr(delim1+1, curStr.size()- delim1);
 
-        if ( setGamers.contains(clid) ) {
+        if ( setGamers.count(clid) > 0 ) {
             if (strType == "disconnect") {
                 setGamers.erase(clid);
             }
