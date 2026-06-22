@@ -19,26 +19,21 @@ var base01_text = `#include <iostream>
 #include <iomanip>
 using namespace std;
 
-std::vector<std::string> ProcessingCandidates::PrintCorrectCandidates(
-const std::string & /*scoreInput*/,
-const std::string & /*namesInput*/ )
+std::vector<std::string> PrintCorrectCandidates(
+const std::string & scoreInput ,
+const std::string & namesInput )
 {
-    // напишите ваш код
-    // return ();
-
     std::string sWord;
-    std::stringstream stInput(sScores);
+    std::stringstream stInput(scoreInput);
+
     vector<int> vecScores;
-  
     while ( std::getline(stInput,sWord, ',' )) {
         vecScores.push_back( std::stoi(sWord) );
     }
     int iTotal = std::accumulate( vecScores.begin(), vecScores.end(), 0);
     float fAverage = (float)iTotal / vecScores.size();
-    // cout << "Average value = " << std::fixed << std::setprecision(2) << fAverage << endl;
-
     stInput.clear();
-    stInput.str(sNames);
+    stInput.str(namesInput);
     vector<string>vecNames;
     while ( std::getline(stInput,sWord, ',' )) {
         vecNames.push_back( sWord );
@@ -47,32 +42,25 @@ const std::string & /*namesInput*/ )
     for (size_t i = 0; i < vecScores.size(); ++i) {
          if (vecScores[i] > fAverage) vecResult.push_back(vecNames[i]); 
     }
-    if ( vecResult.size() == 0) { vecResult.push_back("net"); }
+    if ( vecResult.size() == 0) { vecResult.push_back("нет"); }
 
-    return vecResult;   
-}`;
+    return vecResult;
+};`;
 
 var base02_description = `Согласно принятой политике безопасности, при регистрации пользователя в корпоративной информационной системе ему назначается имя пользователя (логин) и пароль.`;
-var base02_text = `#include <sstream>
-#include <vector>
-#include <algorithm>
-#include <cctype>
-
-#include <iostream>
+var base02_text = `#include <iostream>
 
 std::vector<std::string>
-generate_logins(const std::string & first_names_list,
-                const std::string & last_names_list) {
-    // ваш код ниже
-    // return {}
+generate_logins(const std::string & first_names_line,
+                const std::string & last_names_line) {
     std::string sWord;
-    std::stringstream stInput(first_names_list);
+    std::stringstream stInput(first_names_line);
     std::vector<std::string> vecFirstNames;
     while ( std::getline(stInput,sWord, ',' )) {
         vecFirstNames.push_back( sWord );
     }
     stInput.clear();
-    stInput.str(last_names_list);
+    stInput.str(last_names_line);
     std::vector<std::string>vecLastNames;
     while ( std::getline(stInput,sWord, ',' )) {
         vecLastNames.push_back( sWord );
@@ -97,8 +85,6 @@ generate_logins(const std::string & first_names_list,
 var base03_description = `Отдел кадров компании планирует внедрение новой информационной системы для работы с кандидатами на вакантные должности.
 Для информационной системы необходимо разработать модуль, который, позволяет сформировать каталог для хранения информации о кандидатах в формате Имя,Отчество,Фамилия,Рейтинг.`;
 var base03_text = `#include <iostream>
-#include <vector>
-#include <sstream>
 #include <numeric>
 #include <iomanip>
 
@@ -112,18 +98,15 @@ public:
     int ratio;
 };
 
-class CandidateCatalog {
+std::vector<std::string>
+get_candidates_catalog( const std::string & rating_line ,
+                        const std::string names_line) {
     vector<Candidate> vData;
-public: 
-    void loadData( const std::string & inScores , const std::string & inFIO );
-    void PrintCandidates (); //  { std::cout << "_not_implemented_" << std::endl; };
-};
 
-void CandidateCatalog::loadData( const std::string & inScores , const std::string & inFIO ) {
     std::string sBall;
     std::string sPerson;
-    std::stringstream streamScore(inScores);
-    std::stringstream streamFIO(inFIO);
+    std::stringstream streamScore(rating_line);
+    std::stringstream streamFIO(names_line);
   
     while ( std::getline(streamScore,sBall, ',' ) && std::getline(streamFIO,sPerson, ',' ) ) {
         std::stringstream streamFields(sPerson);
@@ -134,12 +117,19 @@ void CandidateCatalog::loadData( const std::string & inScores , const std::strin
         std::getline(streamFields,newCandid.family, ':' ); 
         vData.push_back(newCandid);
     }
-}
+    vector<string> vecResult;
 
-void CandidateCatalog::PrintCandidates() {
     for ( Candidate curCandid : vData) {
-        std::cout << curCandid.name << " " << curCandid.surname << " " <<  curCandid.family << " - " << curCandid.ratio << endl;
+        string sOut = curCandid.name;
+        sOut += " " ; 
+        sOut += curCandid.surname; 
+        sOut += " ";
+        sOut += curCandid.family;
+        sOut += " - ";
+        sOut += std::to_string(curCandid.ratio);
+        vecResult.push_back(sOut);
     }
+    return vecResult;
 }`;
 
 var base04_description = `Платформа онлайн-дистрибуции компьютерных игр сформировала список названий игр и количества скачиваний за год. Для анализа качества игр, размещенных на платформе, нужно определить соотношение востребованных и невостребованных игр. Рассчитайте, какой процент игр от общего количества представленных на платформе игр имеет количество скачиваний строго меньше среднего значения.`;

@@ -6,29 +6,21 @@
 
 using namespace std;
 
-// vector<string>splitString()
-// std::vector<std::string> ProcessingCandidates::PrintCorrectCandidates(
 std::vector<std::string> PrintCorrectCandidates(
-const std::string & /*scoreInput*/ sScores,
-const std::string & /*namesInput*/ sNames )
+const std::string & scoreInput ,
+const std::string & namesInput )
 {
-    // напишите ваш код
     std::string sWord;
-    std::stringstream stInput(sScores);
+    std::stringstream stInput(scoreInput);
 
     vector<int> vecScores;
-    // while ( stInput >> sWord ) {
     while ( std::getline(stInput,sWord, ',' )) {
         vecScores.push_back( std::stoi(sWord) );
     }
-    // cout << "scores items = " << vecScores.size() << endl;
     int iTotal = std::accumulate( vecScores.begin(), vecScores.end(), 0);
-    // cout << "total value = " << iTotal << endl;
     float fAverage = (float)iTotal / vecScores.size();
-    cout << "Average value = " << std::fixed << std::setprecision(2) << fAverage << endl;
-
     stInput.clear();
-    stInput.str(sNames);
+    stInput.str(namesInput);
     vector<string>vecNames;
     while ( std::getline(stInput,sWord, ',' )) {
         vecNames.push_back( sWord );
@@ -37,7 +29,7 @@ const std::string & /*namesInput*/ sNames )
     for (size_t i = 0; i < vecScores.size(); ++i) {
          if (vecScores[i] > fAverage) vecResult.push_back(vecNames[i]); 
     }
-    if ( vecResult.size() == 0) { vecResult.push_back("net"); }
+    if ( vecResult.size() == 0) { vecResult.push_back("нет"); }
 
     return vecResult;
 };

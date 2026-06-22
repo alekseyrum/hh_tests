@@ -6,18 +6,16 @@
 #include <iostream>
 
 std::vector<std::string>
-generate_logins(const std::string & first_names_list,
-                const std::string & last_names_list) {
-    // ваш код ниже
+generate_logins(const std::string & first_names_line,
+                const std::string & last_names_line) {
     std::string sWord;
-    std::stringstream stInput(first_names_list);
+    std::stringstream stInput(first_names_line);
     std::vector<std::string> vecFirstNames;
     while ( std::getline(stInput,sWord, ',' )) {
-        // sWord = std::tolower(sWord, std::locale()) ;
         vecFirstNames.push_back( sWord );
     }
     stInput.clear();
-    stInput.str(last_names_list);
+    stInput.str(last_names_line);
     std::vector<std::string>vecLastNames;
     while ( std::getline(stInput,sWord, ',' )) {
         vecLastNames.push_back( sWord );
@@ -33,7 +31,6 @@ generate_logins(const std::string & first_names_list,
         sLogin += std::toupper(vecLastNames[i][4], std::locale() );
         sLogin += std::tolower(vecLastNames[i][3], std::locale() );
         sLogin += std::toupper(vecLastNames[i][2], std::locale() );
-         // if (vecScores[i] > fAverage) vecResult.push_back(vecNames[i]); 
         vecResult.push_back(sLogin);
 
     }
@@ -41,6 +38,7 @@ generate_logins(const std::string & first_names_list,
 }
 
 int main() {
+    system("chcp 65001 > nul");
     std::vector<std::string> vecRes;
     // vecRes = generate_logins("John,Michael,Elizabeth", "Johnson,Williams,Anderson");
     // vecRes = generate_logins("Ale,Vic", "Pesko,Skaya");

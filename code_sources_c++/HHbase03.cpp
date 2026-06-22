@@ -14,6 +14,7 @@ public:
     int ratio;
 };
 
+/*
 class CandidateCatalog {
     vector<Candidate> vData;
 public: 
@@ -43,6 +44,41 @@ void CandidateCatalog::PrintCandidates() {
         std::cout << curCandid.name << " " << curCandid.surname << " " <<  curCandid.family << " - " << curCandid.ratio << endl;
     }
 }
+*/
+
+std::vector<std::string>
+get_candidates_catalog( const std::string & rating_line ,
+                        const std::string names_line) {
+    vector<Candidate> vData;
+
+    std::string sBall;
+    std::string sPerson;
+    std::stringstream streamScore(rating_line);
+    std::stringstream streamFIO(names_line);
+  
+    while ( std::getline(streamScore,sBall, ',' ) && std::getline(streamFIO,sPerson, ',' ) ) {
+        std::stringstream streamFields(sPerson);
+        Candidate newCandid;
+        newCandid.ratio = std::stoi(sBall);
+        std::getline(streamFields,newCandid.name, ':' );
+        std::getline(streamFields,newCandid.surname, ':' );
+        std::getline(streamFields,newCandid.family, ':' ); 
+        vData.push_back(newCandid);
+    }
+    vector<string> vecResult;
+
+    for ( Candidate curCandid : vData) {
+        string sOut = curCandid.name;
+        sOut += " " ; 
+        sOut += curCandid.surname; 
+        sOut += " ";
+        sOut += curCandid.family;
+        sOut += " - ";
+        sOut += std::to_string(curCandid.ratio);
+        vecResult.push_back(sOut);
+    }
+    return vecResult;
+}
 
 int main() {
     // setlocale(LC_ALL, "Russian");
@@ -63,7 +99,15 @@ int main() {
     string ratings = "4,6,8,5,7,9";
     string names = "Александр:Владимирович:Каракозов,Дарья:Олеговна:Старостина,Игорь:Николаевич:Макаренко,Наталья:Александровна:Виноградова,Сергей:Викторович:Романовсвский,Екатерина:Андреевна:Кузнецова-Смирнова";
 
-    CandidateCatalog cc;
-    cc.loadData(ratings , names );
-    cc.PrintCandidates();
+    std::vector<std::string> vecRes;
+    vecRes = get_candidates_catalog(ratings, names);
+
+    for (std::string val : vecRes) {
+        std::cout << val << std::endl;
+    }
+
+    // CandidateCatalog cc;
+    // cc.loadData(ratings , names );
+    // cc.PrintCandidates();
+
 }
