@@ -1,0 +1,208 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//
+// HH.ru : Английский А2 Элементарный уровень
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+Don't forget to sign the ____ before you leave.
+
+++ 		: contract
+
+-- team
+-- e-mail
+-- meeting
+-- folder
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+They ____ check their emails when they come to work.
+
+++ 		: usually
+
+-- not often
+-- every day
+-- yesterday
+-- once
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+Last year, she ____ her own online business.
+
+++ 		: started
+
+-- starts
+-- is start
+-- start
+-- starting
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+I am not sure but I think they ____ offer him a job.
+
+++ 		: will
+
+-- are
+-- going to
+-- are going to
+-- will be
+
+* Фраза начинается с сомнения «I am not sure but I think...» (Я не уверен, но думаю...). В английском языке после глаголов мнения и неуверенности (think, believe, expect, probably) для выражения предположений о будущем обычно используется время Future Simple с глаголом will. Варианты с «are going to» здесь не подходят, так как они используются для твердых планов или когда есть четкие доказательства/уверенность в том, что произойдет в ближайшем будущем.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+I left the documents ____ your desk.
+
+++ 		: on
+
+-- of 
+-- out 
+-- at 
+-- over 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+I am not busy at 3 p.m. today, so I ____ help you
+
+++ 		: can
+
+-- could
+-- don't have to
+-- must 
+-- have to
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+The project presentation is ____ Wednesday.
+
+Варианты ответа:
+-- by
+-- at
+-- for 
+-- on
+-- in
+
+*Почему используется on:
+В английском языке предлог on используется с днями недели (on Monday, on Wednesday, on Sunday) и конкретными датами.
+at — используется для точного времени (at 5 o'clock).
+in — используется для месяцев, годов и времени суток (in July, in 2026, in the morning).
+by — используется для обозначения крайнего срока («к» какому-то времени).
+for — используется для указания длительности или назначения.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант 
+I don't understand this email. ____ you explain it to me, please?
+
+++ 		: Could
+
+-- Have
+-- Should 
+-- Do
+-- Must
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question
+Starting a job can be exciting but also a little scary. Here are some simple tips to help you in your first week.
+Be on time
+Arrive a few minutes early for work and for meetings. This shows you are responsible and respect other people's time.
+Ask questions
+If you don't understand something, it's OK to ask. It is better to ask a simple question than to make a big mistake.
+Learn people's names
+Try to remember the names of your colleagues and use them when you talk. It is a friendly and polite thing to do.
+Write things down
+Keep a notebook with you. When you learn something new, write it down, so you won't forget it.
+Relax and smile 
+Be friendly and positive. A smile can help you and your colleagues feel more comfortable.
+
+What is the text about?
+
+++ 		: How to start new job successfully
+
+-- How not to make mistakes at work
+-- How to remember your colleagues' names
+-- How to be organized at work
+-- How to stay positive at work
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Starting a job can be exciting but also a little scary. Here are some simple tips to help you in your first week.
+Be on time
+Arrive a few minutes early for work and for meetings. This shows you are responsible and respect other people's time.
+Ask questions
+If you don't understand something, it's OK to ask. It is better to ask a simple question than to make a big mistake.
+Learn people's names
+Try to remember the names of your colleagues and use them when you talk. It is a friendly and polite thing to do.
+Write things down
+Keep a notebook with you. When you learn something new, write it down, so you won't forget it.
+Relax and smile 
+Be friendly and positive. A smile can help you and your colleagues feel more comfortable.
+
+Why should you arrive a few minutes early?
+
+++ 		: It shows that you think about other people
+
+-- You will have time to prepare
+-- You will have time to speak to colleagues
+-- It shows that you want to be the first 
+-- You will have time for coffee
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
++2
+	-1 (3 question)
+	-2 (4 question)
++3
++4
++5
++6
++7
++8
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прослушайте аудио и дайте ответ на вопрос.
+What is Tom talking about?
+
+[ mp3/hh_eng_A1.mp3 ]
+
+++ 		: Good things about working online
+
+-- Working in the office
+-- Working too much
+-- Having much free time
+-- Bad things about working online
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прослушайте аудио и дайте ответ на вопрос.
+What is Tom's favourite thing about his work?
+
+[ mp3/hh_eng_A1.mp3 ]
+
+++ 		: He can work from his kitchen and drink coffee
+
+-- He finishes work early every day
+-- He goes to an office on foot
+-- He has a lot of meeting
+-- His working day isn't long
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+[Past Simple] Конкретное завершенное действие в прошлом
+
+Утвердительные предложения (Affirmative)
+Правильные: к базовой форме глагола добавляется окончание -ed.
+Пример: work → worked (работал), play → played (играл)
+
+Отрицательные предложения (Negative)
+Строятся по формуле: 
+Подлежащее + did not (didn't) + глагол (в начальной форме).
+В отрицании did берет на себя все «прошлое время», поэтому основной глагол используется без изменений.
+Пример: I didn't play (Я не играл), He didn't go (Он не ходил)
+
+Вопросительные предложения (Interrogative)
+Строятся по формуле: 
+Did + подлежащее + глагол (в начальной форме).
+Пример: Did you play? (Ты играл?), Did he go? (Он ходил?)
