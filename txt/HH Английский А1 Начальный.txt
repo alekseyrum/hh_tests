@@ -1,0 +1,196 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//
+// HH.ru : Английский А1 Начальный уровень
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+The boss wants to see ___ after the meeting.
+
+++ 		: me  (это местоимение в объектном падеже, остальные в именительном)
+
+-- he
+-- they
+-- we 
+-- I
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+We have an important ____ at 10 a.m. We will discuss the new project.
+
+++ 		:meeting
+
+-- resume
+-- document
+-- deadline
+-- file
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+I ____ at work last Saturday.
+
+++ 		: was
+
+-- are
+-- were
+-- is
+-- am
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+I send ____ to our customers every day.
+
+++ 		: emails
+
+-- meetings
+-- deadlines
+-- bonuses
+-- phone calls
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+This is the ____ report I've ever written.
+
+++ 		: longest
+
+-- longer
+-- long
+-- more long
+-- most long
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+She ____ a meeting with the team at 10 o'clock yesterday.
+
+++ 		: started
+
+-- start
+-- has started
+-- starting
+-- starts
+
+* конкретное завершенное действие в прошлом, поэтому нужно использовать время Past Simple
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+He always ____ at 7 o'clock in the morning because his work starts at 8 a.m.
+
+++ 		: wakes up
+
+-- has dinner
+-- goes to bed
+-- falls asleep
+-- comes home
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Saving Money for the Future.
+Do you want to save money? Here are some easy ideas.
+Make a plan
+Know how much money you get and how much you spend. Write it down.
+Small amounts help
+Save a little money every week. It is not difficult. For example, save money froma coffe you don't buy.
+Wait before you buy
+See a nice phone? Wait 2 days. Often, you see that you don't need it.
+Have a goal
+Save money for something special, like a holiday or a new bike. It helps you stay happy.
+Saving money is a good habit for a calm future!
+
+What is the text about?
+
+++ 		: Easy ways to save money
+
+-- Ways to spend money
+-- Ways to write a weekly plan
+-- Ways to choose the best coffe
+-- Steps of planning a holiday
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Saving Money for the Future.
+Do you want to save money? Here are some easy ideas.
+Make a plan
+Know how much money you get and how much you spend. Write it down.
+Small amounts help
+Save a little money every week. It is not difficult. For example, save money froma coffe you don't buy.
+Wait before you buy
+See a nice phone? Wait 2 days. Often, you see that you don't need it.
+Have a goal
+Save money for something special, like a holiday or a new bike. It helps you stay happy.
+Saving money is a good habit for a calm future!
+
+What should you do when you see a new phone?
+
+++ 		: Wait for a couple of days
+
+-- Wait for a week
+-- Save money for a year
+-- Find a cheaper phone
+-- Buy it now
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Saving Money for the Future.
+Do you want to save money? Here are some easy ideas.
+Make a plan
+Know how much money you get and how much you spend. Write it down.
+Small amounts help
+Save a little money every week. It is not difficult. For example, save money froma coffe you don't buy.
+Wait before you buy
+See a nice phone? Wait 2 days. Often, you see that you don't need it.
+Have a goal
+Save money for something special, like a holiday or a new bike. It helps you stay happy.
+Saving money is a good habit for a calm future!
+
+What is one easy way to save some money every week?
+
+++ 		: Don't buy coffee and save the money
+
+-- Don't write a plan
+-- Don't use your computer 
+-- Don't go on holiday
+-- Don't buy a bike
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прослушайте аудио и дайте ответ на вопрос.
+What is Tom talking about?
+
+[ mp3/hh_eng_A1.mp3 ]
+
+++ 		: Good things about working online
+
+-- Working in the office
+-- Working too much
+-- Having much free time
+-- Bad things about working online
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прослушайте аудио и дайте ответ на вопрос.
+What is Tom's favourite thing about his work?
+
+[ mp3/hh_eng_A1.mp3 ]
+
+++ 		: He can work from his kitchen and drink coffee
+
+-- He finishes work early every day
+-- He goes to an office on foot
+-- He has a lot of meeting
+-- His working day isn't long
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+[Past Simple] Конкретное завершенное действие в прошлом
+
+Утвердительные предложения (Affirmative)
+Правильные: к базовой форме глагола добавляется окончание -ed.
+Пример: work → worked (работал), play → played (играл)
+
+Отрицательные предложения (Negative)
+Строятся по формуле: 
+Подлежащее + did not (didn't) + глагол (в начальной форме).
+В отрицании did берет на себя все «прошлое время», поэтому основной глагол используется без изменений.
+Пример: I didn't play (Я не играл), He didn't go (Он не ходил)
+
+Вопросительные предложения (Interrogative)
+Строятся по формуле: 
+Did + подлежащее + глагол (в начальной форме).
+Пример: Did you play? (Ты играл?), Did he go? (Он ходил?)
