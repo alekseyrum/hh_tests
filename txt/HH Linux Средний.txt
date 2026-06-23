@@ -1,0 +1,62 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//
+// HH.ru : Linux Средний уровень
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+В директории /var/log вы хотите найти все текстовые файлы с расширением .log, в содержимом которых есть слово timeout, и получить список их имен. Какую команду используете?
+
+++ 		: find /var/log -type f -name "*.log" -exec grep -l "timeout" {} \;
+
+-- find /var/log -name "*.log" | grep -r "timeout"
+-- grep -rl "timeout" /var/log -exec find -name "*.log"
+-- find /var/log -type f -grep "timeout" > *.log
+-- grep -l "timeout" $(find /var/log -type d -name "*.log")
+
+По совету ГуглИИ: find /var/log -type f -name "*.log" -exec grep -l timeout {} \;
+Но так тоже получается: find /var/log -name "*.log" | grep -r "timeout"
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Какой командой корректно завершить все процессы с именем "myapp" ?
+
+++ 		: pkill myapp
+
+-- ps -ef | grep myapp
+-- killall -HUP myapp
+-- jobs myapp
+-- kill -9 myapp
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Какой командой изменить приоритет нескольких процессов, принадлежащих пользователю user123, за один раз? 
+
+++ 		: renice -n 10 -u user123
+
+-- kill -STOP user123
+-- nice -n 10 user123
+-- renice -p user123 10
+-- nice user123 -all
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Как просмотреть только записи systemd-журнала, относящиеся к сервису ssh?
+Варианты ответа:
+-- journalctl -- service sshd
+-- journalctl -u ssh
+-- cat /var/log/ssh.log
+-- tail -f /var/log/secure
+-- grep ssh /var/log/messages
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Варианты ответа:
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Варианты ответа:
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Варианты ответа:
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+?1 	+- 1 (1 вопрос)
+	-1   (2 question)
+	-1   (3 question)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
