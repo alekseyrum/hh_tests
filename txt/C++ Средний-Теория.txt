@@ -275,3 +275,134 @@ int main() {
 -- Выходной итератор (Output Iterator)
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Какое выражение нужно вставить на место пропуска в коде ниже, чтобы в консоль вывелось 7?
+int main() 
+{
+    int a = 104;
+    a = ____;
+    std::cout << a;    
+}
+
+правильный ответ:
+++      : a ^ (a | (a - 1))        = 7
+
+ошибки:
+-- a ^ (a ^ (a - 1))        = 103
+-- a | (a | (a + 1))        = 105
+-- a ^ (a & (a - 1))        = 8 
+-- a | (a ^ (a - 1))        = 111
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Какой тип связи используется между Teacher и Student?
+class Teacher;
+class Student {
+public:
+    void attendClass(Teacher* teacher) {
+        std::cout << "Attending class by teacher" << teacher;
+    }
+};
+class Teacher {
+public:
+    void teach(Student* student) {
+        std::cout << "Teaching student " << student;
+    }
+}
+
+правильный ответ:
+++      : Ассоциация
+
+ошибки:
+-- Агрегация 
+-- Наследование
+-- Композиция
+-- Инкапсуляция
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+В данном рагменте кода нарушена логика иерархии наследования. Какой из приведенных вариантов модификации кода устраняет нарушение?
+class Rectangle {
+protected:
+    int width, height;
+public:
+    virtual void setWidth(int w) { width = w; }
+    virtual void setHeight(int h) { height = h; }
+    int area() const { return width * height; } 
+};
+class Square: public Rectangle {
+public:
+    void setWidth(int w) override { width = height = w; }
+    void setHeight(int h) override { width = height = h; }
+};
+class AreaCalculator {
+public:
+    static void printArea(Rectangle &r) {
+        r.setWidth(5);
+        r.setHeight(4);
+        std::cout << r.area();
+    }
+};
+правильный ответ:
+++      : Добавить абстрактный класс Shape с виртуальным методом area() как базовый для Rectangle и Square
+
+ошибки:
+-- Добавить абстрактный класс Shape с методом area() как базовый для Rectangle и Square
+-- Переопределить метод area в классе Square
+-- Поменять последовательность наследования: класс Square должен стать базовым для Rectangle
+-- Переопределить метод area в классе Rectangle
+
+*В данном фрагменте кода нарушен Принцип подстановки Барбары Лисков (LSP)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Проанализируйте код ниже и выберите верное утверждение.
+#include <memory>
+#include <vector>
+void test() {
+    auto s1 = std::make_unique<int>(30);
+    std::vector<std::unique_ptr<int>> v;
+
+    v.push_back(std::move(s1));
+    auto7 s2 = v[0];
+    auto s3 = std::move(s2);
+}
+правильный ответ:
+++      : s2 пуст, s3 владеет объектом
+
+ошибки:
+-- s2 и s3 совместно владеют объектом
+-- Оба указателя пусты
+-- s2 владеет объектом, s3 пуст
+-- s2 владеет объектом, s3 не валидный
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Какое выражение нужно вставить на место пропуска в коде ниже, чтобы перехватывать только полиморфные исключения рантайма при вызове makeSDKRequest(); ?
+#include <iostream>
+int main () {
+    try {
+        makeSDKRequest();
+    } catch(____) {
+    }
+    return 0;
+}
+правильный ответ:
+++      : std::runtime_error &
+
+ошибки:
+-- std::runtime_error
+-- std::exception
+-- std::exception&
+-- ...
+
+*Перехват по ссылке &: Исключения в C++ почти всегда следует перехватывать по ссылке. Это предотвращает создание лишних копий объекта, а также сохраняет полиморфизм. Если перехватывать по значению (без знака &), произойдет срезка объекта (object slicing), и вы потеряете информацию о специфическом типе ошибки.Только исключения рантайма: Чтобы отлавливать только полиморфные исключения времени выполнения (ошибки, которые могут быть обнаружены только во время выполнения программы), используется базовый класс для таких ошибок — std::runtime_error
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Какой из вариантов вызовет перемещение (move semantics), а не копирование?
+
+правильный ответ:
+++      : std::string s1 = std::move(s2)
+
+ошибки:
+-- std::string s1 = s2
+-- std::string s1 = &s2
+-- std::string s1 = new String(s2)
+-- std::string s1 = const_cast<const std::string&>(s2)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
