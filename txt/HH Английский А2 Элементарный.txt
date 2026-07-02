@@ -6,8 +6,10 @@
 Выберите правильный вариант 
 Don't forget to sign the ____ before you leave.
 
+правильный ответ:
 ++ 		: contract
 
+ошибки:
 -- team
 -- e-mail
 -- meeting
@@ -17,8 +19,10 @@ Don't forget to sign the ____ before you leave.
 Выберите правильный вариант
 They ____ check their emails when they come to work.
 
+правильный ответ:
 ++ 		: usually
 
+ошибки:
 -- not often
 -- every day
 -- yesterday
@@ -28,8 +32,10 @@ They ____ check their emails when they come to work.
 Выберите правильный вариант 
 Last year, she ____ her own online business.
 
+правильный ответ:
 ++ 		: started
 
+ошибки:
 -- starts
 -- is start
 -- start
@@ -39,8 +45,10 @@ Last year, she ____ her own online business.
 Выберите правильный вариант 
 I am not sure but I think they ____ offer him a job.
 
+правильный ответ:
 ++ 		: will
 
+ошибки:
 -- are
 -- going to
 -- are going to
@@ -52,8 +60,10 @@ I am not sure but I think they ____ offer him a job.
 Выберите правильный вариант 
 I left the documents ____ your desk.
 
+правильный ответ:
 ++ 		: on
 
+ошибки:
 -- of 
 -- out 
 -- at 
@@ -63,8 +73,10 @@ I left the documents ____ your desk.
 Выберите правильный вариант 
 I am not busy at 3 p.m. today, so I ____ help you
 
+правильный ответ:
 ++ 		: can
 
+ошибки:
 -- could
 -- don't have to
 -- must 
@@ -74,11 +86,13 @@ I am not busy at 3 p.m. today, so I ____ help you
 Выберите правильный вариант 
 The project presentation is ____ Wednesday.
 
-Варианты ответа:
+правильный ответ:
+++ 		: on
+
+ошибки:
 -- by
 -- at
 -- for 
--- on
 -- in
 
 *Почему используется on:
@@ -92,8 +106,10 @@ for — используется для указания длительност�
 Выберите правильный вариант 
 I don't understand this email. ____ you explain it to me, please?
 
+правильный ответ:
 ++ 		: Could
 
+ошибки:
 -- Have
 -- Should 
 -- Do
@@ -115,8 +131,10 @@ Be friendly and positive. A smile can help you and your colleagues feel more com
 
 What is the text about?
 
+правильный ответ:
 ++ 		: How to start new job successfully
 
+ошибки:
 -- How not to make mistakes at work
 -- How to remember your colleagues' names
 -- How to be organized at work
@@ -138,8 +156,10 @@ Be friendly and positive. A smile can help you and your colleagues feel more com
 
 Why should you arrive a few minutes early?
 
+правильный ответ:
 ++ 		: It shows that you think about other people
 
+ошибки:
 -- You will have time to prepare
 -- You will have time to speak to colleagues
 -- It shows that you want to be the first 
@@ -150,11 +170,15 @@ Why should you arrive a few minutes early?
  What is the audio about?
 
  [ mp3/hh_eng_A2.mp3 ]
+Hi, I am David. I usually work at home, but I have to go to the office twice a week.
+What is better? Well, it's difficult to say. When I work in the office, I see my colleagues and we can talk easily. I can ask a quick question and get an answer immediately. It's really good for teamwork. But I have to wake up very early and travel to work by bus or car every day. This takes a lot of time. When I work from home, I have more free time because there is no travel. I can also have lunch in my own kitchen. But sometimes I feel a little alone at home. It can also be difficult to stop working when my computer is always there. So, both are different. The office is more social, but home is more comfortable. I really like this mix between the two. It is a good balance for me.
 
+правильный ответ:
 ++ 		: What David likes and dislikes about 2 types of work
 
+ошибки:
 -- Why David doesn't like working at home 
--- What Dvid likes about working at home
+-- What David likes about working at home
 -- Why David doen't like working in the office
 -- Why it is better for David to work in the office
 
@@ -163,9 +187,13 @@ Why should you arrive a few minutes early?
 "What is one problem David has when he works from home?"
 
  [ mp3/hh_eng_A2.mp3 ]
+Hi, I am David. I usually work at home, but I have to go to the office twice a week.
+What is better? Well, it's difficult to say. When I work in the office, I see my colleagues and we can talk easily. I can ask a quick question and get an answer immediately. It's really good for teamwork. But I have to wake up very early and travel to work by bus or car every day. This takes a lot of time. When I work from home, I have more free time because there is no travel. I can also have lunch in my own kitchen. But sometimes I feel a little alone at home. It can also be difficult to stop working when my computer is always there. So, both are different. The office is more social, but home is more comfortable. I really like this mix between the two. It is a good balance for me.
 
+правильный ответ:
 ++ 		: He feels lonely
 
+ошибки:
  -- He sometimes has to wake up early
  -- His colleagues often call him
  -- He has to wear formal clothes

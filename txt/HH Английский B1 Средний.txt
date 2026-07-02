@@ -6,8 +6,10 @@
 Choose the correct option
 Sarah can't join the call. She ____ with an important client right now.
 
+правильный ответ:
 ++ 		: is speaking
 
+ошибки:
 -- has spoken
 -- speaks
 -- spoke
@@ -17,8 +19,10 @@ Sarah can't join the call. She ____ with an important client right now.
 Choose the correct option
 We ____ the budget report last Friday.
 
+правильный ответ:
 ++ 		: finished
 
+ошибки:
 -- are finishing
 -- finishes
 -- have finished
@@ -28,8 +32,10 @@ We ____ the budget report last Friday.
 Choose the correct option
 Select the sentence where 'attend' is used correctly.
 
+правильный ответ:
 ++ 		: I cannot attend the training session on Friday.
 
+ошибки:
 -- She attended the data for any mistakes.
 -- Did you attend the printer with new paper?
 -- We must attend this problem immediately.
@@ -41,8 +47,10 @@ Select the sentence where 'attend' is used correctly.
 Choose the correct option
 I think you ____ speak to the IT department about the computer issue.
 
+правильный ответ:
 ++ 		: should
 
+ошибки:
 -- are able to
 -- might
 -- would
@@ -52,8 +60,10 @@ I think you ____ speak to the IT department about the computer issue.
 Choose the correct option
 We ____ the project on time if we don't get the client's feedback soon.
 
+правильный ответ:
 ++  		: won't finish
 
+ошибки:
 -- wouldn't finish
 -- don't finish
 -- didn't finish
@@ -63,8 +73,10 @@ We ____ the project on time if we don't get the client's feedback soon.
 Choose the correct option
 She ____ a presentation to the board of directors this Friday.
 
+правильный ответ:
 ++ 		: is giving
 
+ошибки:
 -- gave
 -- will be given
 -- have given
@@ -72,12 +84,15 @@ She ____ a presentation to the board of directors this Friday.
 -- gives
 
 * Present Continuous (Настоящее длительное) часто используется для выражения запланированных действий в будущем (особенно когда речь идет о личных планах, договоренностях и расписаниях).
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Choose the correct option
 You need special permission to access these files. What does 'access' means in this context?
 
+правильный ответ:
 ++ 		: To enter
 
+ошибки:
 -- To add
 -- To attack
 -- To approach
@@ -87,8 +102,10 @@ You need special permission to access these files. What does 'access' means in t
 Choose the correct option
 After graduating, she started her ____ in marketing as a junior assistant.
 
+правильный ответ:
 ++ 		: career
 
+ошибки:
 -- system
 -- application
 -- interview
@@ -101,8 +118,10 @@ A good salesperson focuses on how the product or service solves a problem or imp
 Remember, effective sales skills involve patience, active listening, and clear communication. It's about helping the customer make the best decision for them. With these skills, you can achieve better results and feel more confident in your role.
 Choose the correct title for the text
 
+правильный ответ:
 ++ 		: The importance of listening and trust in sales
 
+ошибки:
 -- How to talk more in a sales meeting 
 -- Learning complicated sales words
 -- Why products are more important than people
@@ -116,8 +135,10 @@ Remember, effective sales skills involve patience, active listening, and clear c
 
 What is the main purpose of "active listening" in sales?
 
+правильный ответ:
 ++ 		: To understand the client's real needs and offer the right solution
 
+ошибки:
 -- To identify which customer is the easiest to convince
 -- To memorize exactly what the client says and reoeat it back to them
 -- To politely wait for your turn to start presenting the product features
@@ -127,10 +148,13 @@ What is the main purpose of "active listening" in sales?
 Listen to the audio and answer the question.
 What is the main topic of the audio?
 
-[ mp3/hh_eng_B1.mp3]
+[ mp3/hh_eng_B1.mp3 ]
+Hello! Today we're discussing how to effectively prepare for a job interview. It's completely natural to feel a bit nervous, but good preparation will significantly boost your confidence. We'll focus on three key areas. First, research thoroughly. Don't just visit the company website. Try to understand their recent projects and company culture. Carefully analyze the job description. Second, practice your responses. You will be asked common questions like, can you describe your strengths and weaknesses? Or, why do you want to work here? Practice answering these aloud. Aim for clear, structured responses. Third, prepare questions. At the interview's conclusion, you will usually have the chance to ask questions. Prepare a few in advance. You could ask, what are the biggest challenges someone in this role would face? Or, how would you describe the team I'd be working with? This demonstrates your interest and critical thinking. With good preparation, you can present the best version of yourself.
 
+правильный ответ:
 ++ 		: Good preparation based on research, practice and planning builds confidence for a job interview
 
+ошибки:
 -- The most important thing is to wear professional clothes to an interview
 -- You should avoid asking questions so that the interviewer knows you are confident
 -- The company site is the only source for information you need 
@@ -141,9 +165,12 @@ Listen to the audio and answer the question.
 What questions should you prepare at the end of an interview?
 
 [ mp3/hh_eng_B1.mp3]
+Hello! Today we're discussing how to effectively prepare for a job interview. It's completely natural to feel a bit nervous, but good preparation will significantly boost your confidence. We'll focus on three key areas. First, research thoroughly. Don't just visit the company website. Try to understand their recent projects and company culture. Carefully analyze the job description. Second, practice your responses. You will be asked common questions like, can you describe your strengths and weaknesses? Or, why do you want to work here? Practice answering these aloud. Aim for clear, structured responses. Third, prepare questions. At the interview's conclusion, you will usually have the chance to ask questions. Prepare a few in advance. You could ask, what are the biggest challenges someone in this role would face? Or, how would you describe the team I'd be working with? This demonstrates your interest and critical thinking. With good preparation, you can present the best version of yourself.
 
+правильный ответ:
 ++ 		: To demonstrate your interest in the position and your ability to think critically
 
+ошибки:
 -- To ensure that you don't have to answer any more difficult questions
 -- To test the interview's knowledge about the company
 -- To politely correct any mistakes that the interviewer made earlier
