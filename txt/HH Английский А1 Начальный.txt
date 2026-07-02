@@ -6,8 +6,10 @@
 Выберите правильный вариант.
 The boss wants to see ___ after the meeting.
 
+правильный ответ:
 ++ 		: me  (это местоимение в объектном падеже, остальные в именительном)
 
+ошибки:
 -- he
 -- they
 -- we 
@@ -17,8 +19,10 @@ The boss wants to see ___ after the meeting.
 Выберите правильный вариант.
 We have an important ____ at 10 a.m. We will discuss the new project.
 
+правильный ответ:
 ++ 		:meeting
 
+ошибки:
 -- resume
 -- document
 -- deadline
@@ -28,8 +32,10 @@ We have an important ____ at 10 a.m. We will discuss the new project.
 Выберите правильный вариант.
 I ____ at work last Saturday.
 
+правильный ответ:
 ++ 		: was
 
+ошибки:
 -- are
 -- were
 -- is
@@ -39,8 +45,10 @@ I ____ at work last Saturday.
 Выберите правильный вариант.
 I send ____ to our customers every day.
 
+правильный ответ:
 ++ 		: emails
 
+ошибки:
 -- meetings
 -- deadlines
 -- bonuses
@@ -50,8 +58,10 @@ I send ____ to our customers every day.
 Выберите правильный вариант.
 This is the ____ report I've ever written.
 
+правильный ответ:
 ++ 		: longest
 
+ошибки:
 -- longer
 -- long
 -- more long
@@ -61,8 +71,10 @@ This is the ____ report I've ever written.
 Выберите правильный вариант.
 She ____ a meeting with the team at 10 o'clock yesterday.
 
+правильный ответ:
 ++ 		: started
 
+ошибки:
 -- start
 -- has started
 -- starting
@@ -74,8 +86,10 @@ She ____ a meeting with the team at 10 o'clock yesterday.
 Выберите правильный вариант.
 He always ____ at 7 o'clock in the morning because his work starts at 8 a.m.
 
+правильный ответ:
 ++ 		: wakes up
 
+ошибки:
 -- has dinner
 -- goes to bed
 -- falls asleep
@@ -97,8 +111,10 @@ Saving money is a good habit for a calm future!
 
 What is the text about?
 
+правильный ответ:
 ++ 		: Easy ways to save money
 
+ошибки:
 -- Ways to spend money
 -- Ways to write a weekly plan
 -- Ways to choose the best coffe
@@ -120,8 +136,10 @@ Saving money is a good habit for a calm future!
 
 What should you do when you see a new phone?
 
+правильный ответ:
 ++ 		: Wait for a couple of days
 
+ошибки:
 -- Wait for a week
 -- Save money for a year
 -- Find a cheaper phone
@@ -143,8 +161,10 @@ Saving money is a good habit for a calm future!
 
 What is one easy way to save some money every week?
 
+правильный ответ:
 ++ 		: Don't buy coffee and save the money
 
+ошибки:
 -- Don't write a plan
 -- Don't use your computer 
 -- Don't go on holiday
@@ -156,8 +176,10 @@ What is Tom talking about?
 
 [ mp3/hh_eng_A1.mp3 ]
 
+правильный ответ:
 ++ 		: Good things about working online
 
+ошибки:
 -- Working in the office
 -- Working too much
 -- Having much free time
@@ -169,15 +191,101 @@ What is Tom's favourite thing about his work?
 
 [ mp3/hh_eng_A1.mp3 ]
 
+правильный ответ:
 ++ 		: He can work from his kitchen and drink coffee
 
+ошибки:
 -- He finishes work early every day
 -- He goes to an office on foot
 -- He has a lot of meeting
 -- His working day isn't long
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+____ is a busy Monday morning.
 
+правильный ответ:
+++ 		: It
+
+ошибки:
+-- She 
+-- He
+-- I
+-- We 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+Please, read the ____ and sign it.
+
+правильный ответ:
+++ 		: document
+
+ошибки:
+-- book
+-- message
+-- story
+-- text
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+He ____ on a business trip last week.
+
+правильный ответ:
+++ 		: was
+
+ошибки:
+-- are
+-- were
+-- is
+-- am
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+I forgot my ____. I can't open the computer.
+Варианты ответа:
+-- password
+-- schedule
+-- deadline
+-- document
+-- pencil
+
+правильный ответ:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Варианты ответа:
+
+правильный ответ:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Варианты ответа:
+
+правильный ответ:
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+1)	+1
+2)	+2
+3)	+3
+4)
+5)
+6)
+7)
+8)
+9)
+10)
+11)
+12)
+
+
+           
 [Past Simple] Конкретное завершенное действие в прошлом
 
 Утвердительные предложения (Affirmative)
