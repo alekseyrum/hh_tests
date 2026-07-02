@@ -242,48 +242,147 @@ He ____ on a business trip last week.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Выберите правильный вариант.
 I forgot my ____. I can't open the computer.
-Варианты ответа:
--- password
+
+правильный ответ:
+++ 		: password
+
+
 -- schedule
 -- deadline
 -- document
 -- pencil
 
-правильный ответ:
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Варианты ответа:
-
-правильный ответ:
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Варианты ответа:
+Выберите правильный вариант.
+This is ____ task of the day. 
 
 правильный ответ:
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+++ 		: the easiest
+
+ошибки:
+-- easier
+-- more easy
+-- the most easy
+-- easy
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+I ____ the document for the boss an hour ago.
+
+правильный ответ:
+++ 		: printed
+
+ошибки:
+-- print 
+-- printing
+-- prints
+-- will print
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+She always ____ the news on TV in the evening.
+
+правильный ответ:
+++ 		: watches
+
+ошибки:
+-- reads
+-- looks
+-- sees
+-- has
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Is your work difficult sometimes? These tips can help.
+Organize your desk. A clean desk helps you think clearly. Put your papers and pens in order.
+Take short breaks. Work for an hour, then rest for 5 minutes. Look out of the window or drink some water.
+Talk to colleagues. Say "good morning" and talk abouts simple things. Good friends at work are important.
+Make a list. Write down your tasks for the day. It helps you remember what to do.
+You can enjoy your work day more with small changes!
+What is the main idea of the text?
+
+правильный ответ:
+++ 		: How to feel better at work
+
+ошибки:
+-- How to make a task list
+-- How to organize your workplace
+-- How to communicate at work
+-- How to find a new job
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Is your work difficult sometimes? These tips can help.
+Organize your desk. A clean desk helps you think clearly. Put your papers and pens in order.
+Take short breaks. Work for an hour, then rest for 5 minutes. Look out of the window or drink some water.
+Talk to colleagues. Say "good morning" and talk abouts simple things. Good friends at work are important.
+Make a list. Write down your tasks for the day. It helps you remember what to do.
+You can enjoy your work day more with small changes!
+Why is a clean desk helpful?
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-1)	+1
-2)	+2
-3)	+3
-4)
-5)
-6)
-7)
-8)
-9)
-10)
-11)
-12)
+правильный ответ:
+++ 		: It helps you to think
 
+ошибки:
+-- It makes your colleagues happy
+-- You can find things easily
+-- It is beautiful
+-- You canwork 4 more hours
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос.
+Is your work difficult sometimes? These tips can help.
+Organize your desk. A clean desk helps you think clearly. Put your papers and pens in order.
+Take short breaks. Work for an hour, then rest for 5 minutes. Look out of the window or drink some water.
+Talk to colleagues. Say "good morning" and talk abouts simple things. Good friends at work are important.
+Make a list. Write down your tasks for the day. It helps you remember what to do.
+You can enjoy your work day more with small changes!
+Why should you organize your work?
+
+правильный ответ:
+++ 		: You can think better
+
+ошибки:
+-- It's a rule from the manager
+-- Your colleagues will be happy
+-- It saves electricity
+-- You remember things better
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Послушайте аудио и дайте ответ на вопрос.
+What is Sarah talking about?
+
+[ mp3/hh_eng_A1_02.mp3 ]
+
+Oh, I am at home at last. It was very, very busy today. I had three meetings in the morning. Then I wrote 10 emails. In the afternoon, my boss gave me a big new project. I also talked on the phone many times. I had no time for lunch. Now I am very tired. I need a good rest.
+
+правильный ответ:
+++ 		: Her hard day at work
+
+ошибки:
+-- Working long hours
+-- The team meeting
+-- Emails to customers
+-- The boss
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Послушайте аудио и дайте ответ на вопрос.
+What did the boss ask Sarah to do?
+
+[ mp3/hh_eng_A1_02.mp3 ]
+
+Oh, I am at home at last. It was very, very busy today. I had three meetings in the morning. Then I wrote 10 emails. In the afternoon, my boss gave me a big new project. I also talked on the phone many times. I had no time for lunch. Now I am very tired. I need a good rest.
+
+правильный ответ:
+++ 		: To work on a new project
+
+ошибки:
+-- To write an email to a new client
+-- To have a meeting with clients
+-- To write a report
+-- To work with documents
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
            
 [Past Simple] Конкретное завершенное действие в прошлом
