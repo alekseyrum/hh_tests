@@ -177,3 +177,175 @@ Hello! Today we're discussing how to effectively prepare for a job interview. It
 -- To make the interview seem more impressive
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Look, the trainees ____ the new software in the training room.
+
+правильный ответ:
+++ 		: are using
+
+ошибки:
+-- use 
+-- used
+-- has used
+-- uses
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Select the sentence where 'require' is used correctly
+
+правильный ответ:
+++ 		: This task requires careful attention to the detail.
+
+ошибки:
+-- She is requiring the manager for her signature.
+-- They required the workshop very interesting.
+-- He required the order to arrive yesterday.
+-- I require the meeting room for one hour, please.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+____ you please send me the latest version of the contract?
+
+правильный ответ:
+++ 		: Could
+
+ошибки:
+-- Must
+-- Might
+-- Have to
+-- Should
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+If we ____ a better internet connection, our video calls wouldn't keep freezing.
+
+правильный ответ:
+++ 		: had
+
+ошибки:
+-- will have
+-- has
+-- would have
+-- have
+
+*Перед нами классический пример условного предложения второго типа (Second Conditional). Оно используется для описания воображаемых, нереальных ситуаций в настоящем или будущем времени. По правилам Second Conditional предложение строится следующим образом: В придаточной части (после слова If) используется простое прошедшее время (Past Simple)->глагол had.
+*will have — будущее время. В английском языке в придаточных предложениях условия (сразу после слова If) использовать будущее время will категорически запрещено.
+*would have — использование would в части с If также является грубой грамматической ошибкой. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+The consultants ____ the final report at the end of the next month.
+
+правильный ответ:
+++ 		: are delivering
+
+ошибки:
+-- will be delivered
+-- deliver
+-- have delivered
+-- were delivering
+
+*[Present Continuous] — используется здесь для выражения запланированного, заранее подготовленного действия в будущем
+*will be delivered (Future Simple Passive) — это пассивный залог. Если выбрать его, то получится, что «Консультантов доставят» (как неодушевленный груз), а не они сами предоставят отчет.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+The new production facility will open next year. What does 'facility' mean in this context?
+
+правильный ответ:
+++ 		: A building or equipment
+
+ошибки:
+-- A fast computer system
+-- A formal document
+-- A service or opportunity
+-- A special ability or skill
+
+*В английском языке слово facility многозначно, но в контексте промышленности, бизнеса и производства (production facility) оно всегда означает физический объект — здание, завод, фабрику, комплекс или специальное оборудование.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+She decided to ____ for the manager position because she felt ready for more responsibility.
+
+правильный ответ:
+++ 		: apply
+
+ошибки:
+-- retire
+-- reject
+-- work
+-- employ
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Building positive relationships with your colleagues is one of the most important aspects of a successful and enjoyable career. When you have good relationships at work, you create a supportive environment. This makes daily tasks more pleasant and improves teamwork. 
+Strong connections with coworkers are built on respect, trust, and clear communication. Simple actions can make a big difference. Be friendly, listen actively when others speak, and offer your help when a colleague is busy. Sharing information openly and giving credit for good work also helps to build trust. 
+These positive relationships benefit everyone. They lead to better work, which means projects are completed more efficiently. When you know and trust your colleagues, it is easier to solve problems together and share new ideas. A friendly atmosphere also reduces stress and can make you feel more satisfied with your job. 
+Investing time in your work relationships is an investment in your own professional career. By being a reliable and positive team member, you contribute to a workplace where everyone can succeed. 
+What is the main idea of the text?
+
+правильный ответ:
+++ 		: Building good work relationships requires effort and brings many benefits
+
+ошибки:
+-- Colleagues are not necessary for doing your job well
+-- The only way to build relationships is through social activities outside work
+-- Teamwork is less efficient than working alone
+-- Communication with colleagues should be avoided to prevent problems
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Building positive relationships with your colleagues is one of the most important aspects of a successful and enjoyable career. When you have good relationships at work, you create a supportive environment. This makes daily tasks more pleasant and improves teamwork. 
+Strong connections with coworkers are built on respect, trust, and clear communication. Simple actions can make a big difference. Be friendly, listen actively when others speak, and offer your help when a colleague is busy. Sharing information openly and giving credit for good work also helps to build trust. 
+These positive relationships benefit everyone. They lead to better work, which means projects are completed more efficiently. When you know and trust your colleagues, it is easier to solve problems together and share new ideas. A friendly atmosphere also reduces stress and can make you feel more satisfied with your job. 
+Investing time in your work relationships is an investment in your own professional career. By being a reliable and positive team member, you contribute to a workplace where everyone can succeed. 
+Which of the following is a recommended way to build trust with colleagues?
+
+правильный ответ:
+++ 		: Give credit to others for their good work and share information openly
+
+ошибки:
+-- Socialize with colleagues outside work every week
+-- Focus on your individual tasks to show that you are a reliable worker
+-- Avoid disagreements with colleagues
+-- Only share information when it directly benefits your own projects
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question.
+What is the main idea of the audio?
+
+[ mp3/hh_eng_B1_02.mp3 ]
+
+Have you ever had a simple idea that you thought could really help people? Well, that's how our company EcoClean started. My friend Anna and I were students. We noticed how many plastic bottles people used every day. We wanted to create something better. So, we developed a small, reusable bottle with a built-in water filter. The beginning was tough. We used our savings to make the first 100 bottles. But when we tried to sell them, many shops said no. They thought our idea was not special. We felt very disappointed.
+The turning point came when we decided to talk directly to customers. We went to a local sports fair. We let people try the bottle for free. They loved it. Soon we were getting orders online from all over the city. That was five years ago. Today, EcoClean sells thousands of bottles every month. The most important lesson we learned? Don't be afraid to start small, listen to your first customers, and believe in your idea even when others don't see it yet. Every big company was once just a simple idea.
+
+правильный ответ:
+++ 		: Success can come from a simple idea and listening to your first customers
+
+ошибки:
+-- Students should never start a business before graduating
+-- Selling products to local shops is easier and better than selling online
+-- The most important part of a business is having a large team from the beginning
+-- The best business iseas are always about expensive high-tech products
+
+*tough [təf] - жесткий, тяжелый, трудный
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question.
+What was the main reason shops said "no" to the EcoClaen bottle at first?
+
+[ mp3/hh_eng_B1_02.mp3 ]
+
+Have you ever had a simple idea that you thought could really help people? Well, that's how our company EcoClean started. My friend Anna and I were students. We noticed how many plastic bottles people used every day. We wanted to create something better. So, we developed a small, reusable bottle with a built-in water filter. The beginning was tough. We used our savings to make the first 100 bottles. But when we tried to sell them, many shops said no. They thought our idea was not special. We felt very disappointed.
+The turning point came when we decided to talk directly to customers. We went to a local sports fair. We let people try the bottle for free. They loved it. Soon we were getting orders online from all over the city. That was five years ago. Today, EcoClean sells thousands of bottles every month. The most important lesson we learned? Don't be afraid to start small, listen to your first customers, and believe in your idea even when others don't see it yet. Every big company was once just a simple idea.
+
+правильный ответ:
+++ 		: They thought the idea was not special enough
+
+ошибки:
+-- The bottle was too expensive for them to sell
+-- The design was not finished and looked unprofessional
+-- The founders didn't have a formal business degree
+-- The water filter didn't work properly
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

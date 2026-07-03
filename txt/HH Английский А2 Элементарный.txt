@@ -200,21 +200,166 @@ What is better? Well, it's difficult to say. When I work in the office, I see my
  -- His computer often breaks down
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+She wants to attend a ____ course next month.
+
+правильный ответ:
+++ 		: training 
+
+ошибки:
+-- manager
+-- job
+-- screen
+-- document
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+He ____ forgets to check documents. They're very important!
+
+правильный ответ:
+++ 		: never
+
+ошибки:
+-- ever
+-- always
+-- not often
+-- once a week
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+My colleague always ____ me with difficult tasks.
+
+правильный ответ:
+++ 		: helps 
+
+ошибки:
+-- helping
+-- is helped
+-- help
+-- is help
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+I think I ____ be late for the meeting because of the traffic.
+
+правильный ответ:
+++ 		: will
+
+ошибки:
+-- will going
+-- is
+-- will going to
+-- am going
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+The manager is in a meeting till noon, so you ____ wait if you want to speak with him.
+
+правильный ответ:
+++ 		: have to
+
+ошибки:
+-- can't
+-- mustn't 
+-- would 
+-- might
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+____ you send me the file when you have time, please?
+
+правильный ответ:
+++ 		: Can
+
+ошибки:
+-- Should
+-- May
+-- Must
+-- Did
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Doing well in meetings is important for your work. It helps you share your ideas and understand colleagues. These simple tips can help you feel more prepared and confident. 
+Prepare before the meeting 
+First, read the meeting plan, it is called an agenda. The agenda tells you what people will talk about. Think about the topics and prepare what you would like to say. You can also write down some questions you have.
+Listen carefully 
+When other people are speaking, it is important to pay full attention. This means you should not look at your phone or computer for other things. It shows respect for the speaker. It also helps you understand all the information and ideas.
+Speak clearly 
+When it is your turn to talk, do not speak too fast. Try to speak clearly so everyone can understand you. If you need a moment to think, it is ok to take a short pause. You should also use simple words to explain your ideas. 
+Stay on topic 
+Meetings have a specific purpose, so try to talk only about the things on the agenda. If you start talking about other subjects, the meeting can become too long. 
+Take notes 
+Always have a notebook and pen with you. Write down important points from the discussion. Also, you can write any new tasks that you need to do after the meeting. These notes will help you remember what to do next and make sure you do not forget anything important.
+What is the main idea of the text?
+
+правильный ответ:
+++ 		: How to behave before and during meetings
+
+ошибки:
+-- How to plan a meeting
+-- How to speak clearly so everyone listens to you
+-- How to ask questions at meetings
+-- How to choose the right people for meetings
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Прочитайте текст и ответьте на вопрос
+Doing well in meetings is important for your work. It helps you share your ideas and understand colleagues. These simple tips can help you feel more prepared and confident. 
+Prepare before the meeting 
+First, read the meeting plan, it is called an agenda. The agenda tells you what people will talk about. Think about the topics and prepare what you would like to say. You can also write down some questions you have.
+Listen carefully 
+When other people are speaking, it is important to pay full attention. This means you should not look at your phone or computer for other things. It shows respect for the speaker. It also helps you understand all the information and ideas.
+Speak clearly 
+When it is your turn to talk, do not speak too fast. Try to speak clearly so everyone can understand you. If you need a moment to think, it is ok to take a short pause. You should also use simple words to explain your ideas. 
+Stay on topic 
+Meetings have a specific purpose, so try to talk only about the things on the agenda. If you start talking about other subjects, the meeting can become too long. 
+Take notes 
+Always have a notebook and pen with you. Write down important points from the discussion. Also, you can write any new tasks that you need to do after the meeting. These notes will help you remember what to do next and make sure you do not forget anything important.
+What should you do before the meeting?
+
+правильный ответ:
+++ 		: Read agenda and prepare what you want to say
+
+ошибки:
+-- Make sure your telephone is on
+-- Talk to the boss about the agenda
+-- Talk to your colleagues about the weekend plans
+-- Make sure you have a notebook
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen the audio and answer the question
+What does the audio talk about?
+
+[ mp3/hh_eng_A2_02.mp3 ]
+
+Hello, I am Tom Brown, a manager at Citi Solutions Company. We are growing and we are looking for new people. So what kind of person are we looking for? First, we need someone reliable. This means you have to come to work on time and finish your tasks. Next, you have to be a team player. In our office, we work together on projects. It is important to help your colleagues and share ideas. Another important thing is a positive attitude. Work can sometimes be difficult, so we want someone who stays calm and tries to find a solution. We also need good communicators. You have to listen carefully and explain your ideas clearly to the team. Finally, we value someone who is organized. You have to plan your day and manage your time well. So if you are reliable, a team player, positive, a good communicator, and organized, you are the right person for us.
+
+правильный ответ:
+++ 		: Qualities and skills of new employees
+
+ошибки:
+-- The salary of the company workers
+-- The work time in the company
+-- A new project in the company
+-- The history of the company
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen the audio and answer the question
+Why does the manager say that being positive is important?
+
+[ mp3/hh_eng_A2_02.mp3 ]
+
+Hello, I am Tom Brown, a manager at Citi Solutions Company. We are growing and we are looking for new people. So what kind of person are we looking for? First, we need someone reliable. This means you have to come to work on time and finish your tasks. Next, you have to be a team player. In our office, we work together on projects. It is important to help your colleagues and share ideas. Another important thing is a positive attitude. Work can sometimes be difficult, so we want someone who stays calm and tries to find a solution. We also need good communicators. You have to listen carefully and explain your ideas clearly to the team. Finally, we value someone who is organized. You have to plan your day and manage your time well. So if you are reliable, a team player, positive, a good communicator, and organized, you are the right person for us.
+
+правильный ответ:
+++ 		: It helps you to stay calm and find solution
+
+ошибки:
+-- It helps you communicate with colleagues
+-- You can get a higher salary
+-- You can manage your time better
+-- It helps you to work with difficult tasks
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  [ Пояснения ]
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-[Past Simple] Конкретное завершенное действие в прошлом
-
-Утвердительные предложения (Affirmative)
-Правильные: к базовой форме глагола добавляется окончание -ed.
-Пример: work → worked (работал), play → played (играл)
-
-Отрицательные предложения (Negative)
-Строятся по формуле: 
-Подлежащее + did not (didn't) + глагол (в начальной форме).
-В отрицании did берет на себя все «прошлое время», поэтому основной глагол используется без изменений.
-Пример: I didn't play (Я не играл), He didn't go (Он не ходил)
-
-Вопросительные предложения (Interrogative)
-Строятся по формуле: 
-Did + подлежащее + глагол (в начальной форме).
-Пример: Did you play? (Ты играл?), Did he go? (Он ходил?)
+agenda	[əˈjendə] - повестка дня
