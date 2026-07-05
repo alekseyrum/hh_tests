@@ -4,12 +4,20 @@
 #include <algorithm>
 using namespace std;
 
-std::vector<std::string> report(const std::vector<std::string> & lines) 
+std::vector<std::string> report(const std::vector<std::string> & input) 
 {
     std::vector<std::string> vecResult;
 
-    for (auto cc : lines) {
-        std::string_view sv(cc);
+    for (auto cc : input) {
+
+        string workLine;
+        workLine.reserve(cc.length() );
+
+        for(auto  curC : cc ) {        // remove all SPACEs
+            if ( curC != ' ') workLine.push_back( curC );
+        }
+
+        std::string_view sv(workLine);
 
         int delim1 = sv.find("->");
         int delim2 = sv.find("->", delim1+2);

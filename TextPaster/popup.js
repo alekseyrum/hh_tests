@@ -263,12 +263,19 @@ var middle02_text = `#include <sstream>
 #include <algorithm>
 using namespace std;
 
-std::vector<std::string> report(const std::vector<std::string> & lines) 
+std::vector<std::string> report(const std::vector<std::string> & input) 
 {
     std::vector<std::string> vecResult;
 
-    for (auto cc : lines) {
-        std::string_view sv(cc);
+    for (auto cc : input) {
+        string workLine;
+        workLine.reserve(cc.length() );
+
+        for(auto  curC : cc ) {        // remove all SPACEs
+            if ( curC != ' ') workLine.push_back( curC );
+        }
+
+        std::string_view sv(workLine);
 
         int delim1 = sv.find("->");
         int delim2 = sv.find("->", delim1+2);
@@ -315,24 +322,49 @@ var middle03_description = `Вы разрабатываете модуль ан�
 Запись лога имеет следующий вид:
 <service="serviceID" data="dataID" action="readwrite">.
 Нужно определить корректные записи логов сервера.`;
-var middle03_text = `#include <iostream>
+var middle03_text = `
+#include <iostream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <regex>
 
 using namespace std;
 
-struct OpStatus {
-    int read;
-    int write;
+class ServerLogAnalyzer {
+public:
+    explicit ServerLogAnalyzer(const std::vector<std::string>& lines );
+    std::vector<std::string> process() const;
+private:
+    struct Stat { int r{0}, w{0} ; };
+    std::unordered_map<std::string, Stat> stat_; 
 };
 
-std::vector<std::string> report(const std::vector<std::string> & lines) 
+std::vector<std::string> ServerLogAnalyzer::process() const
 {
     std::vector<std::string> vecResult;
-    std::map<string, OpStatus> mStates;
-    std::map<string, OpStatus>::iterator itElem;
 
+    std::vector<std::pair<std::string, Stat>> vec(stat_.begin(), stat_.end());
+    std::sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
+        return a.first < b.first;
+    });
+
+    for (const auto & dd : vec ) {
+        int iWriteLimit = (dd.second.w + dd.second.r) *0.75;
+        if ( dd.second.w >= iWriteLimit) {
+            vecResult.push_back( "Alert! " + dd.first + " has suspicious activity" );
+        } else {
+            vecResult.push_back( "{service=\"" + dd.first + "\",\"read\":" + std::to_string(dd.second.r) + ",\"write\":" + std::to_string(dd.second.w) + "}" );
+        }
+    }
+    if ( vecResult.size() == 0 ) {
+        vecResult.push_back( "none" );
+    }
+    return vecResult;
+}
+
+ServerLogAnalyzer::ServerLogAnalyzer(const std::vector<std::string>& lines )
+{
+    std::unordered_map<std::string, Stat>::iterator itElem;
     std::regex pattern("^<service=\"(\\d{5})\" data=\"(\\w{9})\" action=\"(\\w{4,5})\">"); 
     std::smatch matches;
 
@@ -340,35 +372,23 @@ std::vector<std::string> report(const std::vector<std::string> & lines)
     while ( itLine != lines.end() )
     {
         if (std::regex_search( *itLine , matches, pattern)) {
-            itElem = mStates.find( matches.str(1) );
-            if ( itElem == mStates.end() ) {
-                OpStatus os;
-                os.read = 0;
-                os.write = 0;
-                auto pIns = mStates.insert( { matches.str(1) , os } );
+            // itElem = mStates.find( matches.str(1) );
+            itElem = stat_.find( matches.str(1) );
+            if ( itElem == stat_.end() ) {
+                Stat os;
+                os.r = 0;
+                os.w = 0;
+                auto pIns = stat_.insert( { matches.str(1) , os } );
                 itElem = pIns.first;
             } 
             if ( matches.str(3) == "read") {
-                itElem->second.read++;
+                itElem->second.r++;
             } else if (matches.str(3) == "write") {
-                itElem->second.write++;
+                itElem->second.w++;
             }
         }
         itLine++;
     }
-    // write-out to result:
-    for (const auto & dd : mStates) {
-        int iWriteLimit = (dd.second.write + dd.second.read) *0.75;
-        if ( dd.second.write >= iWriteLimit) {
-            vecResult.push_back( "Alert! " + dd.first + " has suspicious activity" );
-        } else {
-            vecResult.push_back( "{service=\"" + dd.first + "\",\"read\":" + std::to_string(dd.second.read) + ",\"write\":" + std::to_string(dd.second.write) + "}" );
-        }
-    }
-    if ( vecResult.size() == 0 ) {
-        vecResult.push_back( "none" );
-    }
-    return vecResult;
 }`;
 
 
@@ -379,11 +399,13 @@ var middle04_description = `Вы разрабатываете систему м�
 *Price - текущая цена (целое число).
 *ChangeDirection - направление изменения: UP (рост) или DOWN (падение).
 *Timestamp - время изменения в формате ЧЧ:ММ:СС.`;
-var middle04_text = `#include <iostream>
+var middle04_text = `
+#include <iostream>
 #include <vector>
 #include <map>
-#include <chrono>
 #include <regex>
+#include <ctime>
+#include <iomanip>
 
 using namespace std;
 
@@ -411,29 +433,40 @@ std::vector<std::string> report(const std::vector<std::string> & lines)
             continue;
         }
         std::istringstream iss( matches.str(4) );
-        std::chrono::seconds time_val; 
-        iss >> std::chrono::parse("%H:%M:%S", time_val);
+        std::tm tm = { 
+            .tm_sec = 0,  
+            .tm_min = 0,     
+            .tm_hour = 0,  
+            .tm_mday = 1,   
+            .tm_mon = 0,   
+            .tm_year = 2026 - 1900,  
+        };
+
+        iss >> std::get_time(&tm, "%H:%M:%S" );
         if ( iss.fail()) {
             cout << "ERROR time parsing from string:" << matches.str(4) << endl;
             itLine++;
             continue;
         }
+      
+        std::time_t time_t_val = std::mktime(&tm);
+
         int iNewPrice = std::stoi(matches.str(2));
         std::string sPaperName = matches.str(1);
         itPaper = mPapers.find( sPaperName );
         if ( itPaper == mPapers.end() ) {
             AState nS;
             nS.price = iNewPrice;
-            nS.time = time_val;
+            nS.time = time_t_val;
             mPapers.insert( { sPaperName , nS } );
         } else {
             // PAPER already exists
             // cout << "paper exists wit time = " <<  itPaper->second.time << endl;
-            if (itPaper->second.time >= time_val) {
+            if (itPaper->second.time >= time_t_val) {
                 itLine++;
                 continue;
             }
-            itPaper->second.time = time_val;
+            itPaper->second.time = time_t_val;
             if ( matches.str(3) == "UP" ) {
                 vecResult.push_back("{\"Symbol\":\"" + sPaperName + "\",\"Price\":" + std::to_string(iNewPrice) + ",\"Trend\":\"UP\"}" );
             } else {

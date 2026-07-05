@@ -1,14 +1,16 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include <chrono>
 #include <regex>
+#include <ctime>
+#include <iomanip>
 
 using namespace std;
 
 struct AState {
     int price;
-    std::chrono::seconds time;
+    // std::chrono::seconds time;
+    std::time_t time;
 };
 
 std::vector<std::string> report(const std::vector<std::string> & lines) 
@@ -30,29 +32,40 @@ std::vector<std::string> report(const std::vector<std::string> & lines)
             continue;
         }
         std::istringstream iss( matches.str(4) );
-        std::chrono::seconds time_val; 
-        iss >> std::chrono::parse("%H:%M:%S", time_val);
+        std::tm tm = { 
+            .tm_sec = 0,  
+            .tm_min = 0,     
+            .tm_hour = 0,  
+            .tm_mday = 1,   
+            .tm_mon = 0,   
+            .tm_year = 2026 - 1900,  
+        };
+
+        iss >> std::get_time(&tm, "%H:%M:%S" );
         if ( iss.fail()) {
             cout << "ERROR time parsing from string:" << matches.str(4) << endl;
             itLine++;
             continue;
         }
+      
+        std::time_t time_t_val = std::mktime(&tm);
+
         int iNewPrice = std::stoi(matches.str(2));
         std::string sPaperName = matches.str(1);
         itPaper = mPapers.find( sPaperName );
         if ( itPaper == mPapers.end() ) {
             AState nS;
             nS.price = iNewPrice;
-            nS.time = time_val;
+            nS.time = time_t_val;
             mPapers.insert( { sPaperName , nS } );
         } else {
             // PAPER already exists
             // cout << "paper exists wit time = " <<  itPaper->second.time << endl;
-            if (itPaper->second.time >= time_val) {
+            if (itPaper->second.time >= time_t_val) {
                 itLine++;
                 continue;
             }
-            itPaper->second.time = time_val;
+            itPaper->second.time = time_t_val;
             if ( matches.str(3) == "UP" ) {
                 vecResult.push_back("{\"Symbol\":\"" + sPaperName + "\",\"Price\":" + std::to_string(iNewPrice) + ",\"Trend\":\"UP\"}" );
             } else {
