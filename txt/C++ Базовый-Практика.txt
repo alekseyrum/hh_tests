@@ -405,8 +405,8 @@ W1,W2,W3,W4,W5,W6,W7,W8,W9,W10
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <ranges>
 #include <numeric>      // for std::accumulate
+#include <cmath>        // for std::round
 using namespace std;
 
 int processing_input_lines (const std::string & game_ids_line , 
@@ -421,10 +421,13 @@ int processing_input_lines (const std::string & game_ids_line ,
     }
     int sum = std::accumulate( vLoads.begin(), vLoads.end(), 0);
     float fAverage = (float)sum / vLoads.size();
-    auto result_view = vLoads
-                     | std::views::filter( [&fAverage](int n) { return n < fAverage; } );
-    auto count = std::ranges::distance(result_view);
-    int iLessCount = ((float)count/vLoads.size())*100;
+
+    int counter = 0;
+    for (auto curVal : vLoads) {
+        if (curVal < fAverage ) counter++;
+    }
+
+    int iLessCount = std::round( ((float)counter/vLoads.size())*100 );
     return iLessCount;
 }
 
@@ -556,3 +559,18 @@ void CandidateCatalog::PrintCandidates() {
         std::cout << curCandid.name << " " << curCandid.surname << " " <<  curCandid.family << " - " << curCandid.ratio << endl;
     }
 }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Задача 6
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Планирование поездки
+Легкий Обработка строковых данных
+Крупный заказчик планирует проведение выездного мероприятия, которое должна организовать туристическая фирма.
+Отдел бронирования туристической фирмы подготовил информацию об отелях, с которыми заключен партнерский договор, в формате: НазваниеОтеля,Город.
+Разработайте метод, который находит все города, в которых количество отелей максимально, чтобы можно было сформировать предложение для заказчика.
+Два названия города считаютсяя одинаковыми, если они совпадают посимвольно при переводе в нижний регистр.
+Если найдется несколько городов с одинаковым масимальным количеством отелей, то вывести города в отсортированные по алфавиту.
+
+ФОРМАТ ВВОДА
+Две строки, от 1 до 1000 элементов в каждой.
+Первая строка входных данных содержит список городов 

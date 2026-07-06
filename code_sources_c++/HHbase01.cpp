@@ -7,11 +7,11 @@
 using namespace std;
 
 std::vector<std::string> PrintCorrectCandidates(
-const std::string & scoreInput ,
+const std::string & scoresInput ,
 const std::string & namesInput )
 {
     std::string sWord;
-    std::stringstream stInput(scoreInput);
+    std::stringstream stInput(scoresInput);
 
     vector<int> vecScores;
     while ( std::getline(stInput,sWord, ',' )) {

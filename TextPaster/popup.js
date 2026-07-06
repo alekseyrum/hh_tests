@@ -20,11 +20,11 @@ var base01_text = `#include <iostream>
 using namespace std;
 
 std::vector<std::string> PrintCorrectCandidates(
-const std::string & scoreInput ,
+const std::string & scoresInput ,
 const std::string & namesInput )
 {
     std::string sWord;
-    std::stringstream stInput(scoreInput);
+    std::stringstream stInput(scoresInput);
 
     vector<int> vecScores;
     while ( std::getline(stInput,sWord, ',' )) {
@@ -90,7 +90,7 @@ var base03_text = `#include <iostream>
 
 using namespace std;
 
-class Candidate {
+class manInfo {
 public:
     std::string name;
     std::string surname;
@@ -99,18 +99,18 @@ public:
 };
 
 std::vector<std::string>
-get_candidates_catalog( const std::string & rating_line ,
+get_candidates_catalog( const std::string & ratings_line ,
                         const std::string names_line) {
-    vector<Candidate> vData;
+    vector<manInfo> vData;
 
     std::string sBall;
     std::string sPerson;
-    std::stringstream streamScore(rating_line);
+    std::stringstream streamScore(ratings_line);
     std::stringstream streamFIO(names_line);
   
     while ( std::getline(streamScore,sBall, ',' ) && std::getline(streamFIO,sPerson, ',' ) ) {
         std::stringstream streamFields(sPerson);
-        Candidate newCandid;
+        manInfo newCandid;
         newCandid.ratio = std::stoi(sBall);
         std::getline(streamFields,newCandid.name, ':' );
         std::getline(streamFields,newCandid.surname, ':' );
@@ -119,7 +119,7 @@ get_candidates_catalog( const std::string & rating_line ,
     }
     vector<string> vecResult;
 
-    for ( Candidate curCandid : vData) {
+    for ( manInfo curCandid : vData) {
         string sOut = curCandid.name;
         sOut += " " ; 
         sOut += curCandid.surname; 
@@ -133,11 +133,12 @@ get_candidates_catalog( const std::string & rating_line ,
 }`;
 
 var base04_description = `Платформа онлайн-дистрибуции компьютерных игр сформировала список названий игр и количества скачиваний за год. Для анализа качества игр, размещенных на платформе, нужно определить соотношение востребованных и невостребованных игр. Рассчитайте, какой процент игр от общего количества представленных на платформе игр имеет количество скачиваний строго меньше среднего значения.`;
-var base04_text = `#include <iostream>
+var base04_text = `
+#include <iostream>
 #include <sstream>
 #include <vector>
-#include <ranges>
 #include <numeric>      // for std::accumulate
+#include <cmath>        // for std::round
 using namespace std;
 
 int processing_input_lines (const std::string & game_ids_line , 
@@ -152,12 +153,16 @@ int processing_input_lines (const std::string & game_ids_line ,
     }
     int sum = std::accumulate( vLoads.begin(), vLoads.end(), 0);
     float fAverage = (float)sum / vLoads.size();
-    auto result_view = vLoads
-                     | std::views::filter( [&fAverage](int n) { return n < fAverage; } );
-    auto count = std::ranges::distance(result_view);
-    int iLessCount = ((float)count/vLoads.size())*100;
+
+    int counter = 0;
+    for (auto curVal : vLoads) {
+        if (curVal < fAverage ) counter++;
+    }
+
+    int iLessCount = std::round( ((float)counter/vLoads.size())*100 );
     return iLessCount;
-}`;
+}
+`;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 // Средний уровень: 
