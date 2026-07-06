@@ -946,5 +946,81 @@ std::vector<std::string> ProcessingNeuroData::process(const std::vector<std::str
     return vResult;
 }`;
 
-var hard07_description = `none`;
-var hard07_text = ``;
+var hard07_description = `Для контроля температуры рабочего носителя, циркулирующего в системе охлаждения суперкомпьютера банка, ведется сбор данных от датчиков. Данные записываются в формате временного ряда, содержащего записи вида:
+TimeStamp:Value.`;
+var hard07_text = `
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+std::vector<std::string> processingInputLines(const std::string& intervalLine,
+                                                const std::vector<std::string>& inputLines)
+{
+    std::istringstream iss( intervalLine );
+    std::tm tm1 = {};
+    std::tm tm2 = {};
+
+    iss >> std::get_time(&tm1, "%d:%m:%Y:%H:%M:%S" );
+    iss.ignore(1);
+    iss >> std::get_time(&tm2, "%d:%m:%Y:%H:%M:%S" );
+
+    std::time_t time_1 = std::mktime(&tm1);
+    std::time_t time_2 = std::mktime(&tm2);
+ 
+    float fMin = 0.0;
+    float fMax = 0.0;
+    float fSum = 0.0;
+    int iValCount = 0;
+
+    std::vector<std::string>::const_iterator itLine = inputLines.begin();
+    for ( auto curLine : inputLines) {
+        iss.clear();  
+        iss.str( curLine ); 
+
+        iss >> std::get_time(&tm1, "%d:%m:%Y:%H:%M:%S" );
+        std::time_t lineTime = std::mktime(&tm1);
+        if (lineTime < time_1 || lineTime > time_2) continue;
+
+        int delimPos = curLine.find(';');
+        float fVal = std::stof( curLine.substr(delimPos+1, curLine.length() - delimPos - 1) );
+     
+        fSum += fVal;
+        if ( iValCount == 0 ) {
+            fMin = fMax = fVal;
+            iValCount++;
+            continue;
+        }
+        if ( fVal < fMin ) fMin = fVal;
+        if ( fVal > fMax ) fMax = fVal;
+        iValCount++;
+    }
+    float fAverage = 0.0 ; 
+    if (iValCount == 0) { return {"none"}; }
+
+    fAverage = fSum/iValCount;
+
+    vector<string> vResult;
+    std::stringstream stream;
+    stream << std::fixed << std::setprecision(3) << fMax ;
+    std::string str = stream.str();
+    vResult.push_back( stream.str() );
+
+    stream.str(""); 
+    stream << fMin ; 
+    vResult.push_back( stream.str() );
+
+    stream.str(""); 
+    stream << fAverage ; 
+    vResult.push_back( stream.str() );
+
+    return vResult;
+}`;
+
+var hard08_description = `none`;
+var hard08_text = ``;
