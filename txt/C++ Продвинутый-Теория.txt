@@ -896,3 +896,122 @@ public:
 -- Возможна взаимоблокировка (deadlock), потому что используется std::mutex
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Код, представленный ниже, претерпел повреждения при распаковке из архива, часть его была нечитабельной, и ее было решено удалить. Было известно, что код должен расширять массив на 3 элемента справа, вставляя -1 на места новых ячеек. Что необходимо дописать в строке 9 для восстановления работоспособности программы?
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <vector>
+int main()
+{
+    std::vector<int> v{1, 2, 3};
+    std::fill_n(____, 3, -1);
+} 
+Варианты ответа:
+-- std::forward(v.begin())
+-- v.rbegin()
+-- v.begin()
+-- v.end()
+-- std::back_inserter(v)
+
+
+
+Код, представленный ниже, претерпел повреждения при распаковке из архива, часть его была нечитабельной, и ее было решено удалить. Было известно, что код должен расширять массив на 3 элемента справа, вставляя -1 на места новых ячеек. Что необходимо дописать в строке с пропуском для восстановления работоспособности программы?
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <vector>
+int main()
+{
+    std::vector<int> v{1, 2, 3};
+    std::fill_n(____, 3, -1);
+} 
+
+правильный ответ:
+++      : std::back_inserter(v)
+
+ошибки:
+-- std::forward(v.begin())
+-- v.rbegin()
+-- v.begin()
+-- v.end()
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+В приведенном коде присутствует зависимость класса верхнего уровня Switch от класса нижнего уровня LightBulb, что является ошибкой. Выберите из предложенных вариантов тот, который исправляет эту ошибку.
+class LightBulb {
+public:
+    void turnOn() { cout << "LightBulb: ON" << endl; }
+    void turnOff() { cout << "LightBulb: OFF" << endl; }
+};
+class Switch {
+private:
+    LightBulb bulb;
+public:
+    void operate(bool turnOn) {
+        if (turnOn) bulb.turnOn();
+        else bulb.tunrOff();
+    }
+};
+
+правильный ответ:
+++      : Ввести интерфейс ISwitchable и зависеть от него
+
+ошибки:
+-- Передать LightBulb в Switch через конструктор
+-- Сделать LightBulb синглтоном
+-- Добавить второй метод operate() с параметром LightBulb
+-- Сделать LightBulb дружественным методом
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Укажите, какая строка должна быть на месте пропуска, чтобы исключение было корректно обработано и в консоль было бы выведено Custom!:
+#include <iostream>
+struct MyException : public std::exception {
+    const char* what() const noexcept { return "Custom!"; }
+};
+int main() {
+    try {
+        ____
+    } catch (const std::exception& e) {
+        std::cout << e.what();
+    }
+    return 0;
+}
+
+правильный ответ:
+++      : throw MyException()
+
+ошибки:
+-- throw std::exception()
+-- throw Default
+-- throw new MyException()
+-- throw "Custom!"
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите из предложенных вариантов тот, который правильно описывает поведение данного кода:
+#include <mutex>
+#include <iostream>
+class Counter {
+    std::recursive_mutex mtx;
+    int count = 0;
+public:
+    void increment() {
+        std::lock_guard<std::mutex> lock(mtx);
+        count++;
+    }
+    void doubleIncrement() {
+        std::lock_guard<std::mutex> lock(mtx);
+        increment();
+    }
+}
+
+правильный ответ:
+++      : Ошибка компиляции из-за неправильного использования recursive_mutex
+
+ошибки:
+-- Программа аварийно завершится, так как recursive_mutex не может использоваться в данном контексте
+-- recursive_mutex откладывает блокировку, позволяя заблокировать мьютекс позже
+-- Рекурсивный вызов increment() требует recursive_mutex, иначе будет deadlock
+-- Ошибка времени выполнения из-за переполнения стека
+
+*Несовместимость типов: В классе Counter объявлен мьютекс типа std::recursive_mutex однако в строках std::lock_guard<std::mutex> lock(mtx); используется обычный std::lock_guard, шаблонный параметр которого жестко задан как std::mutex
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
