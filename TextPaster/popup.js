@@ -164,6 +164,58 @@ int processing_input_lines (const std::string & game_ids_line ,
 }
 `;
 
+var base05_description = `Крупный заказчик планирует проведение выездного мероприятия, которое должна организовать туристическая фирма.
+Отдел бронирования туристической фирмы подготовил информацию об отелях, с которыми заключен партнерский договор, в формате: НазваниеОтеля,Город.`;
+var base05_text = `
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <cmath>        // for std::round
+#include <map>
+#include <algorithm>
+using namespace std;
+
+std::vector<std::string>
+find_popular_cities (   const std::string & cities_line, 
+                        const std::string& hotels_line ) 
+{
+    std::string sWorkStr = cities_line;
+    std::transform(sWorkStr.begin(), sWorkStr.end(), sWorkStr.begin(), 
+        [](unsigned char c) { return std::tolower(c); } );
+
+    std::stringstream sDwnl(sWorkStr);
+    std::string sVal;
+
+    map<string, int> mapCities;
+    map<string, int>::iterator itCity;
+    while ( std::getline(sDwnl,sVal, ',' ) ) {
+        itCity = mapCities.find(sVal);
+        if ( itCity == mapCities.end() ) {
+            mapCities.insert( {sVal , 1 } );
+        } else {
+            itCity->second++;
+        }
+    }
+
+    std::vector<std::pair<std::string, int>> vec(mapCities.begin(), mapCities.end());
+    std::sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
+        return a.second > b.second;
+    });
+
+    int iMaxCount = vec[0].second;
+    int iCurPos = 0;
+    std::vector<std::string> retRes;
+    while ( iCurPos < vec.size() && vec[iCurPos].second == iMaxCount ) {
+        std::string sCityName = "" ;
+        sCityName += std::toupper( vec[iCurPos].first[0] ) ; 
+        sCityName += vec[iCurPos].first.substr(1,vec[iCurPos].first.length()-1);
+        retRes.push_back( sCityName + " " + std::to_string(vec[iCurPos].second) );
+        iCurPos++;
+    }
+    return retRes;
+}
+`;
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 // Средний уровень: 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
