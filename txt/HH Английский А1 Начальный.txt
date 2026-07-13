@@ -383,8 +383,59 @@ Oh, I am at home at last. It was very, very busy today. I had three meetings in 
 -- To work with documents
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+____ are from the same office.
 
-           
+правильный ответ:
+++ 		: We
+
+ошибки:
+-- I
+-- She
+-- He
+-- Them
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+They ____ at the meeting yesterday.
+
+правильный ответ:
+++ 		: were
+
+ошибки:
+-- are
+-- is
+-- be
+-- was
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+My new laptop is ____ than the old one.
+
+правильный ответ:
+++ 		: faster
+
+ошибки:
+-- less fast
+-- more fast
+-- fastest
+-- fast
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+I ____ my friends after work on Friday.
+
+правильный ответ:
+++ 		: meet
+
+ошибки:
+-- watch
+-- look
+-- go
+-- take
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 [Past Simple] Конкретное завершенное действие в прошлом
 
 Утвердительные предложения (Affirmative)
@@ -401,3 +452,6 @@ Oh, I am at home at last. It was very, very busy today. I had three meetings in 
 Строятся по формуле: 
 Did + подлежащее + глагол (в начальной форме).
 Пример: Did you play? (Ты играл?), Did he go? (Он ходил?)
+
+. . . . . .
+Слово more используется только с длинными прилагательными (состоящими из двух и более слогов), например: more expensive (дороже).

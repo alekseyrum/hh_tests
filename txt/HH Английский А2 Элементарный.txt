@@ -360,6 +360,73 @@ Hello, I am Tom Brown, a manager at Citi Solutions Company. We are growing and w
 -- It helps you to work with difficult tasks
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+He works as a ____ in a big company.
+
+правильный ответ:
+++ 		: lawyer
+
+ошибки:
+-- notice
+-- team
+-- colleague
+-- break
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+My colleague is ____ stressed because she works too much.
+
+
+правильный ответ:
+++ 		: often
+
+ошибки:
+
+-- twice
+-- ever
+-- int the evening
+-- late
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+Yesterday, I ____ my boss to tell him about the new project.
+
+правильный ответ:
+++ 		: called
+
+ошибки:
+-- calling
+-- calls
+-- is call 
+-- call
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+We ____ change the work schedule as you know. We discussed it at the last meeting.
+
+правильный ответ:
+++ 		: are going to
+
+ошибки:
+-- going to
+-- will to
+-- will
+-- are going
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант
+____ I use the company laptop for my presentation?
+
+правильный ответ:
+++ 		: May
+
+ошибки:
+-- Have
+-- Able
+-- Shouldn't
+-- Will be
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  [ Пояснения ]
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 agenda	[əˈjendə] - повестка дня
