@@ -131,5 +131,164 @@ What is the main topic of the text?
 -- 
 -- [ ... видео оборвалось ... ]
 -- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+During the training session next Monday, the instructor ____ the new software.
+
+правильный ответ:
+++ 		: will be demonstrating
+
+ошибки:
+-- demonstrates
+-- is demonstrating
+-- will demonstrate
+-- was demonstrating
+
+*Future Continuous: Маркер времени указывает на конкретный ограниченный период в будущем: (во время тренинга в следующий понедельник). То есть в этот определенный момент в будущем действие будет находиться в процессе своего совершения, а не просто произойдет как факт.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+All new employees have to complete the ____ online training on data security, it's not optional.
+
+правильный ответ:
+-- compulsory
+
+ошибки:
+-- cooperative
+-- flexible
+-- reliable
+-- voluntary
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+He is a highly ____ manager who excels at motivating his team through clear goals and regular feedback.
+
+правильный ответ:
+++ 		: supportive
+
+ошибки:
+-- independent
+-- obstinate
+-- demanding
+-- indifferent
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+The project files are missing from the shared folder. Someone ____ them accidently.
+
+правильный ответ:
+++ 		: could have deleted
+
+ошибки:
+-- might delete
+-- must delete
+-- should have deleted
+-- can be deleting
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+We are looking for a candidate ____ problem-solving skills are exceptional.
+
+правильный ответ:
+++ 		: whose
+
+ошибки:
+-- that
+-- which
+-- where
+-- who
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+By 5 p.m. today, she ____ all the job interviews for the open position.
+
+правильный ответ:
+++ 		: will have conducted
+
+ошибки:
+-- conducts
+-- will be conducted
+-- will be conducting
+-- has conducting
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Problem-Solving: a Key Soft Skill 
+Problem-solving is a core soft skill that involves identifying challenges, analyzing information, and developing effective solutions. In the workplace, this ability is crucial for overcoming daily problems, improving processes, and driving innovation. Employers highly value this skill as it enables employees to work independently, adapt to change, and contribute directly to organizational success. 
+Effective problem-solving is not just about finding any solution, but about finding the best one. It requires a structured approach: first, clearly understanding the problem. Next, gathering relevant data to find out the root cause. Then, brainstorming multiple potential solutions before evaluating their pros and cons to select the best option. Finally, putting the chosen solution into practice and reviewing the results is key to learning and improvement. 
+This skill combines several abilities, including critical thinking to analyze situations logically, creativity to find new ideas, and decision-making to choose a course of action. It also requires communication skills to work with others and explain solutions. 
+You can develop your problem-solving skills through practice. Start by breaking down complex issues into smaller parts. Learn to ask clarifying questions and actively listen to different opinions to gain a full understanding. Practicing techniques like brainstorming in a team or using simple mind maps can be very effective. Reflecting on past challenges is also a powerful way to learn your approach. 
+What is the main idea of the text?
+
+правильный ответ:
+-- Problem-solving is a structured skill enabling employees to overcome challenges at work 
+
+ошибки:
+-- Problem-solving is an innate talent that cannot be developed through training or practice
+-- This skill is mainly about using data and logic to find a single correct answer to any issue
+-- Problem-solving is a skill focused on brainstormin new ideas without a clear process
+-- The only effective way to solve workplace problem is by working in a team 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Problem-Solving: a Key Soft Skill 
+Problem-solving is a core soft skill that involves identifying challenges, analyzing information, and developing effective solutions. In the workplace, this ability is crucial for overcoming daily problems, improving processes, and driving innovation. Employers highly value this skill as it enables employees to work independently, adapt to change, and contribute directly to organizational success. 
+Effective problem-solving is not just about finding any solution, but about finding the best one. It requires a structured approach: first, clearly understanding the problem. Next, gathering relevant data to find out the root cause. Then, brainstorming multiple potential solutions before evaluating their pros and cons to select the best option. Finally, putting the chosen solution into practice and reviewing the results is key to learning and improvement. 
+This skill combines several abilities, including critical thinking to analyze situations logically, creativity to find new ideas, and decision-making to choose a course of action. It also requires communication skills to work with others and explain solutions. 
+You can develop your problem-solving skills through practice. Start by breaking down complex issues into smaller parts. Learn to ask clarifying questions and actively listen to different opinions to gain a full understanding. Practicing techniques like brainstorming in a team or using simple mind maps can be very effective. Reflecting on past challenges is also a powerful way to learn your approach. 
+
+According to the text, how can someone develop their problem-solving skills?
+
+правильный ответ:
+++ 		: By practising, for example, taking into consideration past experience
+
+ошибки:
+-- By being trained in formal courses offered by their employer
+-- By avoiding difficult problems to prevent making mistakes
+-- By focusing on their own ideas and avoiding brainstorming sessions
+-- By specializing deeply in one area to become an expert
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question.
+What is the main idea of the podcast?
+
+[ mp3/hh_eng_B2_02.mp3 ]
+Hello, today we'll talk about presenting startups. Well, the first thing you should remember is that it isn't just about sharing an idea. It's about telling a compelling story that connects with your audience, whether they are investors, partners, or customers. Let's break down how to make your presentation powerful.
+First, start with a strong hook. In the first 30 seconds, you must answer, what problem are you solving, and why does it matter? Make it relatable. Say, imagine this common frustration. Our solution fixes that. Next, clearly explain your solution. Avoid technical jargon. Describe what you offer in simple terms and highlight your unique value. What makes you different from others? This is your secret sauce. Then, introduce your business model. How will you make money? Be direct. Use phrases like we generate revenue through, or our primary customers are. Also, briefly show you understand your market. Mention its size and your target customer. Now, talk about your team. Briefly state why you and your co-founders are the right people to execute this vision. Confidence here builds trust. Finally, finish with a clear ask. What do you need? Funding? A partnership? State it clearly. And remember, your delivery is key. Practice until it feels natural. Maintain eye contact and show your passion. Your energy sells the vision. Thank you. Now go and tell your story with confidence.
+
+правильный ответ:
+++ 		: How to deliver a pitch with clear structure and confidence
+
+ошибки:
+-- How to use jargon to show expertise
+-- How to prioritize team experience over the idea
+-- How to focus on detailed financial forecasts
+-- How to impress investors with an elevator pitch
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question.
+According to the speaker, what is the purpose of the first 30 seconds of a presentation?
+
+[ mp3/hh_eng_B2_02.mp3 ]
+Hello, today we'll talk about presenting startups. Well, the first thing you should remember is that it isn't just about sharing an idea. It's about telling a compelling story that connects with your audience, whether they are investors, partners, or customers. Let's break down how to make your presentation powerful.
+First, start with a strong hook. In the first 30 seconds, you must answer, what problem are you solving, and why does it matter? Make it relatable. Say, imagine this common frustration. Our solution fixes that. Next, clearly explain your solution. Avoid technical jargon. Describe what you offer in simple terms and highlight your unique value. What makes you different from others? This is your secret sauce. Then, introduce your business model. How will you make money? Be direct. Use phrases like we generate revenue through, or our primary customers are. Also, briefly show you understand your market. Mention its size and your target customer. Now, talk about your team. Briefly state why you and your co-founders are the right people to execute this vision. Confidence here builds trust. Finally, finish with a clear ask. What do you need? Funding? A partnership? State it clearly. And remember, your delivery is key. Practice until it feels natural. Maintain eye contact and show your passion. Your energy sells the vision. Thank you. Now go and tell your story with confidence.
+правильный ответ:
+++ 		: To state the problem being solved and why it is important
+
+ошибки:
+-- To demonstrate the product functionality with a live demo
+-- To outline the company's projected revenue for the next quarter
+-- To present a detailed analysis of the competitive market
+-- To introduce all team members and their qualifications
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+compulsory [комполсори] - принудительный, обязательный, вынужденный
+contribute [контрибьют] - способствовать, содействовать, сотрудничать
+pros and cons [прос энд конс] - плюсы и минусы, за и против
+compelling [компэллинг] - убедительный, неотразимый, привлекательный
+frustration [фрустрэйшн] - разочарование, недовольство, расстройство
+revenue [рэвэню] - выручка, прибыль, доход
+pitch [питч] - подача; короткая презентация
 
