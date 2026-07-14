@@ -434,4 +434,64 @@ We have received your application for the job. What does 'application' mean in t
 -- A computer program
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Sarah ____ an email to the client an hour ago, but hasn't received a reply yet.
 
+правильный ответ:
+++ 		: sent		(Past Simple)
+
+ошибки:
+-- is sending
+-- has sent
+-- sended
+-- will send
+
+*Маркер времени an hour ago (час назад) четко указывает на конкретный момент в прошлом, который уже завершился. В таких случаях всегда используется Past Simple.
+Present Perfect отвечает на вопрос «Что сделано?» (акцент на результат).
+Past Simple отвечает на вопрос «Когда это произошло?» (акцент на время).
+Если в предложении есть четкий ответ на вопрос «Когда?» (и это время уже прошло) — Present Perfect использовать нельзя.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Select the sentence where 'arrange' is used correctly.
+
+правильный ответ:
+++ 		: Can you arrange a meeting with the logistics team?
+
+ошибки:
+-- They arranged a deadline to be next week.
+-- She is arranging the client about the delay.
+-- We need to arrange the data into the new system.
+-- He arranged the report on the manager's desk.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+You ____ a confirmation email if your registration is successful.
+
+правильный ответ:
+++ 		: will get
+
+ошибки:
+
+-- get
+-- would get
+-- got
+-- has got
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Mary ____ a video conference with the Singapore office at 9 a.m. tomorrow.
+
+правильный ответ:
+++ 		: is hosting
+
+ошибки:
+-- will be host
+-- hosts
+-- hosted
+-- was hosting
+
+*Present Continuous (is hosting) очень часто используется для выражения запланированных действий в будущем, особенно когда речь идет о деловых встречах, договоренностях и календарных событиях (фиксированное время at 9 a.m. tomorrow). В таких контекстах это самый естественный и распространенный вариант в современном английском языке.
+в русском языке мы тоже часто используем настоящее время для запланированных дел на будущее (например: «Завтра я иду к врачу»).
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

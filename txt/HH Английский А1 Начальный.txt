@@ -435,6 +435,32 @@ I ____ my friends after work on Friday.
 -- take
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+He is the leader of our team. He is our ____ .
+
+правильный ответ:
+++ 		: manager
+
+ошибки:
+-- friend 
+-- secretary
+-- assistant
+-- client
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Выберите правильный вариант.
+The manager ____ us some time to finish the project at the last meeting.
+
+правильный ответ:
+++ 		: gave
+
+ошибки:
+-- gives
+-- give
+-- gived
+-- giving
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 [Past Simple] Конкретное завершенное действие в прошлом
 
