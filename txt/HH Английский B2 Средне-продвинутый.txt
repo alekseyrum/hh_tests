@@ -273,6 +273,7 @@ According to the speaker, what is the purpose of the first 30 seconds of a prese
 [ mp3/hh_eng_B2_02.mp3 ]
 Hello, today we'll talk about presenting startups. Well, the first thing you should remember is that it isn't just about sharing an idea. It's about telling a compelling story that connects with your audience, whether they are investors, partners, or customers. Let's break down how to make your presentation powerful.
 First, start with a strong hook. In the first 30 seconds, you must answer, what problem are you solving, and why does it matter? Make it relatable. Say, imagine this common frustration. Our solution fixes that. Next, clearly explain your solution. Avoid technical jargon. Describe what you offer in simple terms and highlight your unique value. What makes you different from others? This is your secret sauce. Then, introduce your business model. How will you make money? Be direct. Use phrases like we generate revenue through, or our primary customers are. Also, briefly show you understand your market. Mention its size and your target customer. Now, talk about your team. Briefly state why you and your co-founders are the right people to execute this vision. Confidence here builds trust. Finally, finish with a clear ask. What do you need? Funding? A partnership? State it clearly. And remember, your delivery is key. Practice until it feels natural. Maintain eye contact and show your passion. Your energy sells the vision. Thank you. Now go and tell your story with confidence.
+
 правильный ответ:
 ++ 		: To state the problem being solved and why it is important
 
@@ -281,6 +282,73 @@ First, start with a strong hook. In the first 30 seconds, you must answer, what 
 -- To outline the company's projected revenue for the next quarter
 -- To present a detailed analysis of the competitive market
 -- To introduce all team members and their qualifications
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Please, set a clear ____ for the first draft so the team knows when their work is due.
+
+правильный ответ:
+++ 		: deadline
+
+ошибки:
+-- feedback
+-- database
+-- invoice
+-- receipt
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+He decided to ____ the job offer because the salary was too low.
+
+правильный ответ:
+++ 		: turn down		(отклонить, отвергнуть)
+
+ошибки:
+-- call off				(отменять, прекращать)
+-- come up with			(предлагать, придумывать)
+-- put off				(откладывать, переносить)
+-- look into			(изучать, исследовать)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+He admitted that he ____ the mistake.
+
+правильный ответ:
+-- had made
+
+ошибки:
+-- would make
+-- has made
+-- will make
+-- made
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+This is the new software platform ____ will streamline all our project management.
+
+правильный ответ:
+++ 		: that
+
+ошибки:
+-- whom
+-- what
+-- where
+-- who
+
+*Местоимение what («что») не используется для связи с конкретным существительным, стоящим перед ним
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+By the end of this quarter, our team ____ all the key performance targets.
+
+правильный ответ:
+++ 		: will have achieved
+
+ошибки:
+-- will achieve
+-- is achieving
+-- achieves
+-- will be achieving
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
