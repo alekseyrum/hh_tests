@@ -1,0 +1,160 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//
+// HH.ru : Английский С1 Продвинутый уровень
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+Between 3 and 5 p.m. tomorrow, the system administrator ____ the encrypted datasets to the secure portal.
+
+правильный ответ:
+++ 		: will be uploading
+
+ошибки:
+-- is uploading
+-- will be uploaded
+-- will upload
+-- will have upload
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+The project was ultimately a success, ____ the initial budget was severely understimated.
+
+правильный ответ:
+++ 		: even though
+
+ошибки:
+-- in spite of
+-- much as
+-- despite
+-- whereas
+
+underestimate [ондээстимэйт] - недооценивать, занижать, приуменьшать
+
+*even though (хотя / несмотря на то что)
+*in spite of / despite (несмотря на): Оба предлога подходят по смыслу, но грамматически здесь невозможны. После in spite of и despite может идти только существительное, местоимение или герундий (например: despite the low budget), но никак не целое предложение со сказуемым.
+*whereas (в то время как / тогда как)
+*much as (как ни / хотя и) Этот союз часто имеет сильный оттенок «хоть я и очень люблю/хочу...» и обычно используется с глаголами чувств (например: Much as I like him, I can't agree). Для безличного описания ситуации с бюджетом проекта он не подходит.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+Before we sign, our legal team must ____ the contract to identify any potential liabilities.
+
+правильный ответ:
+-- look over
+
+ошибки:
+-- break down
+-- point out
+-- draw up
+-- hand in
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+Our annual ____ process involves comparing our customer service response times against those of our main competitors.
+
+правильный ответ:
+++ 		: benchmarking
+
+ошибки:
+-- rapport			(взаимопонимание)
+-- cohesion			(единение)
+-- appraisal		(экспертиза,оценка)
+-- resilience		(устройчивость)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+____ did the CEO acknowledge the market downturn, but he also presented a detailed contingency plan to the board
+
+правильный ответ:
+++ 		: Not only
+
+ошибки:
+-- Only
+-- Little
+-- Hardly
+-- Never
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+The client's payment is two weeks overdue. They ____ overlooked the invoices somehow.
+
+правильный ответ:
+++ 		: might have
+
+ошибки:
+-- should have
+-- can't have
+-- would have
+-- will have
+
+*might have: для выражения слабого или умеренного предположения о действии в прошлом (в значении «возможно», «может быть»)
+*can't have: Выражает твердую уверенность в том, что действие в прошлом точно не происходило («не может быть, чтобы они упустили»)
+*should have: Означает сожаление о невыполненном обязательстве или совет, обращенный в прошлое («им следовало бы упустить из виду»).
+*will have: Используется для выражения уверенного предположения о завершенном действии, но в данном контексте неуверенности (somehow) звучит неестественно
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option to complete the sentence
+If I ____ you were looking for a supplier, I would have recommended an excellent one last month.
+
+правильный ответ:
+++ 		: had known
+
+ошибки:
+-- will know
+-- would know
+-- have known
+-- knew
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+What does the speaker imply in the folowing feedback?
+While I understand the rationale behind your decision to cut costs in this area, we should be mindful of potential impacts on product quality.
+
+правильный ответ:
+++ 		: Cost-cutting might lead to a decline in product quality, so caution is needed.
+
+ошибки:
+-- Cost-cutting will definitely omprove product quality.
+-- The decision to cut costs was wrong and should be reversed immediately.
+-- Cost-cutting has no effect on product quality.
+-- Product quality is not a concern at all.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct passive sentence transformation for the sentence:
+We expect the board to make a final decision by Friday.
+
+правильный ответ:
+++ 		: A final decision is expected to be made by the board by Friday.
+
+ошибки:
+-- A final decision will expect to be made by the board by Friday.
+-- It is expected that a final decision is making by the board by Friday.
+-- We are expected that the board will make a final decision by Friday.
+-- The board will expect that it will make a final decision by Friday.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+[... видео оборвалось ...]
+
+
+
+Read the text and answer the question 
+Effective risk management is fundamental to sustainable success in both business and investing. 
+Many believe the safest path is to avoid situations where loss is possible. However, this approach overlooks the costs of inaction: missed opportunities, loss of value from inflation, and falling behind competitors. True mitigation is not about avoidance but about intelligent engagement. This is done by diversifying, or allocating resources across a mix of assets, industries, or ventures. The goal is to ensure that a failure in one specific area does not put the entire endeavor at risk. It is a foundational tactic to manage unsystematic specific risks. 
+While sophisticated analysis has its place, effective risk management starts with fundamental principles accessible to all. It begins with clear risk identification: systematically listing potential threats, from market downturns and operational failures to regulatory changes. The next step is assessment, evaluating both the likelihood of these events and the potential severity of their impact. This prioritizes resources towards managing the most significant threats. Finally, planning specific responses—whether to accept, avoid, transfer (e.g., via insurance), or mitigate the risk—creates a proactive framework. 
+Ultimately, the focus should shift from pursuing a state with no risk to actively fostering the strength to withstand and adapt to it. This means building buffers, such as maintaining emergency funds or flexible operational plans, to absorb shocks. It also requires continuous monitoring, as risks evolve. By replacing the myths of total avoidance or exclusive expertise with a structured, disciplined process: individuals and organizations can navigate uncertainty with greater confidence and strategic clarity. 
+What is the primary focus of the text?
+
+правильный ответ:
+++ 		: The best solution is structuring a process to mitigate risk, not eliminate it
+
+ошибки:
+-- Complete avoidance of all risks is the best strategy
+-- Diversification alone is sufficient for all risks
+-- Taking high risks is the fastest way to grow
+-- Only expert models can effectively manage risks
+
+overlook [оверлук]	- упускать из виду, игнорировать, пропускать
+mitigation [митигейшн] - смягчение, облегчение, уменьшение
+endeavor [эндевор] - предприятие, проект, деятельность
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+

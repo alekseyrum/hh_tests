@@ -262,6 +262,7 @@ The new production facility will open next year. What does 'facility' mean in th
 -- A special ability or skill
 
 *В английском языке слово facility многозначно, но в контексте промышленности, бизнеса и производства (production facility) оно всегда означает физический объект — здание, завод, фабрику, комплекс или специальное оборудование.
+"Новый производственный объект откроется в следующем году."
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Choose the correct option
@@ -447,8 +448,8 @@ Sarah ____ an email to the client an hour ago, but hasn't received a reply yet.
 -- will send
 
 *Маркер времени an hour ago (час назад) четко указывает на конкретный момент в прошлом, который уже завершился. В таких случаях всегда используется Past Simple.
-Present Perfect отвечает на вопрос «Что сделано?» (акцент на результат).
-Past Simple отвечает на вопрос «Когда это произошло?» (акцент на время).
+*Present Perfect отвечает на вопрос «Что сделано?» (акцент на результат).
+*Past Simple отвечает на вопрос «Когда это произошло?» (акцент на время).
 Если в предложении есть четкий ответ на вопрос «Когда?» (и это время уже прошло) — Present Perfect использовать нельзя.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -522,5 +523,18 @@ She will confirm the meeting by email. What does 'confirm' mean in this context?
 -- To make something easier
 -- To write a long report
 -- To be late for something
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+New employees ____ read the safety regulations on they first day.
+
+правильный ответ:
+-- must
+
+ошибки:
+-- can
+-- could
+-- might
+-- would
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
