@@ -131,16 +131,107 @@ We expect the board to make a final decision by Friday.
 -- We are expected that the board will make a final decision by Friday.
 -- The board will expect that it will make a final decision by Friday.
 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-[... видео оборвалось ...]
+Choose the correct passive sentence transformation for the sentence
+____ his outstanding technical skills, his lack of interpersonal communication hindered his advancement into a leadership role.
 
+правильный ответ:
+++ 		: In spite of
 
+ошибки:
+-- Much as
+-- Even though
+-- Although
+-- Whereas
 
+*lack [лаак] - недостаток, дефицит, отсутствие, нуждаться
+hinder [хиндэ(р)] - мешать, препятствовать, затруднять
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct passive sentence transformation for the sentence
+The innovative proposal gained immediate credibility and widespread suppord after receiving a public ____ from the lead industry analyst.
+
+правильный ответ:
+++ 		: endorsement
+
+ошибки:
+-- appraisal
+-- disclaimer
+-- compliance
+-- probation
+
+*endorsement - Индоссамент — это специальная передаточная надпись на ценной бумаге (векселе, чеке, коносаменте), которая удостоверяет переход всех или части прав по этому документу к другому лицу.
+*disclaimer - Дисклеймер — это официальное заявление, в котором автор или компания предупреждают аудиторию о рисках, снимают с себя ответственность за возможные последствия использования информации или сообщают важные условия использования продукта.
+*compliance - Комплаенс (от англ. compliance — соответствие, согласие) — это система мер, процедур и внутреннего контроля компании, направленная на то, чтобы ее деятельность полностью соответствовала требованиям законов, нормативных актов, отраслевых стандартов и внутренних корпоративных правил
+*probation - Пробация — это система государственной поддержки и контроля для осужденных и освободившихся из мест лишения свободы. Её главная цель — помочь человеку вернуться к нормальной жизни, восстановить документы, найти работу, получить медицинскую или психологическую помощь и предотвратить повторные преступления
+
+*appraisal (экспертиза,оценка)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct passive sentence transformation for the sentence
+____ did she suspect that the promotion was actually a result of her consistent hard work.
+
+правильный ответ:
+++ 		: Little
+
+ошибки:
+-- Rarely
+-- No sooner
+-- Never
+-- Only then
+
+*Little — в начале предложения используется для усиления и означает «она и не подозревала» / «меньше всего она подозревала». 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct passive sentence transformation for the sentence
+The main server was completely offline during the maintence window, so any unautorised changes to the central database ____ occured at that time.
+
+правильный ответ:
+++ 		: can't have
+
+ошибки:
+-- must have
+-- should have
+-- could have
+-- might have
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct passive sentence transformation for the sentence
+The budget will be approved providing the finance committee ____ all the necessary documentation.
+
+правильный ответ:
+++ 		: receives
+
+ошибки:
+-- will receive
+-- would receive
+-- received
+-- have received
+
+*в данном предложении слово providing (или providing that) выступает в роли союза «при условии, что»/«если» и вводит придаточное условие (Condition Clause). По правилам английской грамматики (First Conditional), в придаточных частях условия и времени вместо будущего времени используется настоящее (Present Simple), даже если речь идет о будущем. Так как the finance committee (финансовый комитет) согласуется с глаголом в единственном числе, выбирается форма receives.
+*will receive — будущее время (Future Simple) нельзя использовать в придаточных условия после союзов if, providing, as long as.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Choose the correct option
+Which sentence correctly uses the passive voice to report what was said?
+
+правильный ответ:
+-- It was said the client had signed the contract last Friday.
+
+ошибки:
+-- The contract is said to be signed last Friday by the client.
+-- The client is said to sign the contract last Friday.
+-- The client was said to have signed the contract last Friday.
+-- It is being said the client signs the contract.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Read the text and answer the question 
 Effective risk management is fundamental to sustainable success in both business and investing. 
 Many believe the safest path is to avoid situations where loss is possible. However, this approach overlooks the costs of inaction: missed opportunities, loss of value from inflation, and falling behind competitors. True mitigation is not about avoidance but about intelligent engagement. This is done by diversifying, or allocating resources across a mix of assets, industries, or ventures. The goal is to ensure that a failure in one specific area does not put the entire endeavor at risk. It is a foundational tactic to manage unsystematic specific risks. 
 While sophisticated analysis has its place, effective risk management starts with fundamental principles accessible to all. It begins with clear risk identification: systematically listing potential threats, from market downturns and operational failures to regulatory changes. The next step is assessment, evaluating both the likelihood of these events and the potential severity of their impact. This prioritizes resources towards managing the most significant threats. Finally, planning specific responses—whether to accept, avoid, transfer (e.g., via insurance), or mitigate the risk—creates a proactive framework. 
 Ultimately, the focus should shift from pursuing a state with no risk to actively fostering the strength to withstand and adapt to it. This means building buffers, such as maintaining emergency funds or flexible operational plans, to absorb shocks. It also requires continuous monitoring, as risks evolve. By replacing the myths of total avoidance or exclusive expertise with a structured, disciplined process: individuals and organizations can navigate uncertainty with greater confidence and strategic clarity. 
+
 What is the primary focus of the text?
 
 правильный ответ:
@@ -157,4 +248,99 @@ mitigation [митигейшн] - смягчение, облегчение, ум
 endeavor [эндевор] - предприятие, проект, деятельность
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Effective risk management is fundamental to sustainable success in both business and investing. 
+Many believe the safest path is to avoid situations where loss is possible. However, this approach overlooks the costs of inaction: missed opportunities, loss of value from inflation, and falling behind competitors. True mitigation is not about avoidance but about intelligent engagement. This is done by diversifying, or allocating resources across a mix of assets, industries, or ventures. The goal is to ensure that a failure in one specific area does not put the entire endeavor at risk. It is a foundational tactic to manage unsystematic specific risks. 
+While sophisticated analysis has its place, effective risk management starts with fundamental principles accessible to all. It begins with clear risk identification: systematically listing potential threats, from market downturns and operational failures to regulatory changes. The next step is assessment, evaluating both the likelihood of these events and the potential severity of their impact. This prioritizes resources towards managing the most significant threats. Finally, planning specific responses—whether to accept, avoid, transfer (e.g., via insurance), or mitigate the risk—creates a proactive framework. 
+Ultimately, the focus should shift from pursuing a state with no risk to actively fostering the strength to withstand and adapt to it. This means building buffers, such as maintaining emergency funds or flexible operational plans, to absorb shocks. It also requires continuous monitoring, as risks evolve. By replacing the myths of total avoidance or exclusive expertise with a structured, disciplined process: individuals and organizations can navigate uncertainty with greater confidence and strategic clarity. 
+
+What is the first step in the risk management process described in the text?
+
+правильный ответ:
+++ 		: Creating a systematic list of all possible threats
+
+ошибки:
+-- Evaluating the likelihood and severity of potential events
+-- Planning specific responses like transfering risks via insurance
+-- Building financial buffers like emergency funds
+-- Allocating resources to manage the most significant threats
+
+threat [(т)фреат] - угроза, опасность
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Read the text and answer the question 
+Effective risk management is fundamental to sustainable success in both business and investing. 
+Many believe the safest path is to avoid situations where loss is possible. However, this approach overlooks the costs of inaction: missed opportunities, loss of value from inflation, and falling behind competitors. True mitigation is not about avoidance but about intelligent engagement. This is done by diversifying, or allocating resources across a mix of assets, industries, or ventures. The goal is to ensure that a failure in one specific area does not put the entire endeavor at risk. It is a foundational tactic to manage unsystematic specific risks. 
+While sophisticated analysis has its place, effective risk management starts with fundamental principles accessible to all. It begins with clear risk identification: systematically listing potential threats, from market downturns and operational failures to regulatory changes. The next step is assessment, evaluating both the likelihood of these events and the potential severity of their impact. This prioritizes resources towards managing the most significant threats. Finally, planning specific responses—whether to accept, avoid, transfer (e.g., via insurance), or mitigate the risk—creates a proactive framework. 
+Ultimately, the focus should shift from pursuing a state with no risk to actively fostering the strength to withstand and adapt to it. This means building buffers, such as maintaining emergency funds or flexible operational plans, to absorb shocks. It also requires continuous monitoring, as risks evolve. By replacing the myths of total avoidance or exclusive expertise with a structured, disciplined process: individuals and organizations can navigate uncertainty with greater confidence and strategic clarity. 
+
+What does the text describe as the ultimate objective of effective risk management?
+
+правильный ответ:
+++ 		: Building toughness to survive and adapt to sudden problems
+
+ошибки:
+-- Ensuring that all ventures are free from unsystematic risks
+-- Achieving a state where continuous monitoring is no longer necessary
+-- The total elimination of all risks to an operation
+-- Delegating all risk management decisions to specialized experts
+
+ultimately [ултимэйтли] - наконец, в конечном итоге, окончательно
+pursuing [пу(р)суинг] - стремление к, преследование
+foster [фостэ(р)] - способствовать, содействовать, поощрять, укреплять
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question
+What is the main idea of the audio?
+
+[ mp3/hh_eng_C1_01.mp3 ]
+Hello, everyone. Today, let's talk about building authentic rapport with your partners. It's not about simple networking. It's about forging strategic alliances built on mutual respect and understanding. The foundation is active, genuine listening. This means going beyond hearing words to understanding context. In your next meeting, focus entirely. Paraphrase their points to confirm understanding. Ask questions that show a deep curiosity about their challenges, not just their resources. This demonstrates respect and shifts the dynamic from a negotiation to a dialogue. Building on that, empathy is your strategic tool. It's about intellectually and emotionally understanding their position, their pressures, KPIs, culture. When you can articulate their challenges back to them, perhaps even before they fully voice them, you build immense credibility. This leads to the critical element of reliability and honesty. Rapport isn't built on always agreeing. It's built on being consistently trustworthy. Be transparent about your limitations. If a deadline is at risk, communicate early. Furthermore, pay attention to the nuanced communication, the tone, the preferred style of interaction. Some partners value detailed reports. Others want a succinct summary. Adapting to their communication style shows a high level of professional intelligence and consideration. Ultimately, view rapport not as a preliminary step, but as the continuous maintenance of a shared space of trust. Invest in it deliberately, nurture it consistently, and it will become your most valuable asset in any negotiation. Thank you.
+
+правильный ответ:
+++ 		: Developing genuine trust is a continuous strategic process vital for partnerships
+
+ошибки:
+-- Rapport is just an initial step before real negotiations begin
+-- Always agreeing with partners is key to successful collaboration
+-- Active listening is the main skill needed for successful partnerships
+-- Success partnership depends on providing detailed reports in every interaction
+
+genuine [(д)жэньюэн] - подлинный, настоящий, истинный
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question
+According to the speaker, what primarily transforms an interaction from a negotiation into a more productive dialogue?
+
+[ mp3/hh_eng_C1_01.mp3 ]
+Hello, everyone. Today, let's talk about building authentic rapport with your partners. It's not about simple networking. It's about forging strategic alliances built on mutual respect and understanding. The foundation is active, genuine listening. This means going beyond hearing words to understanding context. In your next meeting, focus entirely. Paraphrase their points to confirm understanding. Ask questions that show a deep curiosity about their challenges, not just their resources. This demonstrates respect and shifts the dynamic from a negotiation to a dialogue. Building on that, empathy is your strategic tool. It's about intellectually and emotionally understanding their position, their pressures, KPIs, culture. When you can articulate their challenges back to them, perhaps even before they fully voice them, you build immense credibility. This leads to the critical element of reliability and honesty. Rapport isn't built on always agreeing. It's built on being consistently trustworthy. Be transparent about your limitations. If a deadline is at risk, communicate early. Furthermore, pay attention to the nuanced communication, the tone, the preferred style of interaction. Some partners value detailed reports. Others want a succinct summary. Adapting to their communication style shows a high level of professional intelligence and consideration. Ultimately, view rapport not as a preliminary step, but as the continuous maintenance of a shared space of trust. Invest in it deliberately, nurture it consistently, and it will become your most valuable asset in any negotiation. Thank you.
+
+правильный ответ:
+++ 		: A deep effort to truly comprehend the other party's perspective
+
+ошибки:
+-- Focusing exclusively on reaching a final agreement quickly
+-- Scheduling regular formal meetings to maintain contact
+-- Preparing a more convincing argument than your partner
+-- Clearly outlining your own resources and limitations first
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Listen to the audio and answer the question
+Why is empathy described as a 'strategic tool' in building partnership rapport?
+
+[ mp3/hh_eng_C1_01.mp3 ]
+Hello, everyone. Today, let's talk about building authentic rapport with your partners. It's not about simple networking. It's about forging strategic alliances built on mutual respect and understanding. The foundation is active, genuine listening. This means going beyond hearing words to understanding context. In your next meeting, focus entirely. Paraphrase their points to confirm understanding. Ask questions that show a deep curiosity about their challenges, not just their resources. This demonstrates respect and shifts the dynamic from a negotiation to a dialogue. Building on that, empathy is your strategic tool. It's about intellectually and emotionally understanding their position, their pressures, KPIs, culture. When you can articulate their challenges back to them, perhaps even before they fully voice them, you build immense credibility. This leads to the critical element of reliability and honesty. Rapport isn't built on always agreeing. It's built on being consistently trustworthy. Be transparent about your limitations. If a deadline is at risk, communicate early. Furthermore, pay attention to the nuanced communication, the tone, the preferred style of interaction. Some partners value detailed reports. Others want a succinct summary. Adapting to their communication style shows a high level of professional intelligence and consideration. Ultimately, view rapport not as a preliminary step, but as the continuous maintenance of a shared space of trust. Invest in it deliberately, nurture it consistently, and it will become your most valuable asset in any negotiation. Thank you.
+
+правильный ответ:
+++ 		: It builds significant credibility by demonstrating a profound graps of their situation
+
+ошибки:
+-- It primarily helps in socially mirroring a partner's behavior to make them like you
+-- It is a method for ensuring all conversations remain positive and avoid conflict
+-- It allow you to identify and exploit a partner's main weakness
+-- It is a technique for getting pertners to agree with your proposals more easily
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
 
